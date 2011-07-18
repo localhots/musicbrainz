@@ -1,8 +1,63 @@
-= musicbrainz
+= MusicBrainz Web Service wrapper
 
-Description goes here.
+=== Installation
 
-== Contributing to musicbrainz
+    gem install musicbrainz
+
+=== Usage
+
+    require 'musicbrainz'
+    
+    @kasabian = MusicBrainzArtist.find('69b39eab-6577-46a4-a9f5-817839092033')
+    
+    @empire_tracks = @kasabian.release_groups[8].releases.first.tracks
+
+=== Future
+
+It should work all like ActiveRecord models.
+
+=== Api
+
+MusicBrainzArtist
+
+    MusicBrainzArtist.find(mbid)
+    MusicBrainzArtist.id
+    MusicBrainzArtist.type
+    MusicBrainzArtist.name
+    MusicBrainzArtist.country
+    MusicBrainzArtist.date_begin
+    MusicBrainzArtist.date_end
+    MusicBrainzArtist.release_groups
+
+MusicBrainzReleaseGroup
+
+    MusicBrainzReleaseGroup.find(mbid)
+    MusicBrainzReleaseGroup.id
+    MusicBrainzReleaseGroup.type
+    MusicBrainzReleaseGroup.title
+    MusicBrainzReleaseGroup.first_release_date
+    MusicBrainzReleaseGroup.releases
+
+MusicBrainzRelease
+
+    MusicBrainzRelease.find(mbid)
+    MusicBrainzRelease.id
+    MusicBrainzRelease.title
+    MusicBrainzRelease.status
+    MusicBrainzRelease.date
+    MusicBrainzRelease.country
+    MusicBrainzRelease.tracks
+
+MusicBrainzTrack
+
+    MusicBrainzTrack.find(mbid)
+    MusicBrainzTrack.position
+    MusicBrainzTrack.recording_id
+    MusicBrainzTrack.title
+    MusicBrainzTrack.length
+
+
+=== Contributing
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -12,8 +67,6 @@ Description goes here.
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+=== Copyright
 
-Copyright (c) 2011 magnolia-fan. See LICENSE.txt for
-further details.
-
+Copyright (c) 2011 Gregory Eremin. See LICENSE.txt for further details.

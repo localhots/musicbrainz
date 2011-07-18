@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/magnolia-fan/musicbrainz"
   gem.license = "MIT"
   gem.summary = %Q{MusicBrainz Web Service wrapper}
-  gem.description = %Q{MusicBrainz Web Service wrapper}
+  gem.description = %Q{MusicBrainz Web Service wrapper with ActiveRecord-style models}
   gem.email = "magnolia_fan@me.com"
   gem.authors = ["Gregory Eremin"]
   # dependencies defined in Gemfile

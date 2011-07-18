@@ -11,7 +11,6 @@ group :development do
   gem "jeweler", "~> 1.6.4"
   gem "rcov", ">= 0"
   gem "rdoc", ">= 0"
-  gem "awesome_print"
 end
 
 gem "nokogiri", ">= 0"
