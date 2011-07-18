@@ -66,4 +66,59 @@ class TestMusicbrainz < Test::Unit::TestCase
       assert_equal('GB', releases[0].country)
     end
   end
+  
+  context "release" do
+    should "load release xml" do
+      assert_nothing_raised(Exception) do
+        MusicBrainzRelease.find('2225dd4c-ae9a-403b-8ea0-9e05014c778f')
+      end
+    end
+    
+    setup do
+      @release = MusicBrainzRelease.find('2225dd4c-ae9a-403b-8ea0-9e05014c778f')
+    end
+    
+    should "return valid instance" do
+      assert_instance_of(MusicBrainzRelease, @release)
+    end
+    
+    should "contain correct data" do
+      assert_equal("2225dd4c-ae9a-403b-8ea0-9e05014c778f", @release.id)
+      assert_equal("Empire", @release.title)
+      assert_equal("Official", @release.status)
+      assert_equal(Time.parse('2006-08-28'), @release.date)
+      assert_equal("GB", @release.country)
+    end
+    
+    should "load tracks" do
+      tracks = @release.tracks
+      assert_equal(11, tracks.length)
+      assert_equal(1, tracks[0].position)
+      assert_equal('b3015bab-1540-4d4e-9f30-14872a1525f7', tracks[0].recording_id)
+      assert_equal('Empire', tracks[0].title)
+      assert_equal(233013, tracks[0].length)
+    end
+  end
+  
+  context "track" do
+    should "load track xml" do
+      assert_nothing_raised(Exception) do
+        MusicBrainzTrack.find('b3015bab-1540-4d4e-9f30-14872a1525f7')
+      end
+    end
+    
+    setup do
+      @track = MusicBrainzTrack.find('b3015bab-1540-4d4e-9f30-14872a1525f7')
+    end
+    
+    should "return valid instance" do
+      assert_instance_of(MusicBrainzTrack, @track)
+    end
+    
+    should "contain correct data" do
+      assert_equal("b3015bab-1540-4d4e-9f30-14872a1525f7", @track.recording_id)
+      assert_equal("Empire", @track.title)
+      assert_equal(233013, @track.length)
+    end
+  end
 end

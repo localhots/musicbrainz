@@ -5,8 +5,8 @@ class MusicBrainzRelease
   def tracks
     if @tracks.nil? and not self.id.nil?
       @tracks = []
-      Nokogiri::XML(open('http://musicbrainz.org/ws/2/release/' + self.id + '?inc=recordings')).css('release').each do |r|
-        @tracks << MusicBrainzRelease.parse_xml(r)
+      Nokogiri::XML(open('http://musicbrainz.org/ws/2/release/' + self.id + '?inc=recordings')).css('medium-list > medium > track-list > track').each do |r|
+        @tracks << MusicBrainzTrack.parse_xml(r)
       end
     end
     @tracks
