@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Gregory Eremin}]
   s.date = %q{2011-07-18}
-  s.description = %q{MusicBrainz Web Service wrapper}
+  s.description = %q{MusicBrainz Web Service wrapper with ActiveRecord-style models}
   s.email = %q{magnolia_fan@me.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -23,11 +23,13 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
     "lib/models/music_brainz_artist.rb",
     "lib/models/music_brainz_release.rb",
     "lib/models/music_brainz_release_group.rb",
     "lib/models/music_brainz_track.rb",
     "lib/musicbrainz.rb",
+    "musicbrainz.gemspec",
     "test/helper.rb",
     "test/test_musicbrainz.rb"
   ]
