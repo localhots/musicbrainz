@@ -1,0 +1,3 @@
+class MusicBrainzTrack
+  
+end

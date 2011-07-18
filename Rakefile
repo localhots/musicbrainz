@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "musicbrainz"
   gem.homepage = "http://github.com/magnolia-fan/musicbrainz"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{MusicBrainz Web Service wrapper}
+  gem.description = %Q{MusicBrainz Web Service wrapper}
   gem.email = "magnolia_fan@me.com"
-  gem.authors = ["magnolia-fan"]
+  gem.authors = ["Gregory Eremin"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -42,8 +42,8 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
