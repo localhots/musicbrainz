@@ -4,16 +4,16 @@ class TestMusicbrainz < Test::Unit::TestCase
   context "artist" do
     should "load artist xml" do
       assert_nothing_raised(Exception) do
-        MusicBrainzArtist.find('69b39eab-6577-46a4-a9f5-817839092033')
+        MusicBrainz::Artist.find('69b39eab-6577-46a4-a9f5-817839092033')
       end
     end
     
     setup do
-      @artist = MusicBrainzArtist.find('69b39eab-6577-46a4-a9f5-817839092033')
+      @artist = MusicBrainz::Artist.find('69b39eab-6577-46a4-a9f5-817839092033')
     end
     
     should "return valid instance" do
-      assert_instance_of(MusicBrainzArtist, @artist)
+      assert_instance_of(MusicBrainz::Artist, @artist)
     end
     
     should "contain correct data" do
@@ -37,16 +37,16 @@ class TestMusicbrainz < Test::Unit::TestCase
   context "release group" do
     should "load release group xml" do
       assert_nothing_raised(Exception) do
-        MusicBrainzReleaseGroup.find('6f33e0f0-cde2-38f9-9aee-2c60af8d1a61')
+        MusicBrainz::ReleaseGroup.find('6f33e0f0-cde2-38f9-9aee-2c60af8d1a61')
       end
     end
     
     setup do
-      @release_group = MusicBrainzReleaseGroup.find('6f33e0f0-cde2-38f9-9aee-2c60af8d1a61')
+      @release_group = MusicBrainz::ReleaseGroup.find('6f33e0f0-cde2-38f9-9aee-2c60af8d1a61')
     end
     
     should "return valid instance" do
-      assert_instance_of(MusicBrainzReleaseGroup, @release_group)
+      assert_instance_of(MusicBrainz::ReleaseGroup, @release_group)
     end
     
     should "contain correct data" do
@@ -70,16 +70,16 @@ class TestMusicbrainz < Test::Unit::TestCase
   context "release" do
     should "load release xml" do
       assert_nothing_raised(Exception) do
-        MusicBrainzRelease.find('2225dd4c-ae9a-403b-8ea0-9e05014c778f')
+        MusicBrainz::Release.find('2225dd4c-ae9a-403b-8ea0-9e05014c778f')
       end
     end
     
     setup do
-      @release = MusicBrainzRelease.find('2225dd4c-ae9a-403b-8ea0-9e05014c778f')
+      @release = MusicBrainz::Release.find('2225dd4c-ae9a-403b-8ea0-9e05014c778f')
     end
     
     should "return valid instance" do
-      assert_instance_of(MusicBrainzRelease, @release)
+      assert_instance_of(MusicBrainz::Release, @release)
     end
     
     should "contain correct data" do
@@ -103,16 +103,16 @@ class TestMusicbrainz < Test::Unit::TestCase
   context "track" do
     should "load track xml" do
       assert_nothing_raised(Exception) do
-        MusicBrainzTrack.find('b3015bab-1540-4d4e-9f30-14872a1525f7')
+        MusicBrainz::Track.find('b3015bab-1540-4d4e-9f30-14872a1525f7')
       end
     end
     
     setup do
-      @track = MusicBrainzTrack.find('b3015bab-1540-4d4e-9f30-14872a1525f7')
+      @track = MusicBrainz::Track.find('b3015bab-1540-4d4e-9f30-14872a1525f7')
     end
     
     should "return valid instance" do
-      assert_instance_of(MusicBrainzTrack, @track)
+      assert_instance_of(MusicBrainz::Track, @track)
     end
     
     should "contain correct data" do
