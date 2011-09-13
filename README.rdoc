@@ -1,4 +1,4 @@
-= MusicBrainz Web Service wrapper
+= MusicBrainz Web Service wrapper {<img src="https://secure.travis-ci.org/magnolia-fan/musicbrainz.png"/>}[http://travis-ci.org/magnolia-fan/musicbrainz]
 
 === Installation
 
