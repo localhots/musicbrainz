@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{musicbrainz}
-  s.version = "0.2.0"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Gregory Eremin}]
@@ -24,6 +24,11 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "lib/models/music_brainz.rb",
+    "lib/models/music_brainz/artist.rb",
+    "lib/models/music_brainz/release.rb",
+    "lib/models/music_brainz/release_group.rb",
+    "lib/models/music_brainz/track.rb",
     "lib/musicbrainz.rb",
     "musicbrainz.gemspec",
     "test/helper.rb",

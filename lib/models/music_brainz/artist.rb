@@ -22,9 +22,9 @@ module MusicBrainz
       @artist.id = xml.css('artist').attr('id').value
       @artist.type = xml.css('artist').attr('type').value
       @artist.name = xml.css('artist > name').text
-      @artist.country = xml.css('artist > country').text || nil
-      @artist.date_begin = xml.css('artist > life-span > begin').text || nil
-      @artist.date_end = xml.css('artist > life-span > end').text || nil
+      @artist.country = xml.css('artist > country').text unless xml.css('artist > country').empty?
+      @artist.date_begin = xml.css('artist > life-span > begin').text unless xml.css('artist > life-span > begin').empty?
+      @artist.date_end = xml.css('artist > life-span > end').text unless xml.css('artist > life-span > end').empty?
       @artist
     end
   end

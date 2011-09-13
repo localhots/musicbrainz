@@ -23,4 +23,10 @@ module MusicBrainz
     self.last_query_time = Time.now.to_f
     response
   end
+  
+  def self.discography mbid
+    artist = MusicBrainz::Artist.find(mbid)
+    artist.release_groups.each {|rg| rg.releases.each {|r| r.tracks } }
+    artist
+  end
 end

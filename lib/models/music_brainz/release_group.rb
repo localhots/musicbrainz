@@ -22,8 +22,9 @@ module MusicBrainz
       @release_group = MusicBrainz::ReleaseGroup.new
       @release_group.id = xml.attr('id')
       @release_group.type = xml.attr('type')
-      @release_group.title = xml.css('title').text
-      date = xml.css('first-release-date').text
+      @release_group.title = xml.css('title').text unless xml.css('title').empty?
+      date = nil
+      date = xml.css('first-release-date').text unless xml.css('first-release-date').empty?
       unless date.nil? or date.empty?
         if date.length == 4
           date += '-01-01'

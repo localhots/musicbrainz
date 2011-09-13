@@ -21,9 +21,10 @@ module MusicBrainz
     def self.parse_xml xml
       @release = MusicBrainz::Release.new
       @release.id = xml.attr('id')
-      @release.title = xml.css('title').text
-      @release.status = xml.css('status').text
-      date = xml.css('date').text
+      @release.title = xml.css('title').text unless xml.css('title').empty?
+      @release.status = xml.css('status').text unless xml.css('status').empty?
+      date = nil
+      date = xml.css('date').text unless xml.css('date').empty?
       unless date.nil? or date.empty?
         if date.length == 4
           date += '-01-01'
@@ -33,7 +34,7 @@ module MusicBrainz
         date = Time.parse(date)
       end
       @release.date = date
-      @release.country = xml.css('country').text
+      @release.country = xml.css('country').text unless xml.css('country').empty?
       @release
     end
   end
