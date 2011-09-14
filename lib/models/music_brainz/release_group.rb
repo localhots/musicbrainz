@@ -33,6 +33,7 @@ module MusicBrainz
         date += '-31'
       end
       date = date.split('-')
+      p date
       @release_group.first_release_date = Time.utc(date[0], date[1], date[2])
       @release_group
     end
