@@ -15,12 +15,12 @@ module MusicBrainz
     5.times do
       begin
         response = open(url, "User-Agent" => "gem musicbrainz (https://github.com/magnolia-fan/musicbrainz) @ " + Socket.gethostname)
+        self.last_query_time = Time.now.to_f
       rescue => e
         p "MusicBrainz: 503"
       end
       break unless response.nil?
     end
-    self.last_query_time = Time.now.to_f
     response
   end
   
