@@ -6,7 +6,7 @@ module MusicBrainz
     def tracks
       if @tracks.nil? and not self.id.nil?
         @tracks = []
-        Nokogiri::XML(MusicBrainz.load('http://musicbrainz.org/ws/2/release/' + self.id + '?inc=recordings')).css('medium-list > medium > track-list > track').each do |r|
+        Nokogiri::XML(MusicBrainz.load('http://musicbrainz.org/ws/2/release/' + self.id + '?inc=recordings&limit=100')).css('medium-list > medium > track-list > track').each do |r|
           @tracks << MusicBrainz::Track.parse_xml(r)
         end
       end

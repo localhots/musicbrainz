@@ -30,19 +30,22 @@ module MusicBrainz
       @artist
     end
     
-    private
+    def self.find_by_name name
+      matches = self.search name
+      matches.length.zero? ? nil : self.find(matches.first[:mbid])
+    end
     
     def self.search name
       artists = []
       xml = Nokogiri::XML(MusicBrainz.load(
-        'http://musicbrainz.org/ws/2/artist/?query='+ URI.escape(query).gsub(/\&/, '%26').gsub(/\?/, '%3F') +'~&limit=50'
+        'http://musicbrainz.org/ws/2/artist/?query='+ URI.escape(name).gsub(/\&/, '%26').gsub(/\?/, '%3F') +'~&limit=50'
       ))
       xml.css('artist-list > artist').each do |a|
         artist = {
-          :name => a.css('name').text,
+          :name => a.first_element_child.text,
           :weight => 0,
-          :desc => a.css('disambiguation').text unless a.css('disambiguation').empty?,
-          :type => a.css('type').text.capitalize,
+          :desc => (a.css('disambiguation').text unless a.css('disambiguation').empty?),
+          :type => a.attr('type'),
           :mbid => a.attr('id')
         }
         aliases = a.css('alias-list > alias').map{ |item| item.text }

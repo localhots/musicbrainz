@@ -3,7 +3,7 @@ module MusicBrainz
     attr_accessor :position, :recording_id, :title, :length
   
     def self.find mbid
-      xml = Nokogiri::XML(MusicBrainz.load('http://musicbrainz.org/ws/2/recording/' + mbid))
+      xml = Nokogiri::XML(MusicBrainz.load('http://musicbrainz.org/ws/2/recording/' + mbid + '?limit=100'))
       self.parse_xml(xml) unless xml.nil?
     end
   

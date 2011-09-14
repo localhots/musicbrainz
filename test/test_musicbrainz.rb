@@ -8,6 +8,17 @@ class TestMusicbrainz < Test::Unit::TestCase
       end
     end
     
+    should "search for artists by name" do
+      matches = MusicBrainz::Artist.search('Kasabian')
+      assert_operator(0, :<, matches.length)
+      assert_equal("Kasabian", matches.first[:name])
+    end
+    
+    should "get correct artist by name" do
+      @artist = MusicBrainz::Artist.find_by_name('Kasabian')
+      assert_equal("69b39eab-6577-46a4-a9f5-817839092033", @artist.id)
+    end
+    
     setup do
       @artist = MusicBrainz::Artist.find('69b39eab-6577-46a4-a9f5-817839092033')
     end
