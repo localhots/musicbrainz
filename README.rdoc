@@ -20,7 +20,7 @@
 
 === Api
 
-MusicBrainzArtist
+MusicBrainz::Artist
     
     @artists = MusicBrainz::Artist.search(query)
     @artist = MusicBrainz::Artist.find_by_name(name)
@@ -33,7 +33,7 @@ MusicBrainzArtist
     @artist.date_end
     @artist.release_groups
 
-MusicBrainzReleaseGroup
+MusicBrainz::ReleaseGroup
 
     @release_group = MusicBrainz::ReleaseGroup.find(mbid)
     @release_group.id
@@ -42,7 +42,7 @@ MusicBrainzReleaseGroup
     @release_group.first_release_date
     @release_group.releases
 
-MusicBrainzRelease
+MusicBrainz::Release
 
     @release = MusicBrainz::Release.find(mbid)
     @release.id
@@ -52,7 +52,7 @@ MusicBrainzRelease
     @release.country
     @release.tracks
 
-MusicBrainzTrack
+MusicBrainz::Track
 
     @track = MusicBrainz::Track.find(mbid)
     @track.position
