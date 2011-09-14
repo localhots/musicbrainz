@@ -38,10 +38,10 @@ class TestMusicbrainz < Test::Unit::TestCase
     should "load release groups" do
       release_groups = @artist.release_groups
       assert_operator(16, :<=, release_groups.length)
-      assert_equal('0244b82e-0796-36fc-a629-2507d5441124', release_groups[0].id)
-      assert_equal('Single', release_groups[0].type)
-      assert_equal('Shoot the Runner', release_groups[0].title)
-      assert_equal(Time.parse('2006-01-01'), release_groups[0].first_release_date)
+      assert_equal('533cbc5f-ec7e-32ab-95f3-8d1f804a5176', release_groups.first.id)
+      assert_equal('Single', release_groups.first.type)
+      assert_equal('Club Foot', release_groups.first.title)
+      assert_equal(Time.utc(2004, 5, 10), release_groups.first.first_release_date)
     end
   end
   
@@ -64,17 +64,17 @@ class TestMusicbrainz < Test::Unit::TestCase
       assert_equal("6f33e0f0-cde2-38f9-9aee-2c60af8d1a61", @release_group.id)
       assert_equal("Album", @release_group.type)
       assert_equal("Empire", @release_group.title)
-      assert_equal(Time.parse('2006-08-28'), @release_group.first_release_date)
+      assert_equal(Time.utc(2006, 8, 28), @release_group.first_release_date)
     end
     
     should "load releases" do
       releases = @release_group.releases
       assert_operator(5, :<=, releases.length)
-      assert_equal('2225dd4c-ae9a-403b-8ea0-9e05014c778f', releases[0].id)
-      assert_equal('Official', releases[0].status)
-      assert_equal('Empire', releases[0].title)
-      assert_equal(Time.parse('2006-08-28'), releases[0].date)
-      assert_equal('GB', releases[0].country)
+      assert_equal('2225dd4c-ae9a-403b-8ea0-9e05014c778f', releases.first.id)
+      assert_equal('Official', releases.first.status)
+      assert_equal('Empire', releases.first.title)
+      assert_equal(Time.utc(2006, 8, 28), releases.first.date)
+      assert_equal('GB', releases.first.country)
     end
   end
   
@@ -97,17 +97,17 @@ class TestMusicbrainz < Test::Unit::TestCase
       assert_equal("2225dd4c-ae9a-403b-8ea0-9e05014c778f", @release.id)
       assert_equal("Empire", @release.title)
       assert_equal("Official", @release.status)
-      assert_equal(Time.parse('2006-08-28'), @release.date)
+      assert_equal(Time.utc(2006, 8, 28), @release.date)
       assert_equal("GB", @release.country)
     end
     
     should "load tracks" do
       tracks = @release.tracks
       assert_equal(11, tracks.length)
-      assert_equal(1, tracks[0].position)
-      assert_equal('b3015bab-1540-4d4e-9f30-14872a1525f7', tracks[0].recording_id)
-      assert_equal('Empire', tracks[0].title)
-      assert_equal(233013, tracks[0].length)
+      assert_equal(1, tracks.first.position)
+      assert_equal('b3015bab-1540-4d4e-9f30-14872a1525f7', tracks.first.recording_id)
+      assert_equal('Empire', tracks.first.title)
+      assert_equal(233013, tracks.first.length)
     end
   end
   

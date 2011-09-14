@@ -10,7 +10,7 @@ module MusicBrainz
           @tracks << MusicBrainz::Track.parse_xml(r)
         end
       end
-      @tracks
+      @tracks.sort{ |a, b| a.position <=> b.position }
     end
   
     def self.find mbid
@@ -23,17 +23,16 @@ module MusicBrainz
       @release.id = xml.attr('id')
       @release.title = xml.css('title').text unless xml.css('title').empty?
       @release.status = xml.css('status').text unless xml.css('status').empty?
-      date = nil
-      date = xml.css('date').text unless xml.css('date').empty?
-      unless date.nil? or date.empty?
-        if date.length == 4
-          date += '-01-01'
-        elsif date.length == 7
-          date += '-01'
-        end
-        date = Time.parse(date)
+      date = xml.css('date').empty? ? '9999-12-31' : xml.css('date').text
+      if date.length == 0
+        date = '9999-12-31'
+      elsif date.length == 4
+        date += '-12-31'
+      elsif date.length == 7
+        date += '-31'
       end
-      @release.date = date
+      date = date.split('-')
+      @release.date = Time.utc(date[0], date[1], date[2])
       @release.country = xml.css('country').text unless xml.css('country').empty?
       @release
     end

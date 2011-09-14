@@ -1,6 +1,6 @@
 module MusicBrainz
   class ReleaseGroup
-    attr_accessor :id, :type, :title, :first_release_date
+    attr_accessor :id, :type, :title, :disambiguation, :first_release_date
     @releases
   
     def releases
@@ -10,7 +10,7 @@ module MusicBrainz
           @releases << MusicBrainz::Release.parse_xml(r)
         end
       end
-      @releases
+      @releases.sort{ |a, b| a.date <=> b.date }
     end
   
     def self.find mbid
@@ -22,18 +22,18 @@ module MusicBrainz
       @release_group = MusicBrainz::ReleaseGroup.new
       @release_group.id = xml.attr('id')
       @release_group.type = xml.attr('type')
-      @release_group.title = xml.css('title').text unless xml.css('title').empty?
-      date = nil
-      date = xml.css('first-release-date').text unless xml.css('first-release-date').empty?
-      unless date.nil? or date.empty?
-        if date.length == 4
-          date += '-01-01'
-        elsif date.length == 7
-          date += '-01'
-        end
-        date = Time.parse(date)
+      @release_group.title = xml.css('title').text
+      @release_group.disambiguation = xml.css('disambiguation').empty? ? '' : xml.css('disambiguation').text
+      date = xml.css('first-release-date').empty? ? '9999-12-31' : xml.css('first-release-date').text
+      if date.length == 0
+        date = '9999-12-31'
+      elsif date.length == 4
+        date += '-12-31'
+      elsif date.length == 7
+        date += '-31'
       end
-      @release_group.first_release_date = date
+      date = date.split('-')
+      @release_group.first_release_date = Time.utc(date[0], date[1], date[2])
       @release_group
     end
   end

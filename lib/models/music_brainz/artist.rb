@@ -12,7 +12,7 @@ module MusicBrainz
           @release_groups << MusicBrainz::ReleaseGroup.parse_xml(rg)
         end
       end
-      @release_groups
+      @release_groups.sort{ |a, b| a.first_release_date <=> b.first_release_date }
     end
   
     def self.find mbid
