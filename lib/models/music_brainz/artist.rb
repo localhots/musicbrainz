@@ -30,6 +30,12 @@ module MusicBrainz
       @artist
     end
     
+    def self.discography mbid
+      artist = self.find(mbid)
+      artist.release_groups.each {|rg| rg.releases.each {|r| r.tracks } }
+      artist
+    end
+    
     def self.find_by_name name
       matches = self.search name
       matches.length.zero? ? nil : self.find(matches.first[:mbid])

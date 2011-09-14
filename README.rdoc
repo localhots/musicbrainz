@@ -7,17 +7,23 @@
 === Usage
 
     require 'musicbrainz'
+    
+    # Search for artists
+    @suggestions = MusicBrainz::Artist.search('Jet')
+    
+    # Find artist by name or mbid
+    @foo_fighters = MusicBrainz::Artist.find_by_name('Foo Fighters')
     @kasabian = MusicBrainz::Artist.find('69b39eab-6577-46a4-a9f5-817839092033')
+    
+    # Use them like ActiveRecord models
     @empire_tracks = @kasabian.release_groups[8].releases.first.tracks
-
-=== Future
-
-It should work all like ActiveRecord models.
 
 === Api
 
 MusicBrainzArtist
-
+    
+    @artists = MusicBrainz::Artist.search(query)
+    @artist = MusicBrainz::Artist.find_by_name(name)
     @artist = MusicBrainz::Artist.find(mbid)
     @artist.id
     @artist.type
