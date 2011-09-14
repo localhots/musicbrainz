@@ -23,9 +23,9 @@ module MusicBrainz
       @release.id = xml.attr('id')
       @release.title = xml.css('title').text unless xml.css('title').empty?
       @release.status = xml.css('status').text unless xml.css('status').empty?
-      date = xml.css('date').empty? ? '9999-12-31' : xml.css('date').text
+      date = xml.css('date').empty? ? '2030-12-31' : xml.css('date').text
       if date.length == 0
-        date = '9999-12-31'
+        date = '2030-12-31'
       elsif date.length == 4
         date += '-12-31'
       elsif date.length == 7

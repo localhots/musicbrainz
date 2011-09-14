@@ -24,16 +24,15 @@ module MusicBrainz
       @release_group.type = xml.attr('type')
       @release_group.title = xml.css('title').text
       @release_group.disambiguation = xml.css('disambiguation').empty? ? '' : xml.css('disambiguation').text
-      date = xml.css('first-release-date').empty? ? '9999-12-31' : xml.css('first-release-date').text
+      date = xml.css('first-release-date').empty? ? '2030-12-31' : xml.css('first-release-date').text
       if date.length == 0
-        date = '9999-12-31'
+        date = '2030-12-31'
       elsif date.length == 4
         date += '-12-31'
       elsif date.length == 7
         date += '-31'
       end
       date = date.split('-')
-      p date
       @release_group.first_release_date = Time.utc(date[0], date[1], date[2])
       @release_group
     end
