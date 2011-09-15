@@ -2,7 +2,7 @@ module MusicBrainz
   @@last_query_time = 0
   @@query_interval = 1.5 # Min: 1.0 Safe: 1.5
   
-  def self.query_interval sec
+  def self.query_interval= sec
     @@query_interval = sec.to_f
   end
 
