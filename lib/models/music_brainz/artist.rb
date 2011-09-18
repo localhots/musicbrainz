@@ -16,7 +16,9 @@ module MusicBrainz
     end
   
     def self.find mbid
-      @artist = self.parse_xml(Nokogiri::XML(MusicBrainz.load('http://musicbrainz.org/ws/2/artist/' + mbid)))
+      res = MusicBrainz.load('http://musicbrainz.org/ws/2/artist/' + mbid)
+      return nil if res.nil?
+      @artist = self.parse_xml(Nokogiri::XML())
     end
   
     def self.parse_xml xml

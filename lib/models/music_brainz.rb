@@ -14,7 +14,7 @@ module MusicBrainz
         response = open(url, "User-Agent" => "gem musicbrainz (https://github.com/magnolia-fan/musicbrainz) @ " + Socket.gethostname)
         @@last_query_time = Time.now.to_f
       rescue => e
-        # MusicBrainz: 503
+        return nil if e.io.status[0].to_i == 404
       end
       break unless response.nil?
     end
