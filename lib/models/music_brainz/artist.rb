@@ -22,7 +22,7 @@ module MusicBrainz
     def self.parse_xml xml
       @artist = MusicBrainz::Artist.new
       @artist.id = xml.css('artist').attr('id').value
-      @artist.type = xml.css('artist').attr('type').value
+      @artist.type = xml.css('artist').attr('type').value unless xml.css('artist').empty? or xml.css('artist').attr('type').empty?
       @artist.name = xml.css('artist > name').text
       @artist.country = xml.css('artist > country').text unless xml.css('artist > country').empty?
       @artist.date_begin = xml.css('artist > life-span > begin').text unless xml.css('artist > life-span > begin').empty?
