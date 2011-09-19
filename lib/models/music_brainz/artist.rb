@@ -44,7 +44,7 @@ module MusicBrainz
     def self.search name
       artists = []
       xml = Nokogiri::XML(MusicBrainz.load(
-        'http://musicbrainz.org/ws/2/artist/?query='+ URI.escape(name).gsub(/\&/, '%26').gsub(/\?/, '%3F') +'~&limit=50'
+        'http://musicbrainz.org/ws/2/artist/?query='+ CGI.escape(name).gsub(/\!/, '') +'~&limit=50'
       ))
       xml.css('artist-list > artist').each do |a|
         artist = {

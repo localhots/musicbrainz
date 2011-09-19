@@ -1,6 +1,7 @@
 require "open-uri"
 require "socket"
 require "nokogiri"
+require "cgi"
 
 require "models/music_brainz"
 require "models/music_brainz/artist"
