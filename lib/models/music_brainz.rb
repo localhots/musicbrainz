@@ -13,7 +13,7 @@ module MusicBrainz
     url = WEB_SERVICE_URL + resourse.to_s.gsub('_', '-') + '/' + (params[:id].to_s || '')
     params.delete(:id) unless params[:id].nil?
     url << '?' + params.map{ |k, v|
-      k.to_s.gsub('_', '-') + '=' + (v.is_a?(Array) ? v.map{ |_| _.to_s.gsub('_', '-') }.join(',') : v.to_s)
+      k.to_s.gsub('_', '-') + '=' + (v.is_a?(Array) ? v.map{ |_| _.to_s.gsub('_', '-') }.join('+') : v.to_s)
     }.join('&') unless params.empty?
     self.get_contents url
   end

@@ -1,6 +1,6 @@
 module MusicBrainz
   class Artist < MusicBrainz::Base
-    attr_accessor :id, :type, :name, :country, :date_begin, :date_end
+    attr_accessor :id, :type, :name, :country, :date_begin, :date_end, :urls
     @release_groups
   
     def release_groups
@@ -14,7 +14,7 @@ module MusicBrainz
     end
   
     def self.find mbid
-      res = MusicBrainz.load :artist, :id => mbid
+      res = MusicBrainz.load :artist, :id => mbid, :inc => [:url_rels]
       return nil if res.nil?
       @artist = self.parse_xml(Nokogiri::XML(res))
     end
@@ -27,6 +27,10 @@ module MusicBrainz
       @artist.country = self.safe_get_value(xml, 'artist > country')
       @artist.date_begin = self.safe_get_value(xml, 'artist > life-span > begin')
       @artist.date_end = self.safe_get_value(xml, 'artist > life-span > end')
+      @artist.urls = {}
+      xml.css('relation-list[target-type="url"] > relation').each do |rel|
+        @artist.urls[rel.attr('type').downcase.split(' ').join('_').to_sym] = rel.css('target').text
+      end
       @artist
     end
     

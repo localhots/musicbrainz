@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{musicbrainz}
-  s.version = "0.4.8"
+  s.version = "0.4.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Gregory Eremin}]
-  s.date = %q{2011-09-19}
+  s.authors = ["Gregory Eremin"]
+  s.date = %q{2011-09-20}
   s.description = %q{MusicBrainz Web Service wrapper with ActiveRecord-style models}
   s.email = %q{magnolia_fan@me.com}
   s.extra_rdoc_files = [
@@ -36,9 +36,9 @@ Gem::Specification.new do |s|
     "test/test_musicbrainz.rb"
   ]
   s.homepage = %q{http://github.com/magnolia-fan/musicbrainz}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.8}
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{MusicBrainz Web Service wrapper}
 
   if s.respond_to? :specification_version then
