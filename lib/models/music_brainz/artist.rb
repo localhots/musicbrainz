@@ -1,14 +1,12 @@
 module MusicBrainz
-  class Artist  
+  class Artist < MusicBrainz::Base
     attr_accessor :id, :type, :name, :country, :date_begin, :date_end
     @release_groups
   
     def release_groups
       if @release_groups.nil? and not self.id.nil?
         @release_groups = []
-        Nokogiri::XML(MusicBrainz.load(
-          'http://musicbrainz.org/ws/2/release-group/?artist=' + self.id
-        )).css('release-group').each do |rg|
+        Nokogiri::XML(MusicBrainz.load(:release_group, :artist => self.id)).css('release-group').each do |rg|
           @release_groups << MusicBrainz::ReleaseGroup.parse_xml(rg)
         end
       end
@@ -16,19 +14,19 @@ module MusicBrainz
     end
   
     def self.find mbid
-      res = MusicBrainz.load('http://musicbrainz.org/ws/2/artist/' + mbid)
+      res = MusicBrainz.load :artist, :id => mbid
       return nil if res.nil?
       @artist = self.parse_xml(Nokogiri::XML(res))
     end
   
     def self.parse_xml xml
       @artist = MusicBrainz::Artist.new
-      @artist.id = xml.css('artist').attr('id').value
-      @artist.type = xml.css('artist').attr('type').value unless xml.css('artist').nil? or xml.css('artist').attr('type').nil?
-      @artist.name = xml.css('artist > name').text
-      @artist.country = xml.css('artist > country').text unless xml.css('artist > country').empty?
-      @artist.date_begin = xml.css('artist > life-span > begin').text unless xml.css('artist > life-span > begin').empty?
-      @artist.date_end = xml.css('artist > life-span > end').text unless xml.css('artist > life-span > end').empty?
+      @artist.id = self.safe_get_attr(xml, 'artist', 'id')
+      @artist.type = self.safe_get_attr(xml, 'artist', 'type')
+      @artist.name = self.safe_get_value(xml, 'artist > name')
+      @artist.country = self.safe_get_value(xml, 'artist > country')
+      @artist.date_begin = self.safe_get_value(xml, 'artist > life-span > begin')
+      @artist.date_end = self.safe_get_value(xml, 'artist > life-span > end')
       @artist
     end
     
@@ -45,16 +43,14 @@ module MusicBrainz
     
     def self.search name
       artists = []
-      xml = Nokogiri::XML(MusicBrainz.load(
-        'http://musicbrainz.org/ws/2/artist/?query='+ CGI.escape(name).gsub(/\!/, '') +'~&limit=50'
-      ))
+      xml = Nokogiri::XML(MusicBrainz.load(:artist, :query => CGI.escape(name).gsub(/\!/, '') + '~', :limit => 50))
       xml.css('artist-list > artist').each do |a|
         artist = {
           :name => a.first_element_child.text,
           :weight => 0,
-          :desc => (a.css('disambiguation').text unless a.css('disambiguation').empty?),
-          :type => a.attr('type'),
-          :mbid => a.attr('id')
+          :desc => self.safe_get_value(a, 'disambiguation'),
+          :type => self.safe_get_attr(a, 'type'),
+          :mbid => self.safe_get_attr(a, 'id')
         }
         aliases = a.css('alias-list > alias').map{ |item| item.text }
         if aliases.include? name

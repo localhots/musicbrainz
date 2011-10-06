@@ -4,6 +4,7 @@ require "nokogiri"
 require "cgi"
 
 require "models/music_brainz"
+require "models/music_brainz/base"
 require "models/music_brainz/artist"
 require "models/music_brainz/release_group"
 require "models/music_brainz/release"
