@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{musicbrainz}
-  s.version = "0.4.10"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Gregory Eremin"]
-  s.date = %q{2011-09-20}
+  s.authors = [%q{Gregory Eremin}]
+  s.date = %q{2011-10-06}
   s.description = %q{MusicBrainz Web Service wrapper with ActiveRecord-style models}
   s.email = %q{magnolia_fan@me.com}
   s.extra_rdoc_files = [
@@ -27,18 +27,22 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/models/music_brainz.rb",
     "lib/models/music_brainz/artist.rb",
+    "lib/models/music_brainz/base.rb",
     "lib/models/music_brainz/release.rb",
     "lib/models/music_brainz/release_group.rb",
     "lib/models/music_brainz/track.rb",
     "lib/musicbrainz.rb",
     "musicbrainz.gemspec",
     "test/helper.rb",
-    "test/test_musicbrainz.rb"
+    "test/test_musicbrainz_artist.rb",
+    "test/test_musicbrainz_release.rb",
+    "test/test_musicbrainz_release_group.rb",
+    "test/test_musicbrainz_track.rb"
   ]
   s.homepage = %q{http://github.com/magnolia-fan/musicbrainz}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.licenses = [%q{MIT}]
+  s.require_paths = [%q{lib}]
+  s.rubygems_version = %q{1.8.8}
   s.summary = %q{MusicBrainz Web Service wrapper}
 
   if s.respond_to? :specification_version then
