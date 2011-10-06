@@ -49,8 +49,8 @@ module MusicBrainz
           :name => a.first_element_child.text,
           :weight => 0,
           :desc => self.safe_get_value(a, 'disambiguation'),
-          :type => self.safe_get_attr(a, 'type'),
-          :mbid => self.safe_get_attr(a, 'id')
+          :type => self.safe_get_attr(a, nil, 'type'),
+          :mbid => self.safe_get_attr(a, nil, 'id')
         }
         aliases = a.css('alias-list > alias').map{ |item| item.text }
         if aliases.include? name
