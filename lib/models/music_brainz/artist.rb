@@ -23,7 +23,7 @@ module MusicBrainz
       @artist = MusicBrainz::Artist.new
       @artist.id = self.safe_get_attr(xml, 'artist', 'id')
       @artist.type = self.safe_get_attr(xml, 'artist', 'type')
-      @artist.name = self.safe_get_value(xml, 'artist > name')
+      @artist.name = self.safe_get_value(xml, 'artist > name').gsub(/[`’]/, "'")
       @artist.country = self.safe_get_value(xml, 'artist > country')
       @artist.date_begin = self.safe_get_value(xml, 'artist > life-span > begin')
       @artist.date_end = self.safe_get_value(xml, 'artist > life-span > end')
@@ -50,7 +50,8 @@ module MusicBrainz
       xml = Nokogiri::XML(MusicBrainz.load(:artist, :query => CGI.escape(name).gsub(/\!/, '') + '~', :limit => 50))
       xml.css('artist-list > artist').each do |a|
         artist = {
-          :name => a.first_element_child.text,
+          :name => a.first_element_child.text.gsub(/[`’]/, "'"),
+          :sort_name => self.safe_get_value(a, 'sort-name').gsub(/[`’]/, "'"),
           :weight => 0,
           :desc => self.safe_get_value(a, 'disambiguation'),
           :type => self.safe_get_attr(a, nil, 'type'),
