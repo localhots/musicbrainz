@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 module MusicBrainz
   class Artist < MusicBrainz::Base
     attr_accessor :id, :type, :name, :country, :date_begin, :date_end, :urls
