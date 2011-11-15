@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{musicbrainz}
-  s.version = "0.5.0"
+  s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = [%q{Gregory Eremin}]
-  s.date = %q{2011-10-06}
+  s.authors = ["Gregory Eremin"]
+  s.date = %q{2011-11-15}
   s.description = %q{MusicBrainz Web Service wrapper with ActiveRecord-style models}
   s.email = %q{magnolia_fan@me.com}
   s.extra_rdoc_files = [
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
     ".document",
     ".travis.yml",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
@@ -33,6 +32,9 @@ Gem::Specification.new do |s|
     "lib/models/music_brainz/track.rb",
     "lib/musicbrainz.rb",
     "musicbrainz.gemspec",
+    "spec/requests/artist_spec.rb",
+    "spec/spec_helper.rb",
+    "spec/support/vcr.rb",
     "test/helper.rb",
     "test/test_musicbrainz_artist.rb",
     "test/test_musicbrainz_release.rb",
@@ -40,9 +42,9 @@ Gem::Specification.new do |s|
     "test/test_musicbrainz_track.rb"
   ]
   s.homepage = %q{http://github.com/magnolia-fan/musicbrainz}
-  s.licenses = [%q{MIT}]
-  s.require_paths = [%q{lib}]
-  s.rubygems_version = %q{1.8.8}
+  s.licenses = ["MIT"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{MusicBrainz Web Service wrapper}
 
   if s.respond_to? :specification_version then
@@ -50,26 +52,35 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<vcr>, [">= 0"])
+      s.add_development_dependency(%q<webmock>, [">= 0"])
     else
       s.add_dependency(%q<nokogiri>, [">= 0"])
-      s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<rdoc>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<vcr>, [">= 0"])
+      s.add_dependency(%q<webmock>, [">= 0"])
     end
   else
     s.add_dependency(%q<nokogiri>, [">= 0"])
-    s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<rdoc>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<vcr>, [">= 0"])
+    s.add_dependency(%q<webmock>, [">= 0"])
   end
 end
 
