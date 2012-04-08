@@ -24,5 +24,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'musicbrainz'
 
+MusicBrainz.cache_path = File.join(File.dirname(__FILE__), '../tmp/test/musicbrainz')
+
 class Test::Unit::TestCase
 end
