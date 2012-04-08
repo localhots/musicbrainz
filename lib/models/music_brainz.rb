@@ -57,8 +57,6 @@ private
   end
 
   def self.get_contents url
-    self.get_contents_intern
-    
     response = nil
     
     5.times do
