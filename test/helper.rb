@@ -1,3 +1,13 @@
+require 'simplecov'
+
+if ENV["COVERAGE"]
+  SimpleCov.start do
+    add_filter '/gems/'
+    add_filter '/test/'
+    add_filter '/spec/'
+  end
+end
+
 require 'rubygems'
 require 'bundler'
 begin
