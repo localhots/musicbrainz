@@ -18,6 +18,9 @@
     # Use them like ActiveRecord models
     @empire_tracks = @kasabian.release_groups[8].releases.first.tracks
 
+    # Setting a cache path enables caching of requests
+    MusicBrainz.cache_path = File.join(File.dirname(__FILE__), '../../tmp/test/musicbrainz')
+    
 === Api
 
 MusicBrainz::Artist
