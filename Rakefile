@@ -32,12 +32,21 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec) do |test|
   test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
+end
+
+desc "Run Test Unit with code coverage"
+task :test_coverage do
+  ENV['COVERAGE'] = 'true'
+  Rake::Task["test"].execute
+end
+
+desc "Run RSpec with code coverage"
+task :rspec_coverage do
+  ENV['COVERAGE'] = 'true'
+  Rake::Task["spec"].execute
 end
 
 task :default => :test
