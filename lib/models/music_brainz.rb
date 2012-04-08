@@ -21,18 +21,22 @@ module MusicBrainz
 private
 
   def self.get_contents url
-    time_passed = Time.now.to_f - @@last_query_time
-    sleep @@query_interval - time_passed if time_passed < @@query_interval
     response = nil
+    
     5.times do
+      time_passed = Time.now.to_f - @@last_query_time
+      sleep @@query_interval - time_passed if time_passed < @@query_interval
+    
       begin
         response = open(url, "User-Agent" => USER_AGENT)
         @@last_query_time = Time.now.to_f
       rescue => e
         return nil if e.io.status[0].to_i == 404
       end
+      
       break unless response.nil?
     end
+    
     response
   end
 end
