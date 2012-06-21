@@ -13,6 +13,12 @@ class TestMusicbrainzArtist < Test::Unit::TestCase
       assert_operator(0, :<, matches.length)
       assert_equal("Kasabian", matches.first[:name])
     end
+
+    should "find name first than alias" do
+      matches = MusicBrainz::Artist.search('Chris Martin')
+      assert_operator(0, :<, matches.length)
+      assert_equal("Chris Martin", matches.first[:name])
+    end
     
     should "get correct result by name" do
       @artist = MusicBrainz::Artist.find_by_name('Kasabian')
