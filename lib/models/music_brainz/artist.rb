@@ -60,7 +60,13 @@ module MusicBrainz
           :mbid => self.safe_get_attr(a, nil, 'id')
         }
         aliases = a.css('alias-list > alias').map{ |item| item.text }
-        if aliases.include? name
+        if artist[:name] == name
+          artist[:weight] += 100
+        elsif artist[:name].downcase == name.downcase
+          artist[:weight] += 50
+        elsif artist[:name].downcase.gsub(/\s/, '') == name.downcase.gsub(/\s/, '')
+          artist[:weight] += 25
+        elsif aliases.include? name
           artist[:weight] += 20
         elsif aliases.map{ |item| item.downcase }.include? name.downcase
           artist[:weight] += 10
