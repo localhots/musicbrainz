@@ -1,11 +1,20 @@
+# -*- encoding: utf-8 -*-
 require "open-uri"
 require "socket"
 require "nokogiri"
 require "cgi"
 
-require "models/music_brainz"
-require "models/music_brainz/base"
-require "models/music_brainz/artist"
-require "models/music_brainz/release_group"
-require "models/music_brainz/release"
-require "models/music_brainz/track"
+require "version"
+
+module MusicBrainz
+  autoload :Base, "musicbrainz/base"
+  autoload :Artist, "musicbrainz/artist"
+  autoload :ReleaseGroup, "musicbrainz/release_group"
+  autoload :Release, "musicbrainz/release"
+  autoload :Track, "musicbrainz/track"
+
+  module Tools
+    autoload :Cache, "tools/cache"
+    autoload :Proxy, "tools/proxy"
+  end
+end

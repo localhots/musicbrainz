@@ -1,5 +1,2 @@
-source "http://rubygems.org"
+source :rubygems
 gemspec
-
-gem 'simplecov', :require => false, :group => :test
-

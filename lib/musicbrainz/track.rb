@@ -1,12 +1,13 @@
+# -*- encoding: utf-8 -*-
 module MusicBrainz
   class Track < MusicBrainz::Base
     attr_accessor :position, :recording_id, :title, :length
-  
+
     def self.find mbid
-      xml = Nokogiri::XML(MusicBrainz.load(:recording, :id => mbid))
+      xml = Nokogiri::XML(self.load(:recording, :id => mbid))
       self.parse_xml(xml) unless xml.nil?
     end
-  
+
     def self.parse_xml xml
       @track = MusicBrainz::Track.new
       @track.position = self.safe_get_value(xml, 'position').to_i
