@@ -13,6 +13,10 @@ module MusicBrainz
         @@query_interval = sec.to_f
       end
 
+      def self.query_interval
+        @@query_interval
+      end
+
       def self.tries_limit=(num)
         @@tries_limit = num.to_i
       end

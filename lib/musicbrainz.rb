@@ -5,6 +5,7 @@ require "nokogiri"
 require "cgi"
 
 require "version"
+require "deprecated"
 
 module MusicBrainz
   autoload :Base, "musicbrainz/base"
