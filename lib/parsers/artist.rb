@@ -25,11 +25,11 @@ module MusicBrainz
           xml.css("artist-list > artist").each do |a|
             artists << {
               :name => a.first_element_child.text.gsub(/[`’]/, "'"),
-              :sort_name => self.safe_get_value(a, "sort-name").gsub(/[`’]/, "'"),
+              :sort_name => safe_get_value(a, "sort-name").gsub(/[`’]/, "'"),
               :weight => 0,
-              :desc => self.safe_get_value(a, "disambiguation"),
-              :type => self.safe_get_attr(a, nil, "type"),
-              :mbid => self.safe_get_attr(a, nil, "id"),
+              :desc => safe_get_value(a, "disambiguation"),
+              :type => safe_get_attr(a, nil, "type"),
+              :mbid => safe_get_attr(a, nil, "id"),
               :aliases => a.css("alias-list > alias").map { |item| item.text }
             }
           end
