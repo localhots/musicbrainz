@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
+
 module MusicBrainz
-  class Release < MusicBrainz::Base
+  class Release < Base
 
     field :id, String
     field :title, String
@@ -10,19 +11,32 @@ module MusicBrainz
     field :country, String
 
     def tracks
-      if @tracks.nil? and not self.id.nil?
-        @tracks = []
-        Nokogiri::XML(self.class.load(:release, :id => self.id, :inc => [:recordings, :media], :limit => 100)).css('medium-list > medium > track-list > track').each do |r|
-          @tracks << MusicBrainz::Track.parse_xml(r)
-        end
+      @tracks ||= nil
+      if @tracks.nil? and !id.nil?
+        @tracks = self.class.load({
+          :parser => :release_tracks,
+          :create_models => MusicBrainz::Track
+        }, {
+          :resource => :release,
+          :id => id,
+          :inc => [:recordings, :media],
+          :limit => 100
+        })
+        @tracks.sort{ |a, b| a.position <=> b.position }
       end
-      @tracks.sort{ |a, b| a.position <=> b.position }
+      @tracks
     end
 
     class << self
       def find(mbid)
-        xml = Nokogiri::XML(self.load(:release, :id => mbid, :inc => [:media])).css('release').first
-        self.parse_xml(xml) unless xml.nil?
+        load({
+          :parser => :release_model,
+          :create_model => MusicBrainz::Release
+        }, {
+          :resource => :release,
+          :id => mbid,
+          :inc => [:media]
+        })
       end
     end
   end

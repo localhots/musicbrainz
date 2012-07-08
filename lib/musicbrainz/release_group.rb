@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
+
 module MusicBrainz
-  class ReleaseGroup < MusicBrainz::Base
+  class ReleaseGroup < Base
 
     field :id, String
     field :type, String
@@ -20,8 +21,9 @@ module MusicBrainz
           :inc => [:media],
           :limit => 100
         })
+        @releases.sort!{ |a, b| a.date <=> b.date }
       end
-      @releases.sort{ |a, b| a.date <=> b.date }
+      @releases
     end
 
     class << self

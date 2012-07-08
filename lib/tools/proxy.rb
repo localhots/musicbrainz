@@ -23,6 +23,7 @@ module MusicBrainz
 
       def self.load(params = {})
         url = WEB_SERVICE_URL + params[:resource].to_s.gsub('_', '-') + '/' + (params[:id].to_s || '')
+        params.delete(:resource)
         params.delete(:id) unless params[:id].nil?
         url << '?' + params.map{ |k, v|
           k = k.to_s.gsub('_', '-')
