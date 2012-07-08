@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+
 module MusicBrainz
   module Parsers
     class << self

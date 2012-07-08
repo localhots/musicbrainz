@@ -6,10 +6,8 @@ require "nokogiri"
 require "cgi"
 
 module MusicBrainz
-  module Tools
-  end
-  module Parsers
-  end
+  module Tools; end
+  module Parsers; end
 end
 
 require "version"

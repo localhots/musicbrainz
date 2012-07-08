@@ -17,7 +17,7 @@ module MusicBrainz
 
       def load(params, query)
         parser = MusicBrainz::Parsers.get_by_name(params[:parser])
-        xml = MusicBrainz::Tools::Proxy.load(query)
+        xml = MusicBrainz::Tools::Proxy.query(query)
         result = parser[:const].send(parser[:method], Nokogiri::XML(xml))
         if params[:create_model]
           result_model = params[:create_model].new
