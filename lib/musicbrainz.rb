@@ -4,18 +4,25 @@ require "socket"
 require "nokogiri"
 require "cgi"
 
+module MusicBrainz
+  module Tools
+  end
+  module Parsers
+  end
+end
+
 require "version"
 require "deprecated"
 
-module MusicBrainz
-  autoload :Base, "musicbrainz/base"
-  autoload :Artist, "musicbrainz/artist"
-  autoload :ReleaseGroup, "musicbrainz/release_group"
-  autoload :Release, "musicbrainz/release"
-  autoload :Track, "musicbrainz/track"
+require "musicbrainz/base"
+require "musicbrainz/artist"
+require "musicbrainz/release_group"
+require "musicbrainz/release"
+require "musicbrainz/track"
 
-  module Tools
-    autoload :Cache, "tools/cache"
-    autoload :Proxy, "tools/proxy"
-  end
-end
+require "tools/cache"
+require "tools/proxy"
+
+require "parsers/base"
+require "parsers/artist"
+require "parsers/release_group"

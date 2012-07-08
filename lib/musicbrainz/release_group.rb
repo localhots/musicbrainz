@@ -1,8 +1,12 @@
 # -*- encoding: utf-8 -*-
 module MusicBrainz
   class ReleaseGroup < MusicBrainz::Base
-    attr_accessor :id, :type, :title, :disambiguation, :first_release_date
-    @releases
+
+    field :id, String
+    field :type, String
+    field :title, String
+    field :disambiguation, String
+    field :first_release_date, Time
 
     def releases
       if @releases.nil? and not self.id.nil?

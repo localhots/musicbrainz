@@ -21,8 +21,8 @@ module MusicBrainz
         @@tries_limit = num.to_i
       end
 
-      def self.load(resourse, params = {})
-        url = WEB_SERVICE_URL + resourse.to_s.gsub('_', '-') + '/' + (params[:id].to_s || '')
+      def self.load(params = {})
+        url = WEB_SERVICE_URL + params[:resource].to_s.gsub('_', '-') + '/' + (params[:id].to_s || '')
         params.delete(:id) unless params[:id].nil?
         url << '?' + params.map{ |k, v|
           k = k.to_s.gsub('_', '-')

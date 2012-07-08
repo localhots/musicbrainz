@@ -21,7 +21,7 @@ describe MusicBrainz::Artist do
   it "finds name first than alias" do
     matches = MusicBrainz::Artist.search('Chris Martin')
     matches.length.should be > 0
-    matches.first[:name].should == "Chris Martin"
+    matches.first[:mbid].should == "af2ab893-3212-4226-9e73-73a1660b6952"
   end
 
   it "gets correct result by name" do
@@ -35,7 +35,7 @@ describe MusicBrainz::Artist do
     artist.type.should == "Group"
     artist.name.should == "Kasabian"
     artist.country.should == "GB"
-    artist.date_begin.should == "1999"
+    artist.date_begin.year.should == 1999
   end
 
   it "gets correct artist's release groups" do
