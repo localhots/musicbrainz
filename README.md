@@ -4,16 +4,21 @@
 ```bash
 gem install musicbrainz
 ```
+or add this line to your Gemfile
+```ruby
+gem "musicbrainz"
+```
+
 ### Usage
 ```ruby
-require 'musicbrainz'
+require "musicbrainz"
 
 # Search for artists
-@suggestions = MusicBrainz::Artist.search('Jet')
+@suggestions = MusicBrainz::Artist.search("Jet")
 
 # Find artist by name or mbid
-@foo_fighters = MusicBrainz::Artist.find_by_name('Foo Fighters')
-@kasabian = MusicBrainz::Artist.find('69b39eab-6577-46a4-a9f5-817839092033')
+@foo_fighters = MusicBrainz::Artist.find_by_name("Foo Fighters")
+@kasabian = MusicBrainz::Artist.find("69b39eab-6577-46a4-a9f5-817839092033")
 
 # Use them like ActiveRecord models
 @empire_tracks = @kasabian.release_groups[8].releases.first.tracks
@@ -69,6 +74,16 @@ MusicBrainz::Track
 @track.recording_id
 @track.title
 @track.length
+```
+
+### Testing
+```bash
+bundle rake spec
+```
+
+### Debug console
+```bash
+bundle rake console
 ```
 
 ### Contributing
