@@ -9,37 +9,31 @@ module MusicBrainz
     field :first_release_date, Time
 
     def releases
-      if @releases.nil? and not self.id.nil?
-        @releases = []
-        Nokogiri::XML(self.class.load(:release, :release_group => self.id, :inc => [:media], :limit => 100)).css('release').each do |r|
-          @releases << MusicBrainz::Release.parse_xml(r)
-        end
+      @releases ||= nil
+      if @releases.nil? and !id.nil?
+        @releases = self.class.load({
+          :parser => :release_group_releases,
+          :create_models => MusicBrainz::Release
+        }, {
+          :resource => :release,
+          :release_group => self.id,
+          :inc => [:media],
+          :limit => 100
+        })
       end
       @releases.sort{ |a, b| a.date <=> b.date }
     end
 
-    def self.find mbid
-      xml = Nokogiri::XML(self.load(:release_group, :id => mbid)).css('release-group').first
-      self.parse_xml(xml) unless xml.nil?
-    end
-
-    def self.parse_xml xml
-      @release_group = MusicBrainz::ReleaseGroup.new
-      @release_group.id = self.safe_get_attr(xml, nil, 'id')
-      @release_group.type = self.safe_get_attr(xml, nil, 'type')
-      @release_group.title = self.safe_get_value(xml, 'title')
-      @release_group.disambiguation = self.safe_get_value(xml, 'disambiguation')
-      date = xml.css('first-release-date').empty? ? '2030-12-31' : xml.css('first-release-date').text
-      if date.length == 0
-        date = '2030-12-31'
-      elsif date.length == 4
-        date += '-12-31'
-      elsif date.length == 7
-        date += '-31'
+    class << self
+      def find(mbid)
+        load({
+          :parser => :release_group_model,
+          :create_model => MusicBrainz::ReleaseGroup
+        }, {
+          :resource => :release_group,
+          :id => mbid
+        })
       end
-      date = date.split('-')
-      @release_group.first_release_date = Time.utc(date[0], date[1], date[2])
-      @release_group
     end
   end
 end

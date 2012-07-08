@@ -46,7 +46,6 @@ module MusicBrainz
           :query => CGI.escape(name).gsub(/\!/, '\!') + '~',
           :limit => 50
         })
-
         artists.each { |artist|
           if artist[:name].downcase == name.downcase
             artist[:weight] += 80

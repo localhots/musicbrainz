@@ -5,11 +5,21 @@ module MusicBrainz
       def get_by_name(name)
         case name
         when :artist_model
-          return { :const => MusicBrainz::Parsers::Artist, :method => :model }
+          { :const => MusicBrainz::Parsers::Artist, :method => :model }
         when :artist_search
-          return { :const => MusicBrainz::Parsers::Artist, :method => :search }
+          { :const => MusicBrainz::Parsers::Artist, :method => :search }
         when :artist_release_groups
-          return { :const => MusicBrainz::Parsers::Artist, :method => :release_groups }
+          { :const => MusicBrainz::Parsers::Artist, :method => :release_groups }
+        when :release_group_model
+          { :const => MusicBrainz::Parsers::ReleaseGroup, :method => :model }
+        when :release_group_releases
+          { :const => MusicBrainz::Parsers::ReleaseGroup, :method => :releases }
+        when :release_model
+          { :const => MusicBrainz::Parsers::Release, :method => :model }
+        when :release_tracks
+          { :const => MusicBrainz::Parsers::Release, :method => :tracks }
+        when :track_model
+          { :const => MusicBrainz::Parsers::Track, :method => :model }
         end
       end
     end
