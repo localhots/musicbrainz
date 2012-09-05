@@ -23,7 +23,7 @@ describe MusicBrainz::Artist do
   it "finds name first than alias" do
     matches = MusicBrainz::Artist.search('Chris Martin')
     matches.length.should be > 0
-    matches.first[:mbid].should == "af2ab893-3212-4226-9e73-73a1660b6952"
+    matches.first[:mbid].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
   end
 
   it "gets correct result by name" do
