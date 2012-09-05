@@ -46,19 +46,6 @@ module MusicBrainz
           :query => CGI.escape(name).gsub(/\!/, '\!') + '~',
           :limit => 50
         })
-        artists.each { |artist|
-          if artist[:name].downcase == name.downcase
-            artist[:weight] += 80
-          elsif artist[:name].downcase.gsub(/\s/, "") == name.downcase.gsub(/\s/, "")
-            artist[:weight] += 25
-          elsif artist[:aliases].include? name
-            artist[:weight] += 20
-          elsif artist[:aliases].map { |item| item.downcase }.include?(name.downcase)
-            artist[:weight] += 10
-          elsif artist[:aliases].map { |item| item.downcase.gsub(/\s/, "") }.include?(name.downcase.gsub(/\s/, ""))
-            artist[:weight] += 5
-          end
-        }
         artists.sort{ |a, b| b[:weight] <=> a[:weight] }.take(10)
       end
 
