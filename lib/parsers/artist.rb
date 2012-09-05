@@ -26,7 +26,7 @@ module MusicBrainz
             artists << {
               :name => a.first_element_child.text.gsub(/[`’]/, "'"),
               :sort_name => safe_get_value(a, "sort-name").gsub(/[`’]/, "'"),
-              :weight => 0,
+              :score => (safe_get_attr(a, nil, "score") .to_i rescue 0),
               :desc => safe_get_value(a, "disambiguation"),
               :type => safe_get_attr(a, nil, "type"),
               :mbid => safe_get_attr(a, nil, "id"),
