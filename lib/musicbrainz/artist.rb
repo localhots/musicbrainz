@@ -39,14 +39,13 @@ module MusicBrainz
       end
 
       def search(name)
-        artists = load({
+        load({
           :parser => :artist_search
         }, {
           :resource => :artist,
-          :query => CGI.escape(name).gsub(/\!/, '\!') + '~',
-          :limit => 50
+          :query => "artist:" << CGI.escape(name).gsub(/\!/, '\!'),
+          :limit => 10
         })
-        artists.sort{ |a, b| b[:weight] <=> a[:weight] }.take(10)
       end
 
       def discography(mbid)
