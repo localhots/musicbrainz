@@ -19,6 +19,7 @@ require "musicbrainz/release_group"
 require "musicbrainz/release"
 require "musicbrainz/track"
 
+require "tools/configuration"
 require "tools/cache"
 require "tools/proxy"
 
