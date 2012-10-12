@@ -24,15 +24,9 @@ describe MusicBrainz::Artist do
     matches = MusicBrainz::Artist.search('Chris Martin')
 
     matches[0][:score].should == 100
-    matches[0][:mbid].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
+    matches[0][:id].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
     matches[1][:score].should == 100
-    matches[1][:mbid].should == "af2ab893-3212-4226-9e73-73a1660b6952"
-    matches[2][:score].should == 95
-    matches[2][:mbid].should == "444d1b63-534b-4ea6-89f0-0af6ab2e20c3"
-    matches[3][:score].should == 95
-    matches[3][:mbid].should == "b732a912-af95-472c-be52-b14610734c64"
-    matches[4][:score].should == 95
-    matches[4][:mbid].should == "90fff570-a4ef-4cd4-ba21-e00c7261b05a"
+    matches[1][:id].should == "af2ab893-3212-4226-9e73-73a1660b6952"
   end
 
   it "finds name first than alias" do

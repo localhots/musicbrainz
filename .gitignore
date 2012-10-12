@@ -1,8 +1,5 @@
 coverage
-rdoc
-doc
-.yardoc
 .bundle
-pkg
 tmp
 Gemfile.lock
+.gem

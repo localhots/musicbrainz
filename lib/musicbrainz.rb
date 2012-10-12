@@ -1,30 +1,34 @@
-# -*- encoding: utf-8 -*-
+require "digest/sha1"
+require "fileutils"
 
-require "open-uri"
-require "socket"
+require "faraday"
 require "nokogiri"
-require "cgi"
+
+require "musicbrainz/version"
+require "musicbrainz/deprecated"
+require "musicbrainz/middleware"
+require "musicbrainz/configuration"
+
+require "musicbrainz/client_modules/transparent_proxy"
+require "musicbrainz/client_modules/failsafe_proxy"
+require "musicbrainz/client_modules/caching_proxy"
+require "musicbrainz/client"
+
+require "musicbrainz/models/base_model"
+require "musicbrainz/models/artist"
+require "musicbrainz/models/release_group"
+require "musicbrainz/models/release"
+require "musicbrainz/models/track"
+
+require "musicbrainz/bindings/artist"
+require "musicbrainz/bindings/artist_search"
+require "musicbrainz/bindings/artist_release_groups"
+require "musicbrainz/bindings/release_group"
+require "musicbrainz/bindings/release_group_releases"
+require "musicbrainz/bindings/release"
+require "musicbrainz/bindings/release_tracks"
+require "musicbrainz/bindings/track"
 
 module MusicBrainz
-  module Tools; end
-  module Parsers; end
+  GH_PAGE_URL = "http://git.io/brainz"
 end
-
-require "version"
-require "deprecated"
-
-require "musicbrainz/base"
-require "musicbrainz/artist"
-require "musicbrainz/release_group"
-require "musicbrainz/release"
-require "musicbrainz/track"
-
-require "tools/configuration"
-require "tools/cache"
-require "tools/proxy"
-
-require "parsers/base"
-require "parsers/artist"
-require "parsers/release_group"
-require "parsers/release"
-require "parsers/track"
