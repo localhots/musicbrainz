@@ -14,24 +14,11 @@ module MusicBrainz
       data = params[:binding].parse(xml)
 
       if params[:create_model]
-        result_model = params[:create_model].new
-        data.each do |field, value|
-          result_model.send("#{field}=".to_sym, value)
-        end
-        result_model
+        params[:create_model].new(data)
       elsif params[:create_models]
-        result_models = []
-        data.each do |item|
-          result_model = params[:create_models].new
-          item.each do |field, value|
-            result_model.send("#{field}=".to_sym, value)
-          end
-          result_models << result_model
-        end
-        if params[:sort]
-          result_models.sort!{ |a, b| a.send(params[:sort]) <=> b.send(params[:sort]) }
-        end
-        result_models
+        models = data.map{ |item| params[:create_models].new(item) }
+        models.sort!{ |a, b| a.send(params[:sort]) <=> b.send(params[:sort]) } if params[:sort]
+        models
       else
         data
       end

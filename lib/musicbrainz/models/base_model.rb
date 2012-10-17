@@ -18,6 +18,12 @@ module MusicBrainz
     end
 
     module InstanceMethods
+      def initialize(params = {})
+        params.each do |field, value|
+          self.send :"#{field}=", value
+        end
+      end
+
       def validate_type(val, type)
         if type == Integer
           val.to_i
