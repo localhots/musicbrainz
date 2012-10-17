@@ -1,8 +1,9 @@
 ## MusicBrainz Web Service wrapper [![Travis CI](https://secure.travis-ci.org/magnolia-fan/musicbrainz.png)](http://travis-ci.org/magnolia-fan/musicbrainz)
 
-## Ruby Version
-*IMPORTANT!*
-Ruby version 1.9+ required. No support for 1.8.7 anymore.
+### Ruby Version
+**IMPORTANT!**
+
+Ruby version 1.9+ required. No support for 1.8.7 anymore, update your application already!
 
 ### Installation
 ```
@@ -11,6 +12,24 @@ gem install musicbrainz
 or add this line to your Gemfile
 ```ruby
 gem "musicbrainz"
+```
+
+### Configuration
+```ruby
+MusicBrainz.configure do |c|
+  # Application identity (required)
+  c.app_name = "My Music App"
+  c.app_version = "1.0"
+  c.contact = "support@mymusicapp.com"
+
+  # Cache config (optional)
+  c.cache_path = "/tmp/musicbrainz-cache"
+  c.perform_caching = true
+
+  # Querying config (optional)
+  c.query_interval = 1.2 # seconds
+  c.tries_limit = 2
+end
 ```
 
 ### Usage
@@ -26,22 +45,6 @@ require "musicbrainz"
 
 # Use them like ActiveRecord models
 @empire_tracks = @kasabian.release_groups[8].releases.first.tracks
-
-# Configuring
-MusicBrainz.configure do |c|
-  # Application identity (required)
-  c.app_name = "My Music App"
-  c.app_version = "1.0"
-  c.contact = "support@mymusicapp.com"
-
-  # Cache config (optional)
-  c.cache_path = "/tmp/musicbrainz-cache"
-  c.perform_caching = true
-
-  # Querying config (optional)
-  c.query_interval = 1.2 # seconds
-  c.tries_limit = 2
-end
 ```
 
 ### Api
@@ -105,7 +108,7 @@ bundle exec irb -r musicbrainz
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
-* Start a feature/bugfix branch (*IMPORTANT*)
+* **Start a feature/bugfix branch (IMPORTANT)**
 * Commit and push until you are happy with your contribution
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
