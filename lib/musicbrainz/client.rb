@@ -9,6 +9,8 @@ module MusicBrainz
     end
 
     def load(resource, query, params)
+      raise Exception.new("You need to run MusicBrainz.configure before querying") if MusicBrainz.config.nil?
+
       response = contents_of(build_url(resource, query))
       xml = Nokogiri::XML.parse(response).remove_namespaces!.xpath('/metadata')
       data = params[:binding].parse(xml)

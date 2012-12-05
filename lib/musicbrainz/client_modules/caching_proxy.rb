@@ -18,12 +18,12 @@ module MusicBrainz
         response = nil
 
         if File.exist?(file_path)
-          response = File.open(file_path).gets
+          response = File.open(file_path, 'rb').gets
         else
           response = super
           unless response.nil? or response.empty?
             FileUtils.mkdir_p file_path.split('/')[0..-2].join('/')
-            File.open(file_path, 'w') do |f|
+            File.open(file_path, 'wb') do |f|
               f.puts response
               f.chmod 0755
               f.close
