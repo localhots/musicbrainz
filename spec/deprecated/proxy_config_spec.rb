@@ -2,36 +2,18 @@
 
 require "spec_helper"
 
-describe MusicBrainz do
+describe MusicBrainz::Deprecated::ProxyConfig do
   before(:all) {
-    @old_cache_path = MusicBrainz.config.cache_path
     @old_query_interval = MusicBrainz.config.query_interval
   }
 
   before(:each) {
-    MusicBrainz.config.cache_path = nil
     MusicBrainz.config.query_interval = nil
   }
 
   after(:all) {
-    MusicBrainz.config.cache_path = @old_cache_path
     MusicBrainz.config.query_interval = @old_query_interval
   }
-
-  it "allows deprecated use of cache_path" do
-    MusicBrainz.config.cache_path = "test1"
-
-    MusicBrainz::Tools::Cache.cache_path.should == "test1"
-    MusicBrainz.cache_path.should == "test1"
-  end
-
-  it "allows deprecated use of cache_path=" do
-    MusicBrainz::Tools::Cache.cache_path = "test2"
-    MusicBrainz.config.cache_path.should == "test2"
-
-    MusicBrainz.cache_path = "test3"
-    MusicBrainz.config.cache_path.should == "test3"
-  end
 
   it "allows deprecated use of query_interval" do
     MusicBrainz.config.query_interval = 2
