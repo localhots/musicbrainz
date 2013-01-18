@@ -26,6 +26,23 @@ module MusicBrainz
           create_model: MusicBrainz::ReleaseGroup
         })
       end
+      
+      def search(artist_name, title, options = {})
+        artist_name = CGI.escape(artist_name).gsub(/\!/, '\!')
+        title = CGI.escape(title).gsub(/\!/, '\!')
+        query = ["artist:\"#{artist_name}\"", "releasegroup:\"#{title}\""]
+        query << "type: #{options[:type]}" if options[:type]
+
+        Client.load(
+          :release_group, { query: query.join(' AND '), limit: 10 }, 
+          { binding: MusicBrainz::Bindings::ReleaseGroupSearch }
+        )
+      end
+      
+      def find_by_artist_and_title(artist_name, title, options = {})
+        matches = search(artist_name, title, options)
+        matches.empty? ? nil : find(matches.first[:id])
+      end
     end
   end
 end

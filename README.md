@@ -65,6 +65,9 @@ MusicBrainz::Artist
 
 MusicBrainz::ReleaseGroup
 ```ruby
+@release_groups = MusicBrainz::ReleaseGroup.search(artist_name, title)
+@release_groups = MusicBrainz::ReleaseGroup.search(artist_name, title, type: 'Album')
+@release_group = MusicBrainz::ReleaseGroup.find_by_artist_and_title(artist_name, title, type: 'Album')
 @release_group = MusicBrainz::ReleaseGroup.find(mbid)
 @release_group.id
 @release_group.type
