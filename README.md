@@ -81,6 +81,7 @@ MusicBrainz::Release
 @release.status
 @release.date
 @release.country
+@release.asin
 @release.tracks
 ```
 

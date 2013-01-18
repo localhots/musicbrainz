@@ -21,6 +21,7 @@ describe MusicBrainz::Release do
     release.status.should == "Official"
     release.date.should == Time.utc(2006, 8, 28)
     release.country.should == "GB"
+    release.asin.should == 'B000H49P28'
   end
 
   it "gets correct release tracks" do

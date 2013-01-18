@@ -8,6 +8,7 @@ module MusicBrainz
     field :format, String
     field :date, Time
     field :country, String
+    field :asin, String
 
     attr_writer :tracks
 
