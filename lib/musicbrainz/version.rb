@@ -1,3 +1,3 @@
 module MusicBrainz
-  VERSION = "0.8"
+  VERSION = "0.7.2"
 end

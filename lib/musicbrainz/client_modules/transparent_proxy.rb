@@ -2,7 +2,10 @@ module MusicBrainz
   module ClientModules
     module TransparentProxy
       def get_contents(url)
-        http.get url
+        response = http.get(url)
+        { body: response.body, status: response.status }
+      rescue
+        { body: nil, status: 500 }
       end
     end
   end

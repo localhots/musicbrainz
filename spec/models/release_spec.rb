@@ -19,7 +19,7 @@ describe MusicBrainz::Release do
     release.id.should == "2225dd4c-ae9a-403b-8ea0-9e05014c778f"
     release.title.should == "Empire"
     release.status.should == "Official"
-    release.date.should == Time.utc(2006, 8, 28)
+    release.date.should == Date.new(2006, 8, 28)
     release.country.should == "GB"
   end
 

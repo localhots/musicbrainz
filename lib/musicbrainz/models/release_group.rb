@@ -1,29 +1,26 @@
 module MusicBrainz
-  class ReleaseGroup
-    include BaseModel
-
+  class ReleaseGroup < BaseModel
     field :id, String
     field :type, String
     field :title, String
     field :desc, String
-    field :first_release_date, Time
+    field :first_release_date, Date
 
     alias_method :disambiguation, :desc
-    attr_writer :releases
 
     def releases
-      @releases ||= Client::load(:release, { release_group: id, inc: [:media], limit: 100 }, {
-        binding: MusicBrainz::Bindings::ReleaseGroupReleases,
-        create_models: MusicBrainz::Release,
+      @releases ||= client.load(:release, { release_group: id, inc: [:media], limit: 100 }, {
+        binding: :release_group_releases,
+        create_models: :release,
         sort: :date
       }) unless @id.nil?
     end
 
     class << self
       def find(id)
-        Client.load(:release_group, { id: id }, {
-          binding: MusicBrainz::Bindings::ReleaseGroup,
-          create_model: MusicBrainz::ReleaseGroup
+        client.load(:release_group, { id: id }, {
+          binding: :release_group,
+          create_model: :release_group
         })
       end
     end

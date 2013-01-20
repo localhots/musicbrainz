@@ -1,5 +1,9 @@
 module MusicBrainz
-  module Client
+  class Client
+    include ClientModules::TransparentProxy
+    include ClientModules::FailsafeProxy
+    include ClientModules::CachingProxy
+
     def http
       @faraday ||= Faraday.new do |f|
         f.request :url_encoded            # form-encode POST params
@@ -11,14 +15,18 @@ module MusicBrainz
     def load(resource, query, params)
       raise Exception.new("You need to run MusicBrainz.configure before querying") if MusicBrainz.config.nil?
 
-      response = contents_of(build_url(resource, query))
-      xml = Nokogiri::XML.parse(response).remove_namespaces!.xpath('/metadata')
-      data = params[:binding].parse(xml)
+      url = build_url(resource, query)
+      response = get_contents(url)
+
+      return nil if response[:status] != 200
+
+      xml = Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata')
+      data = binding_class_for(params[:binding]).parse(xml)
 
       if params[:create_model]
-        params[:create_model].new(data)
+        model_class_for(params[:create_model]).new(data)
       elsif params[:create_models]
-        models = data.map{ |item| params[:create_models].new(item) }
+        models = data.map{ |item| model_class_for(params[:create_models]).new(item) }
         models.sort!{ |a, b| a.send(params[:sort]) <=> b.send(params[:sort]) } if params[:sort]
         models
       else
@@ -26,13 +34,7 @@ module MusicBrainz
       end
     end
 
-    def contents_of(url)
-      if method_defined? :get_contents
-        get_contents url
-      else
-        http.get url
-      end
-    end
+  private
 
     def build_url(resource, params)
       "#{MusicBrainz.config.web_service_url}#{resource.to_s.gsub('_', '-')}" <<
@@ -40,17 +42,31 @@ module MusicBrainz
       params.map do |key, value|
         key = key.to_s.gsub('_', '-')
         value = if value.is_a?(Array)
-          value.map{ |el| el.to_s.gsub('_', '-') }.join('+')
+          value.map{ |el| el.to_s.gsub('_', '-') }.join(?+)
         else
           value.to_s
         end
-        "#{key}=#{value}"
-      end.join('&')
+        [key, value].join(?=)
+      end.join(?&)
     end
 
-    include ClientModules::TransparentProxy
-    include ClientModules::FailsafeProxy
-    include ClientModules::CachingProxy
-    extend self
+    def binding_class_for(key)
+      MusicBrainz::Bindings.const_get(constantized(key))
+    end
+
+    def model_class_for(key)
+      MusicBrainz.const_get(constantized(key))
+    end
+
+    def constantized(key)
+      key.to_s.split(?_).map(&:capitalize).join.to_sym
+    end
   end
+
+  module ClientHelper
+    def client
+      @client ||= Client.new
+    end
+  end
+  extend ClientHelper
 end

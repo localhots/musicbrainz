@@ -1,7 +1,5 @@
 module MusicBrainz
-  class Track
-    include BaseModel
-
+  class Track < BaseModel
     field :position, Integer
     field :recording_id, String
     field :title, String
@@ -9,9 +7,9 @@ module MusicBrainz
 
     class << self
       def find(id)
-        Client.load(:recording, { id: id }, {
-          binding: MusicBrainz::Bindings::Track,
-          create_model: MusicBrainz::Track
+        client.load(:recording, { id: id }, {
+          binding: :track,
+          create_model: :track
         })
       end
     end

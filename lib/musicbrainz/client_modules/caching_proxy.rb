@@ -10,28 +10,36 @@ module MusicBrainz
       end
 
       def get_contents(url)
-        return super unless MusicBrainz.config.perform_caching
+        return super unless caching?
 
-        token = Digest::SHA256.hexdigest(url)
-        file_path = "#{cache_path}/#{token[0..1]}/#{token[2..3]}/#{token[4..-1]}.xml"
+        hash = Digest::SHA256.hexdigest(url)
+        dir_path = [cache_path, *(0..2).map{ |i| hash.slice(2*i, 2) }].join(?/)
+        file_path = [dir_path, '/', hash.slice(6, 58), '.xml'].join
 
-        response = nil
+        response = { body: nil, status: 500 }
 
         if File.exist?(file_path)
-          response = File.open(file_path, 'rb').gets
+          response = {
+            body: File.open(file_path, 'rb').gets,
+            status: 200
+          }
         else
           response = super
-          unless response.nil? or response.empty?
-            FileUtils.mkdir_p file_path.split('/')[0..-2].join('/')
+          if response[:status] == 200
+            FileUtils.mkpath(dir_path)
             File.open(file_path, 'wb') do |f|
-              f.puts response
-              f.chmod 0755
+              f.puts(response[:body])
+              f.chmod(0755)
               f.close
             end
           end
         end
 
         response
+      end
+
+      def caching?
+        MusicBrainz.config.perform_caching
       end
     end
   end

@@ -19,7 +19,7 @@ describe MusicBrainz::ReleaseGroup do
     release_group.id.should == "6f33e0f0-cde2-38f9-9aee-2c60af8d1a61"
     release_group.type.should == "Album"
     release_group.title.should == "Empire"
-    release_group.first_release_date.should == Time.utc(2006, 8, 28)
+    release_group.first_release_date.should == Date.new(2006, 8, 28)
   end
 
   it "gets correct release group's releases" do
@@ -28,7 +28,7 @@ describe MusicBrainz::ReleaseGroup do
     releases.first.id.should == "2225dd4c-ae9a-403b-8ea0-9e05014c778f"
     releases.first.status.should == "Official"
     releases.first.title.should == "Empire"
-    releases.first.date.should == Time.utc(2006, 8, 28)
+    releases.first.date.should == Date.new(2006, 8, 28)
     releases.first.country.should == "GB"
   end
 end

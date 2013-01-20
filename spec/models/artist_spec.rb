@@ -55,6 +55,6 @@ describe MusicBrainz::Artist do
     release_groups.first.id.should == "533cbc5f-ec7e-32ab-95f3-8d1f804a5176"
     release_groups.first.type.should == "Single"
     release_groups.first.title.should == "Club Foot"
-    release_groups.first.first_release_date.should == Time.utc(2004, 5, 10)
+    release_groups.first.first_release_date.should == Date.new(2004, 5, 10)
   end
 end

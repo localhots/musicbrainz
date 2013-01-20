@@ -1,0 +1,2 @@
+require "musicbrainz"
+MB = MusicBrainz

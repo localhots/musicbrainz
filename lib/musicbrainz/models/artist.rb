@@ -1,38 +1,34 @@
 module MusicBrainz
-  class Artist
-    include BaseModel
-
+  class Artist < BaseModel
     field :id, String
     field :type, String
     field :name, String
     field :country, String
-    field :date_begin, Time
-    field :date_end, Time
+    field :date_begin, Date
+    field :date_end, Date
     field :urls, Hash
 
-    attr_writer :release_groups
-
     def release_groups
-      @release_groups ||= Client::load(:release_group, { artist: id }, {
-        binding: MusicBrainz::Bindings::ArtistReleaseGroups,
-        create_models: MusicBrainz::ReleaseGroup,
+      @release_groups ||= client.load(:release_group, { artist: id }, {
+        binding: :artist_release_groups,
+        create_models: :release_group,
         sort: :first_release_date
       }) unless @id.nil?
     end
 
     class << self
       def find(id)
-        Client.load(:artist, { id: id, inc: [:url_rels] }, {
-          binding: MusicBrainz::Bindings::Artist,
-          create_model: MusicBrainz::Artist
+        client.load(:artist, { id: id, inc: [:url_rels] }, {
+          binding: :artist,
+          create_model: :artist
         })
       end
 
       def search(name)
         name = CGI.escape(name).gsub(/\!/, '\!')
 
-        Client.load(:artist, { query: "artist:#{name}", limit: 10 }, {
-          binding: MusicBrainz::Bindings::ArtistSearch
+        client.load(:artist, { query: "artist:#{name}", limit: 10 }, {
+          binding: :artist_search
         })
       end
 

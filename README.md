@@ -3,7 +3,11 @@
 ### Ruby Version
 **IMPORTANT!**
 
-Ruby version 1.9+ required. No support for 1.8.7 anymore, update your application already!
+Ruby version 1.9+ required. No support for 1.8.7 anymore, if you still on 1.8 consider using gem [version 0.5.2](https://github.com/magnolia-fan/musicbrainz/tree/v0.5.2#musicbrainz-web-service-wrapper-) and bundle it like this:
+
+```ruby
+gem 'musicbrainz', '0.5.2'
+```
 
 ### Installation
 ```
@@ -11,7 +15,7 @@ gem install musicbrainz
 ```
 or add this line to your Gemfile
 ```ruby
-gem "musicbrainz"
+gem 'musicbrainz'
 ```
 
 ### Configuration
@@ -34,7 +38,7 @@ end
 
 ### Usage
 ```ruby
-require "musicbrainz"
+require 'musicbrainz'
 
 # Search for artists
 @suggestions = MusicBrainz::Artist.search("Jet")
@@ -47,50 +51,80 @@ require "musicbrainz"
 @empire_tracks = @kasabian.release_groups[8].releases.first.tracks
 ```
 
-### Api
+### Models
 
 MusicBrainz::Artist
 ```ruby
-@artists = MusicBrainz::Artist.search(query)
-@artist = MusicBrainz::Artist.find_by_name(name)
-@artist = MusicBrainz::Artist.find(mbid)
-@artist.id
-@artist.type
-@artist.name
-@artist.country
-@artist.date_begin
-@artist.date_end
+# Class Methods:
+MusicBrainz::Artist.find(id)
+MusicBrainz::Artist.find_by_name(name)
+MusicBrainz::Artist.search(name)
+MusicBrainz::Artist.discography(id)
+
+# Instance Methods:
 @artist.release_groups
+
+# Fields
+{
+  :id         => String,
+  :type       => String,
+  :name       => String,
+  :country    => String,
+  :date_begin => Date,
+  :date_end   => Date,
+  :urls       => Hash
+}
 ```
 
 MusicBrainz::ReleaseGroup
 ```ruby
-@release_group = MusicBrainz::ReleaseGroup.find(mbid)
-@release_group.id
-@release_group.type
-@release_group.title
-@release_group.first_release_date
+# Class Methods
+MusicBrainz::ReleaseGroup.find(id)
+
+# Instance Methods
 @release_group.releases
+
+# Fields
+{
+  :id                 => String,
+  :type               => String,
+  :title              => String,
+  :desc               => String,
+  :first_release_date => Date
+}
 ```
 
 MusicBrainz::Release
 ```ruby
-@release = MusicBrainz::Release.find(mbid)
-@release.id
-@release.title
-@release.status
-@release.date
-@release.country
+# Class Methods
+MusicBrainz::Release.find(id)
+
+# Instance Methods
 @release.tracks
+
+# Fields
+{
+  :id      => String,
+  :title   => String,
+  :status  => String,
+  :format  => String,
+  :date    => Date,
+  :country => String
+}
 ```
 
 MusicBrainz::Track
 ```ruby
-@track = MusicBrainz::Track.find(mbid)
-@track.position
-@track.recording_id
-@track.title
-@track.length
+# Class Methods
+MusicBrainz::Track.find(id)
+
+# Fields
+{
+  :position     => Integer,
+  :recording_id => String,
+  :title        => String,
+  :length       => Integer
+}
 ```
 
 ### Testing

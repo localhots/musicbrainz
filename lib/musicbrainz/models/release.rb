@@ -1,29 +1,25 @@
 module MusicBrainz
-  class Release
-    include BaseModel
-
+  class Release < BaseModel
     field :id, String
     field :title, String
     field :status, String
     field :format, String
-    field :date, Time
+    field :date, Date
     field :country, String
 
-    attr_writer :tracks
-
     def tracks
-      @tracks ||= Client::load(:release, { id: id, inc: [:recordings, :media], limit: 100 }, {
-        binding: MusicBrainz::Bindings::ReleaseTracks,
-        create_models: MusicBrainz::Track,
+      @tracks ||= client.load(:release, { id: id, inc: [:recordings, :media], limit: 100 }, {
+        binding: :release_tracks,
+        create_models: :track,
         sort: :position
       }) unless @id.nil?
     end
 
     class << self
       def find(id)
-        Client.load(:release, { id: id, inc: [:media] }, {
-          binding: MusicBrainz::Bindings::Release,
-          create_model: MusicBrainz::Release
+        client.load(:release, { id: id, inc: [:media] }, {
+          binding: :release,
+          create_model: :release
         })
       end
     end
