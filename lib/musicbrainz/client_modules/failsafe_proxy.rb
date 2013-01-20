@@ -6,6 +6,7 @@ module MusicBrainz
 
         response = { body: nil, status: 500 }
         MusicBrainz.config.tries_limit.times do
+          wait_util_ready!
           response = super
           break if response[:status] == 200
         end
