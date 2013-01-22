@@ -6,7 +6,10 @@ module MusicBrainz
     field :format, String
     field :date, Date
     field :country, String
-
+    field :asin, String
+    field :barcode, String
+    field :quality, String
+    
     def tracks
       @tracks ||= client.load(:release, { id: id, inc: [:recordings, :media], limit: 100 }, {
         binding: :release_tracks,
