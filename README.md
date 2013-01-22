@@ -80,6 +80,9 @@ MusicBrainz::ReleaseGroup
 ```ruby
 # Class Methods
 MusicBrainz::ReleaseGroup.find(id)
+MusicBrainz::ReleaseGroup.find_by_artist_and_title(artist_name, title, type: 'Album')
+MusicBrainz::ReleaseGroup.search(artist_name, title)
+MusicBrainz::ReleaseGroup.search(artist_name, title, type: 'Album')
 
 # Instance Methods
 @release_group.releases
