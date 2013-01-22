@@ -109,7 +109,10 @@ MusicBrainz::Release.find(id)
   :status  => String,
   :format  => String,
   :date    => Date,
-  :country => String
+  :country => String,
+  :asin    => String,
+  :barcode => String,
+  :quality => String
 }
 ```
 
