@@ -15,12 +15,15 @@ describe MusicBrainz::Release do
   end
 
   it "gets correct release data" do
-    release = MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f")
-    release.id.should == "2225dd4c-ae9a-403b-8ea0-9e05014c778f"
-    release.title.should == "Empire"
+    release = MusicBrainz::Release.find("b94cb547-cf7a-4357-894c-53c3bf33b093")
+    release.id.should == "b94cb547-cf7a-4357-894c-53c3bf33b093"
+    release.title.should == "Humanoid"
     release.status.should == "Official"
-    release.date.should == Date.new(2006, 8, 28)
-    release.country.should == "GB"
+    release.date.should == Date.new(2009, 10, 6)
+    release.country.should == "US"
+    release.asin.should == 'B002NOYX6I'
+    release.barcode.should == '602527197692'
+    release.quality.should == 'normal'
   end
 
   it "gets correct release tracks" do

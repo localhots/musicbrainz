@@ -9,7 +9,10 @@ module MusicBrainz
           title: (xml.xpath('./title').text rescue nil),
           status: (xml.xpath('./status').text rescue nil),
           country: (xml.xpath('./country').text rescue nil),
-          date: (xml.xpath('./date').text rescue nil)
+          date: (xml.xpath('./date').text rescue nil),
+          asin: (xml.xpath('./asin').text rescue nil),
+          barcode: (xml.xpath('./barcode').text rescue nil),
+          quality: (xml.xpath('./quality').text rescue nil)
         }
         
         formats = (xml.xpath('./medium-list/medium/format') rescue []).map(&:text)
