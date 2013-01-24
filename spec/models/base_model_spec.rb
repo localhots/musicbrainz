@@ -15,7 +15,7 @@ describe MusicBrainz::BaseModel do
       end
       
       context 'year only' do
-        it 'returns 1995-04-30' do
+        it 'returns 1995-12-31' do
           response = '<release-group><first-release-date>1995</first-release-date></release-group>'
           xml = Nokogiri::XML.parse(response)
           release_group = MusicBrainz::ReleaseGroup.new MusicBrainz::Bindings::ReleaseGroup.parse(xml)
