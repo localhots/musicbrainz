@@ -60,6 +60,7 @@ describe MusicBrainz::ReleaseGroup do
       releases.first.title.should == "Empire"
       releases.first.date.should == Date.new(2006, 8, 28)
       releases.first.country.should == "GB"
+      releases.first.type.should == "Album"
     end
   end
 end

@@ -1,6 +1,7 @@
 module MusicBrainz
   class Release < BaseModel
     field :id, String
+    field :type, String
     field :title, String
     field :status, String
     field :format, String
@@ -20,7 +21,7 @@ module MusicBrainz
 
     class << self
       def find(id)
-        client.load(:release, { id: id, inc: [:media] }, {
+        client.load(:release, { id: id, inc: [:media, :release_groups] }, {
           binding: :release,
           create_model: :release
         })

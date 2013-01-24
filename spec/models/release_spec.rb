@@ -24,6 +24,7 @@ describe MusicBrainz::Release do
     release.asin.should == 'B002NOYX6I'
     release.barcode.should == '602527197692'
     release.quality.should == 'normal'
+    release.type.should == 'Album'
   end
 
   it "gets correct release tracks" do

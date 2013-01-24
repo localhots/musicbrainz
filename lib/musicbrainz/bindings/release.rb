@@ -6,6 +6,7 @@ module MusicBrainz
         
         hash = {
           id: (xml.attribute('id').value rescue nil),
+          type: (xml.xpath('./release-group').attribute('type').value rescue nil),
           title: (xml.xpath('./title').text rescue nil),
           status: (xml.xpath('./status').text rescue nil),
           country: (xml.xpath('./country').text rescue nil),
