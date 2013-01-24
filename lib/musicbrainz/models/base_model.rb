@@ -46,14 +46,18 @@ module MusicBrainz
         elsif type == String
           val.to_s
         elsif type == Date
-          if val.nil? or val == ""
-            val = "2030-12-31"
+          val = if val.nil? or val == ""
+            [2030, 12, 31]
           elsif val.split("-").length == 1
-            val << "-12-31"
+            [val.split("-").first.to_i, 12, 31]
           elsif val.split("-").length == 2
-            val << "-31"
+            val = val.split("-").map(&:to_i)
+            [val.first, val.last, -1]
+          else
+            val.split("-").map(&:to_i)
           end
-          Date.new(*val.split(?-).map(&:to_i))
+          
+          Date.new(*val)
         else
           val
         end
