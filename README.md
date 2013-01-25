@@ -108,6 +108,7 @@ MusicBrainz::Release.find(id)
 # Fields
 {
   :id      => String,
+  :type    => String,
   :title   => String,
   :status  => String,
   :format  => String,
