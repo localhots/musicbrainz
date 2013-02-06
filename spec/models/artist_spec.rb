@@ -56,5 +56,6 @@ describe MusicBrainz::Artist do
     release_groups.first.type.should == "Single"
     release_groups.first.title.should == "Club Foot"
     release_groups.first.first_release_date.should == Date.new(2004, 5, 10)
+    release_groups.first.urls[:discogs].should == 'http://www.discogs.com/master/125150'
   end
 end
