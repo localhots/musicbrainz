@@ -93,7 +93,8 @@ MusicBrainz::ReleaseGroup.search(artist_name, title, type: 'Album')
   :type               => String,
   :title              => String,
   :desc               => String,
-  :first_release_date => Date
+  :first_release_date => Date,
+  :urls               => Hash
 }
 ```
 

@@ -21,6 +21,7 @@ describe MusicBrainz::ReleaseGroup do
       release_group.type.should == "Album"
       release_group.title.should == "Empire"
       release_group.first_release_date.should == Date.new(2006, 8, 28)
+      release_group.urls[:wikipedia].should == 'http://en.wikipedia.org/wiki/Empire_(Kasabian_album)'
     end
   end
   
