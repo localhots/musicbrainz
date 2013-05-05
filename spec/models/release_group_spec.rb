@@ -31,13 +31,13 @@ describe MusicBrainz::ReleaseGroup do
         matches = MusicBrainz::ReleaseGroup.search('Kasabian', 'Empire')
         matches.length.should be > 0
         matches.first[:title].should == 'Empire'
-        matches.first[:type].should == 'Single'
+        matches.first[:type].should == 'Album'
       end
     end
     
     context 'with type filter' do
       it "searches release group by artist name and title" do
-        matches = MusicBrainz::ReleaseGroup.search('Kasabian', 'Empire', type: 'Album')
+        matches = MusicBrainz::ReleaseGroup.search('Kasabian', 'Empire', 'Album')
         matches.length.should be > 0
         matches.first[:title].should == 'Empire'
         matches.first[:type].should == 'Album'
@@ -48,7 +48,7 @@ describe MusicBrainz::ReleaseGroup do
   describe '.find_by_artist_and_title' do
     it "gets first release group by artist name and title" do
       release_group = MusicBrainz::ReleaseGroup.find_by_artist_and_title('Kasabian', 'Empire')
-      release_group.id.should == '246bc928-2dc8-35ba-80ee-7a0079de1632'
+      release_group.id.should == '6f33e0f0-cde2-38f9-9aee-2c60af8d1a61'
     end
   end
   
