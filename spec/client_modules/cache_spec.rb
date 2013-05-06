@@ -12,7 +12,7 @@ describe MusicBrainz::ClientModules::CachingProxy do
   let(:test_response){ File.open(test_response_file).read }
 
   before(:all) do
-    MusicBrainz.config.cache_path = tmp_cache_path
+    MusicBrainz.config.cache_path = File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'cache_module_spec_cache')
   end
 
   after(:all) do
