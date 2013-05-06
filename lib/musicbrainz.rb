@@ -29,6 +29,7 @@ require "musicbrainz/bindings/release_group_releases"
 require "musicbrainz/bindings/release"
 require "musicbrainz/bindings/release_tracks"
 require "musicbrainz/bindings/track"
+require "musicbrainz/bindings/track_search"
 
 module MusicBrainz
   GH_PAGE_URL = "http://git.io/brainz"

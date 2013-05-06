@@ -12,6 +12,10 @@ module MusicBrainz
           create_model: :track
         })
       end
+
+			def search(artist_name, track_name)
+				super({artist: artist_name, recording: track_name})
+			end
     end
   end
 end

@@ -25,20 +25,16 @@ module MusicBrainz
         })
       end
       
-      def search(artist_name, title, options = {})
-        artist_name = CGI.escape(artist_name).gsub(/\!/, '\!')
-        title = CGI.escape(title).gsub(/\!/, '\!')
-        query = ["artist:\"#{artist_name}\"", "releasegroup:\"#{title}\""]
-        query << "type: #{options[:type]}" if options[:type]
-
-        client.load(
-          :release_group, { query: query.join(' AND '), limit: 10 }, 
-          { binding: :release_group_search }
-        )
+      def search(artist_name, title, type = nil)
+				if type
+					super({artist: artist_name, releasegroup: title, type: type})
+				else
+					super({artist: artist_name, releasegroup: title})
+				end
       end
       
-      def find_by_artist_and_title(artist_name, title, options = {})
-        matches = search(artist_name, title, options)
+      def find_by_artist_and_title(artist_name, title, type = nil )
+        matches = search(artist_name, title, type)
         matches.empty? ? nil : find(matches.first[:id])
       end
     end

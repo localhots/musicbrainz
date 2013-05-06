@@ -3,3 +3,4 @@ coverage
 tmp
 Gemfile.lock
 .gem
+*.swp
