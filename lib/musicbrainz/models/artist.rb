@@ -25,11 +25,7 @@ module MusicBrainz
       end
 
       def search(name)
-        name = CGI.escape(name).gsub(/\!/, '\!')
-
-        client.load(:artist, { query: "artist:#{name}", limit: 10 }, {
-          binding: :artist_search
-        })
+				super({artist: name})
       end
 
       def discography(mbid)

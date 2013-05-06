@@ -41,7 +41,7 @@ describe MusicBrainz::ReleaseGroup do
     
     context 'with type filter' do
       it "searches release group by artist name and title" do
-        matches = MusicBrainz::ReleaseGroup.search('Kasabian', 'Empire', type: 'Album')
+        matches = MusicBrainz::ReleaseGroup.search('Kasabian', 'Empire', 'Album')
         matches.length.should be > 0
         matches.first[:title].should == 'Empire'
         matches.first[:type].should == 'Album'
