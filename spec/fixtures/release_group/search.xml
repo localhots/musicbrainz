@@ -1,0 +1,79 @@
+<?xml version="1.0" standalone="yes"?>
+<metadata created="2013-05-06T14:05:42.527Z" xmlns="http://musicbrainz.org/ns/mmd-2.0#" xmlns:ext="http://musicbrainz.org/ns/ext#-2.0">
+  <release-group-list count="2" offset="0">
+    <release-group id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61" type="Album" ext:score="100">
+      <title>Empire</title>
+      <primary-type>Album</primary-type>
+      <artist-credit>
+        <name-credit>
+          <artist id="69b39eab-6577-46a4-a9f5-817839092033">
+            <name>Kasabian</name>
+            <sort-name>Kasabian</sort-name>
+          </artist>
+        </name-credit>
+      </artist-credit>
+      <release-list count="7">
+        <release id="9f068ed6-9f69-4a60-bf5a-0931176a9aba">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+        <release id="30d5e730-ce0a-464d-93e1-7d76e4bb3e31">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+        <release id="36ee86ab-0450-4d8f-a970-183c11f210c1">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+        <release id="2225dd4c-ae9a-403b-8ea0-9e05014c778f">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+        <release id="2c8dcfc6-4afe-4b33-abc7-dff1bb4c5386">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+        <release id="2bc94ddc-b872-3b7f-b0a7-98a4fffbe5ba">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+        <release id="dd34af03-37ab-460a-b20a-54629336d81a">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+      </release-list>
+      <tag-list>
+        <tag count="3">
+          <name>rock</name>
+        </tag>
+        <tag count="4">
+          <name>alternative rock</name>
+        </tag>
+        <tag count="1">
+          <name>indie</name>
+        </tag>
+        <tag count="1">
+          <name>rock and indie</name>
+        </tag>
+      </tag-list>
+    </release-group>
+    <release-group id="246bc928-2dc8-35ba-80ee-7a0079de1632" type="Single" ext:score="100">
+      <title>Empire</title>
+      <primary-type>Single</primary-type>
+      <artist-credit>
+        <name-credit>
+          <artist id="69b39eab-6577-46a4-a9f5-817839092033">
+            <name>Kasabian</name>
+            <sort-name>Kasabian</sort-name>
+          </artist>
+        </name-credit>
+      </artist-credit>
+      <release-list count="1">
+        <release id="1da0d848-b937-4beb-8024-f4fdf6193708">
+          <title>Empire</title>
+          <status>Official</status>
+        </release>
+      </release-list>
+    </release-group>
+  </release-group-list>
+</metadata>

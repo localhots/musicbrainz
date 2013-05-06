@@ -28,10 +28,14 @@ describe MusicBrainz::ReleaseGroup do
   describe '.search' do
     context 'without type filter' do
       it "searches release group by artist name and title" do
+        response = File.open(File.join(File.dirname(__FILE__), "../fixtures/release_group/search.xml")).read
+        MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/release-group?query=artist:"Kasabian" AND releasegroup:"Empire"&limit=10').
+        and_return({ status: 200, body: response})
+          
         matches = MusicBrainz::ReleaseGroup.search('Kasabian', 'Empire')
         matches.length.should be > 0
         matches.first[:title].should == 'Empire'
-        matches.first[:type].should == 'Single'
+        matches.first[:type].should == 'Album'
       end
     end
     
@@ -47,8 +51,16 @@ describe MusicBrainz::ReleaseGroup do
   
   describe '.find_by_artist_and_title' do
     it "gets first release group by artist name and title" do
+      response = File.open(File.join(File.dirname(__FILE__), "../fixtures/release_group/search.xml")).read
+      MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/release-group?query=artist:"Kasabian" AND releasegroup:"Empire"&limit=10').
+      and_return({ status: 200, body: response})
+      
+      response = File.open(File.join(File.dirname(__FILE__), "../fixtures/release_group/entity.xml")).read
+      MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/release-group/6f33e0f0-cde2-38f9-9aee-2c60af8d1a61?inc=url-rels').
+      and_return({ status: 200, body: response})
+      
       release_group = MusicBrainz::ReleaseGroup.find_by_artist_and_title('Kasabian', 'Empire')
-      release_group.id.should == '246bc928-2dc8-35ba-80ee-7a0079de1632'
+      release_group.id.should == '6f33e0f0-cde2-38f9-9aee-2c60af8d1a61'
     end
   end
   

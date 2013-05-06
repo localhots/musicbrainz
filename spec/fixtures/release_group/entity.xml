@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+    <title>Empire</title>
+    <first-release-date>2006-08-28</first-release-date>
+    <primary-type>Album</primary-type>
+    <relation-list target-type="url">
+      <relation type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb" type="wikipedia">
+        <target id="e831302f-4fa8-4630-afa5-4e32a795322a">http://en.wikipedia.org/wiki/Empire_(Kasabian_album)</target>
+      </relation>
+      <relation type-id="156344d3-da8b-40c6-8b10-7b1c22727124" type="lyrics">
+        <target id="87d521d9-c78e-42fd-ac5e-98c82e6394a0">http://lyrics.wikia.com/Kasabian:Empire_(2006)</target>
+      </relation>
+      <relation type-id="c3ac9c3b-f546-4d15-873f-b294d2c1b708" type="review">
+        <target id="732310f9-ac35-468f-b293-891c6f7d0812">http://www.bbc.co.uk/music/reviews/389x</target>
+      </relation>
+      <relation type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126" type="discogs">
+        <target id="1afddd13-53dd-4d0c-87e2-faf016725e95">http://www.discogs.com/master/89980</target>
+      </relation>
+    </relation-list>
+  </release-group>
+</metadata>
