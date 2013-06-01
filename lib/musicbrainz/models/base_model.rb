@@ -24,11 +24,15 @@ module MusicBrainz
         MusicBrainz.client
       end
 
-			def search(hash)
+			def search(hash, resource=nil)
 				hash = escape_strings(hash)
 				query_val = build_query(hash)
 				underscore_name = self.name[13..-1].underscore
-				client.load(underscore_name.to_sym, { query: query_val, limit: 10 }, { binding: underscore_name.insert(-1,"_search").to_sym })
+				if resource # only needed since "track" is really a "recording", ugly
+					client.load(resource, { query: query_val, limit: 10 }, { binding: underscore_name.insert(-1,"_search").to_sym })
+				else
+					client.load(underscore_name.to_sym, { query: query_val, limit: 10 }, { binding: underscore_name.insert(-1,"_search").to_sym })
+				end
 			end
 
 			class ::String
