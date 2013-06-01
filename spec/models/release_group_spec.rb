@@ -61,7 +61,6 @@ describe MusicBrainz::ReleaseGroup do
       allow_any_instance_of(MusicBrainz::Client).to receive(:get_contents)
         .with('http://musicbrainz.org/ws/2/release-group/6f33e0f0-cde2-38f9-9aee-2c60af8d1a61?inc=url-rels')
         .and_return({ status: 200, body: response})
-
       release_group = MusicBrainz::ReleaseGroup.find_by_artist_and_title('Kasabian', 'Empire')
       expect(release_group.id).to eq '6f33e0f0-cde2-38f9-9aee-2c60af8d1a61'
     end

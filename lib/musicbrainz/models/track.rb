@@ -14,7 +14,8 @@ module MusicBrainz
       end
 
 			def search(artist_name, track_name)
-				super({artist: artist_name, recording: track_name})
+				# this model really should be named "recording" I'd rename, but I don't want to break anything
+				super({recording: track_name, artist: artist_name}, "recording")
 			end
     end
   end
