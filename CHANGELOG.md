@@ -1,5 +1,9 @@
 ## musicbrainz (unreleased) ##
 
+# 0.7.6 (June 14, 2013) ##
+
+*   Improves urls attribute to return an array if there are multiple urls for a relation type. [#19]
+
 # 0.7.5 (May 6, 2013) ##
 
 *   Created new track_search binding to allow searching for tracks. [#18]
