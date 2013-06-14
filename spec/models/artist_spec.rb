@@ -21,18 +21,16 @@ describe MusicBrainz::Artist do
   end
 
   it "should return search results in the right order and pass back the correct score" do
+    response = File.open(File.join(File.dirname(__FILE__), "../fixtures/artist/search.xml")).read
+    MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/artist?query=artist:"Chris+Martin"&limit=10').
+    and_return({ status: 200, body: response})
+        
     matches = MusicBrainz::Artist.search('Chris Martin')
 
     matches[0][:score].should == 100
-    matches[0][:id].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
+    matches[0][:id].should == "90fff570-a4ef-4cd4-ba21-e00c7261b05a"
     matches[1][:score].should == 100
-    matches[1][:id].should == "af2ab893-3212-4226-9e73-73a1660b6952"
-  end
-
-  it "finds name first than alias" do
-    matches = MusicBrainz::Artist.search('Chris Martin')
-    matches.length.should be > 0
-    matches.first[:mbid].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
+    matches[1][:id].should == "b732a912-af95-472c-be52-b14610734c64"
   end
 
   it "gets correct result by name" do

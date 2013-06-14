@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes"?>
+<metadata created="2013-06-11T14:02:53.104Z" xmlns="http://musicbrainz.org/ns/mmd-2.0#" xmlns:ext="http://musicbrainz.org/ns/ext#-2.0">
+  <artist-list count="5" offset="0">
+    <artist id="90fff570-a4ef-4cd4-ba21-e00c7261b05a" type="Person" ext:score="100">
+      <name>Chris Martin</name>
+      <sort-name>Martin, Chris</sort-name>
+      <disambiguation>Reggae / Dancehall singer Christopher Martin</disambiguation>
+      <life-span>
+        <ended>false</ended>
+      </life-span>
+    </artist>
+    <artist id="b732a912-af95-472c-be52-b14610734c64" type="Person" ext:score="100">
+      <name>Chris Martin</name>
+      <sort-name>Martin, Chris</sort-name>
+      <disambiguation>Illustrator</disambiguation>
+      <life-span>
+        <ended>false</ended>
+      </life-span>
+    </artist>
+    <artist id="98d1ec5a-dd97-4c0b-9c83-7928aac89bca" type="Person" ext:score="100">
+      <name>Chris Martin</name>
+      <sort-name>Martin, Chris</sort-name>
+      <gender>male</gender>
+      <country>GB</country>
+      <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+        <name>United Kingdom</name>
+        <sort-name>United Kingdom</sort-name>
+      </area>
+      <disambiguation>lead singer of Coldplay</disambiguation>
+      <ipi-list>
+        <ipi>00280536565</ipi>
+      </ipi-list>
+      <life-span>
+        <begin>1977-03-02</begin>
+        <ended>false</ended>
+      </life-span>
+      <alias-list>
+        <alias sort-name="Martin, Christopher Anthony John" type="Legal name">Christopher Anthony John Martin</alias>
+      </alias-list>
+      <tag-list>
+        <tag count="1">
+          <name>pop/rock</name>
+        </tag>
+      </tag-list>
+    </artist>
+    <artist id="af2ab893-3212-4226-9e73-73a1660b6952" type="Person" ext:score="100">
+      <name>Chris Martin</name>
+      <sort-name>Martin, Chris</sort-name>
+      <disambiguation>hip hop producer DJ Premier, DJ Primo</disambiguation>
+      <life-span>
+        <begin>1965-05-05</begin>
+        <ended>false</ended>
+      </life-span>
+      <alias-list>
+        <alias sort-name="Christopher Edward Martin">Christopher Edward Martin</alias>
+      </alias-list>
+    </artist>
+    <artist id="444d1b63-534b-4ea6-89f0-0af6ab2e20c3" type="Person" ext:score="100">
+      <name>Chris Martin</name>
+      <sort-name>Martin, Chris</sort-name>
+      <disambiguation>Disney songwriter/composer</disambiguation>
+      <life-span>
+        <ended>false</ended>
+      </life-span>
+    </artist>
+  </artist-list>
+</metadata>
