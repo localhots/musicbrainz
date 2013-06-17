@@ -3,57 +3,50 @@
 require "spec_helper"
 
 describe MusicBrainz::Artist do
-  it "gets no exception while loading artist info" do
-    lambda {
-      MusicBrainz::Artist.find('69b39eab-6577-46a4-a9f5-817839092033')
-    }.should_not raise_error(Exception)
+  describe '.search' do
+    it 'delegates to client properly' do
+      artist_name = 'Kasabian'
+      
+      MusicBrainz::Client.any_instance.should_receive(:search).with(described_class.to_s, "artist:#{artist_name}", create_models: false)
+      
+      described_class.search(artist_name)
+    end
   end
-
-  it "gets correct instance" do
-    artist = MusicBrainz::Artist.find_by_name('Kasabian')
-    artist.should be_an_instance_of(MusicBrainz::Artist)
+  
+  describe '.find_by_name' do
+    it "delegates to search properly" do
+      expected = { name: 'Kasabian', id: '69b39eab-6577-46a4-a9f5-817839092033' }
+      
+      described_class.should_receive(:search).with(expected[:name]).and_return([expected])
+      described_class.should_receive(:find).with(expected[:id]).and_return(described_class.new(id: expected[:id]))
+      got = described_class.find_by_name(expected[:name])
+      
+      got.id.should == expected[:id]
+    end
   end
-
-  it "searches artist by name" do
-    matches = MusicBrainz::Artist.search('Kasabian')
-    matches.length.should be > 0
-    matches.first[:name].should == "Kasabian"
-  end
-
-  it "should return search results in the right order and pass back the correct score" do
-    response = File.open(File.join(File.dirname(__FILE__), "../fixtures/artist/search.xml")).read
-    MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/artist?query=artist:"Chris+Martin"&limit=10').
-    and_return({ status: 200, body: response})
+  
+  describe '#release_groups' do
+    context 'release roups already set' do
+      it 'returns the cached release groups' do
+        artist = described_class.new(id: '2225dd4c-ae9a-403b-8ea0-9e05014c778f')
+        artist.release_groups = [MusicBrainz::ReleaseGroup.new]
         
-    matches = MusicBrainz::Artist.search('Chris Martin')
-
-    matches[0][:score].should == 100
-    matches[0][:id].should == "90fff570-a4ef-4cd4-ba21-e00c7261b05a"
-    matches[1][:score].should == 100
-    matches[1][:id].should == "b732a912-af95-472c-be52-b14610734c64"
-  end
-
-  it "gets correct result by name" do
-    artist = MusicBrainz::Artist.find_by_name('Kasabian')
-    artist.id.should == "69b39eab-6577-46a4-a9f5-817839092033"
-  end
-
-  it "gets correct artist data" do
-    artist = MusicBrainz::Artist.find_by_name('Kasabian')
-    artist.id.should == "69b39eab-6577-46a4-a9f5-817839092033"
-    artist.type.should == "Group"
-    artist.name.should == "Kasabian"
-    artist.country.should == "GB"
-    artist.date_begin.year.should == 1999
-  end
-
-  it "gets correct artist's release groups" do
-    release_groups = MusicBrainz::Artist.find_by_name('Kasabian').release_groups
-    release_groups.length.should be >= 16
-    release_groups.first.id.should == "533cbc5f-ec7e-32ab-95f3-8d1f804a5176"
-    release_groups.first.type.should == "Single"
-    release_groups.first.title.should == "Club Foot"
-    release_groups.first.first_release_date.should == Date.new(2004, 5, 10)
-    release_groups.first.urls[:discogs].should == 'http://www.discogs.com/master/125150'
+        MusicBrainz::Client.any_instance.should_not_receive(:search)
+        
+        artist.release_groups
+      end 
+    end
+    
+    context 'release groups not set yet' do
+      it 'queries release groups' do
+        id = '2225dd4c-ae9a-403b-8ea0-9e05014c778f'
+        
+        MusicBrainz::Client.any_instance.should_receive(:search).with(
+          'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels] }, sort: :first_release_date
+        )
+        
+        described_class.new(id: id).release_groups
+      end
+    end
   end
 end

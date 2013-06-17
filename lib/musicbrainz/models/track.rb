@@ -1,21 +1,14 @@
 module MusicBrainz
   class Track < BaseModel
-    field :position, Integer
-    field :recording_id, String
-    field :title, String
-    field :length, Integer
-
-    class << self
-      def find(id)
-        client.load(:recording, { id: id }, {
-          binding: :track,
-          create_model: :track
-        })
-      end
-
-			def search(artist_name, track_name)
-				super({artist: artist_name, recording: track_name})
-			end
-    end
+    include Mapper::Resources::Track
+    
+    xml_accessor :mbid, from: '@id' # deprecated
+    
+    # user_tags user_ratings
+    INCLUDES = %w(artists releases artist_credits tags ratings annotation url_rels artist-rels label_rels recording_rels release_rels release_group_rels url_rels work_rels)
+    
+    # delegations
+    def artists; @artists || (recording.nil? ? nil : recording.artists); end
+    def title; @title || (recording.nil? ? nil : recording.title); end
   end
 end

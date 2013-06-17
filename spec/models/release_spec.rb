@@ -3,36 +3,42 @@
 require "spec_helper"
 
 describe MusicBrainz::Release do
-  it "gets no exception while loading release info" do
-    lambda {
-      MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f")
-    }.should_not raise_error(Exception)
+  describe '.find' do
+    it 'delegates it to the client properly' do
+      mbid = 'bcf7c1d6-8cb5-41ca-a798-cb6e994f1bda'
+      
+      MusicBrainz::Client.any_instance.should_receive(:find).with('MusicBrainz::Release', mbid, [:media, :release_groups, :url_rels])
+      
+      MusicBrainz::Release.find(mbid)
+    end  
   end
-
-  it "gets correct instance" do
-    release = MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f")
-    release.should be_an_instance_of(MusicBrainz::Release)
+  
+  describe '.find_by_release_group_id' do
+    it 'gets the releases for the release group with the given mbid' do
+      MusicBrainz::ReleaseGroup.any_instance.should_receive(:releases).once
+      
+      described_class.find_by_release_group_id('6f33e0f0-cde2-38f9-9aee-2c60af8d1a61')
+    end
   end
-
-  it "gets correct release data" do
-    release = MusicBrainz::Release.find("b94cb547-cf7a-4357-894c-53c3bf33b093")
-    release.id.should == "b94cb547-cf7a-4357-894c-53c3bf33b093"
-    release.title.should == "Humanoid"
-    release.status.should == "Official"
-    release.date.should == Date.new(2009, 10, 6)
-    release.country.should == "US"
-    release.asin.should == 'B002NOYX6I'
-    release.barcode.should == '602527197692'
-    release.quality.should == 'normal'
-    release.type.should == 'Album'
-  end
-
-  it "gets correct release tracks" do
-    tracks = MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f").tracks
-    tracks.length.should == 11
-    tracks.first.position.should == 1
-    tracks.first.recording_id.should == "b3015bab-1540-4d4e-9f30-14872a1525f7"
-    tracks.first.title.should == "Empire"
-    tracks.first.length.should == 233013
+  
+  describe '#tracks' do
+    context 'tracks already set' do
+      it 'returns the cached tracks' do
+        release = MusicBrainz::Release.new(id: '2225dd4c-ae9a-403b-8ea0-9e05014c778f')
+        release.tracks = [MusicBrainz::Track.new]
+        
+        MusicBrainz::Release.any_instance.should_not_receive(:association)
+        
+        release.tracks
+      end 
+    end
+    
+    context 'tracks not set yet' do
+      it 'queries tracks' do
+        MusicBrainz::Release.any_instance.should_receive(:association).with(:tracks, [:recordings, :media], :position)
+        
+        MusicBrainz::Release.new(id: '2225dd4c-ae9a-403b-8ea0-9e05014c778f').tracks
+      end
+    end
   end
 end

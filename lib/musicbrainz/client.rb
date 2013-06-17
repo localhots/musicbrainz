@@ -12,31 +12,53 @@ module MusicBrainz
       end
     end
 
-    def load(resource, query, params)
+    def find(resource, id, includes = [])
       raise Exception.new("You need to run MusicBrainz.configure before querying") if MusicBrainz.config.nil?
 
-      url = build_url(resource, query)
-      response = get_contents(url)
+      params = { id: id }
+      params[:inc] = includes unless includes.empty?
+      
+      response = get_contents(build_url(resource, params))
+      
+      if response[:status] == 200
+        MusicBrainz.const_get(resource.split('::').pop.to_sym).from_xml(
+          Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata/*[1]').to_xml
+        )
+      else
+        nil
+      end
+    end
+    
+    def search(resource, params, options = {})
+      raise Exception.new("You need to run MusicBrainz.configure before querying") if MusicBrainz.config.nil?
+      
+      params = { query: params } if params.is_a?(String)
+      params = { limit: 10 }.merge(params)
+      
+      response = get_contents(build_url(resource, params))
 
-      return nil if response[:status] != 200
+      return nil unless response[:status] == 200
 
-      xml = Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata')
-      data = binding_class_for(params[:binding]).parse(xml)
-
-      if params[:create_model]
-        model_class_for(params[:create_model]).new(data)
-      elsif params[:create_models]
-        models = data.map{ |item| model_class_for(params[:create_models]).new(item) }
-        models.sort!{ |a, b| a.send(params[:sort]) <=> b.send(params[:sort]) } if params[:sort]
+      models = MusicBrainz::Mapper::List.from_xml(
+        Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata/*').to_xml
+      )
+      
+      options = { create_models: true }.merge(options) 
+      
+      if options[:create_models]
+        models.sort!{ |a, b| a.send(options[:sort]) <=> b.send(options[:sort]) } if options[:sort]
         models
       else
-        data
+        models.to_primitive
       end
     end
 
   private
 
     def build_url(resource, params)
+      resource = resource == 'MusicBrainz::Track' ? 'MusicBrainz::Recording' : resource
+      resource = underscore(resource.split('::').last)
+      
       "#{MusicBrainz.config.web_service_url}#{resource.to_s.gsub('_', '-')}" <<
       ((id = params.delete(:id)) ? "/#{id}?" : "?") <<
       params.map do |key, value|
@@ -49,17 +71,16 @@ module MusicBrainz
         [key, value].join(?=)
       end.join(?&)
     end
-
-    def binding_class_for(key)
-      MusicBrainz::Bindings.const_get(constantized(key))
-    end
-
-    def model_class_for(key)
-      MusicBrainz.const_get(constantized(key))
-    end
-
-    def constantized(key)
-      key.to_s.split(?_).map(&:capitalize).join.to_sym
+    
+    def underscore(camel_cased_word)
+      word = camel_cased_word.to_s.dup
+      word.gsub!(/::/, '/')
+      word.gsub!(/(?:([A-Za-z\d])|^)((?=a)b)(?=\b|[^a-z])/) { "#{$1}#{$1 && '_'}#{$2.downcase}" }
+      word.gsub!(/([A-Z\d]+)([A-Z][a-z])/,'\1_\2')
+      word.gsub!(/([a-z\d])([A-Z])/,'\1_\2')
+      word.tr!("-", "_")
+      word.downcase!
+      word
     end
   end
 

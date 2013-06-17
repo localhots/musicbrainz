@@ -1,31 +1,24 @@
 module MusicBrainz
   class Artist < BaseModel
-    field :id, String
-    field :type, String
-    field :name, String
-    field :country, String
-    field :date_begin, Date
-    field :date_end, Date
-    field :urls, Hash
-
+    include Mapper::Resources::Artist
+    
+    xml_accessor :mbid, from: '@id' # deprecated
+    
+    # user_tags user_ratings
+    INCLUDES = %w(release_groups releases works recordings aliases tags ratings discids media puids isrcs artist_credits various_artists annotation url_rels artist_rels label_rels recording_rels release_rels release_group_rels work_rels)
+    
     def release_groups
-      @release_groups ||= client.load(:release_group, { artist: id, inc: [:url_rels] }, {
-        binding: :artist_release_groups,
-        create_models: :release_group,
-        sort: :first_release_date
-      }) unless @id.nil?
+      return @release_groups if @release_groups || @id.nil? || do_not_search
+      
+      @release_groups ||= client.search(
+        'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels] }, sort: :first_release_date
+      )
     end
-
+    
     class << self
-      def find(id)
-        client.load(:artist, { id: id, inc: [:url_rels] }, {
-          binding: :artist,
-          create_model: :artist
-        })
-      end
-
       def search(name)
-				super({artist: name})
+        name = CGI.escape(name).gsub(/\!/, '\!')
+        client.search(to_s, "artist:#{name}", create_models: false)
       end
 
       def discography(mbid)

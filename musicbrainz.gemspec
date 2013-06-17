@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{ MusicBrainz Web Service wrapper with ActiveRecord-style models }
   gem.homepage      = "http://github.com/magnolia-fan/musicbrainz"
 
-  gem.files         = %x{ git ls-files }.split($\)
+  gem.files         = Dir['README.md', 'LICENSE', 'lib/**/*']
   gem.executables   = []
   gem.test_files    = gem.files.grep(%r{^spec/})
   gem.name          = "musicbrainz"
@@ -14,8 +14,10 @@ Gem::Specification.new do |gem|
   gem.version       = MusicBrainz::VERSION
   gem.license       = "MIT"
 
-  gem.add_dependency('faraday')
-  gem.add_dependency('nokogiri')
-  gem.add_development_dependency('rspec')
-  gem.add_development_dependency('awesome_print')
+  gem.add_dependency 'faraday'
+  gem.add_dependency 'roxml', '~> 3.3.1'
+  gem.add_dependency 'nokogiri', '1.5.9' # 1.6.0 from '@score' is not compatible with ext:score="100" anymore
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'awesome_print'
+  gem.add_development_dependency 'simplecov'
 end

@@ -3,13 +3,15 @@ module MusicBrainz
     attr_accessor :app_name, :app_version, :contact,
                   :web_service_url,
                   :query_interval, :tries_limit,
-                  :cache_path, :perform_caching
+                  :cache_path, :perform_caching,
+                  :hexdigest_url
 
     DEFAULT_WEB_SERVICE_URL = "http://musicbrainz.org/ws/2/"
     DEFAULT_QUERY_INTERVAL = 1.5
     DEFAULT_TRIES_LIMIT = 5
     DEFAULT_CACHE_PATH = File.join(File.dirname(__FILE__), "..", "tmp", "cache")
     DEFAULT_PERFORM_CACHING = false
+    DEFAULT_HEXDIGEST_URL = true
 
     def initialize
       @web_service_url = DEFAULT_WEB_SERVICE_URL
@@ -17,6 +19,7 @@ module MusicBrainz
       @tries_limit = DEFAULT_TRIES_LIMIT
       @cache_path = DEFAULT_CACHE_PATH
       @perform_caching = DEFAULT_PERFORM_CACHING
+      @hexdigest_url = DEFAULT_HEXDIGEST_URL
     end
 
     def valid?
@@ -35,26 +38,4 @@ module MusicBrainz
       true
     end
   end
-
-  module Configurable
-    def configure
-      raise Exception.new("Configuration block missing") unless block_given?
-      yield @config ||= MusicBrainz::Configuration.new
-      config.valid?
-    end
-
-    def config
-      raise Exception.new("Configuration missing") unless instance_variable_defined?(:@config)
-      @config
-    end
-
-    def apply_test_configuration!
-      configure do |c|
-        c.app_name = "gem musicbrainz (development mode)"
-        c.app_version = MusicBrainz::VERSION
-        c.contact = `git config user.email`.chomp
-      end
-    end
-  end
-  extend Configurable
 end

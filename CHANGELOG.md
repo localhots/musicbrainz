@@ -1,5 +1,9 @@
 ## musicbrainz (unreleased) ##
 
+# 0.8.0.rc1 (June 14, 2013) ##
+
+*   Increases coverage of MusicBrainz API and replaces bindings by Music Brainz XSL schema transformation mapper.
+
 # 0.7.6 (June 14, 2013) ##
 
 *   Improves urls attribute to return an array if there are multiple urls for a relation type. [#19]

@@ -29,7 +29,8 @@ MusicBrainz.configure do |c|
   # Cache config (optional)
   c.cache_path = "/tmp/musicbrainz-cache"
   c.perform_caching = true
-
+  c.hexdigest_url = true # not sure if secure in production but set to false if you want to put cached files under a directory schema which matches the query
+  
   # Querying config (optional)
   c.query_interval = 1.2 # seconds
   c.tries_limit = 2
@@ -66,13 +67,18 @@ MusicBrainz::Artist.discography(id)
 
 # Fields
 {
-  :id         => String,
-  :type       => String,
-  :name       => String,
-  :country    => String,
-  :date_begin => Date,
-  :date_end   => Date,
-  :urls       => Hash
+  :id             => String,
+  :type           => String,
+  :name           => String,
+  :sort_name      => String,
+  :gender         => String,
+  :disambiguation => String,
+  :country        => String,
+  :date_begin     => Date,
+  :date_end       => Date,
+  :urls           => Hash # will be removed in 1.0. Use :relations => { :url => {...} } instead,
+  :relations      => Hash,
+  :tags           => Array
 }
 ```
 
@@ -80,9 +86,9 @@ MusicBrainz::ReleaseGroup
 ```ruby
 # Class Methods
 MusicBrainz::ReleaseGroup.find(id)
-MusicBrainz::ReleaseGroup.find_by_artist_and_title(artist_name, title, 'Album') # 3rd arg optional
+MusicBrainz::ReleaseGroup.find_by_artist_and_title(artist_name, title, type: 'Album')
 MusicBrainz::ReleaseGroup.search(artist_name, title)
-MusicBrainz::ReleaseGroup.search(artist_name, title, 'Album') # 3rd arg optional
+MusicBrainz::ReleaseGroup.search(artist_name, title, type: 'Album')
 
 # Instance Methods
 @release_group.releases
@@ -94,7 +100,9 @@ MusicBrainz::ReleaseGroup.search(artist_name, title, 'Album') # 3rd arg optional
   :title              => String,
   :desc               => String,
   :first_release_date => Date,
-  :urls               => Hash
+  :urls               => Hash # will be removed in 1.0. Use :relations => { :url => {...} } instead,
+  :relations          => Hash,
+  :tags               => Array
 }
 ```
 
@@ -108,33 +116,67 @@ MusicBrainz::Release.find(id)
 
 # Fields
 {
-  :id      => String,
-  :type    => String,
-  :title   => String,
-  :status  => String,
-  :format  => String,
-  :date    => Date,
-  :country => String,
-  :asin    => String,
-  :barcode => String,
-  :quality => String
+  :id         => String,
+  :type       => String,
+  :title      => String,
+  :status     => String,
+  :format     => String,
+  :date       => Date,
+  :country    => String,
+  :asin       => String,
+  :barcode    => String,
+  :quality    => String,
+  :urls       => Hash # will be removed in 1.0. Use :relations => { :url => {...} } instead,
+  :relations  => Hash,
+  :media      => Hash
 }
 ```
 
-MusicBrainz::Track
+MusicBrainz::Recording
+
+```ruby
+# Class Methods
+MusicBrainz::Recording.find(id)
+MusicBrainz::Recording.find_by_artist_and_title(artist_name, title, type: 'Album')
+MusicBrainz::Recording.search(artist_name, title)
+MusicBrainz::Recording.search(artist_name, title, type: 'Album')
+
+# Fields
+{
+  :id           => String,
+  :artists      => Array, // use MusicBrainz::Recording#artist_name to concat artist name(s) with joinphrase
+  :title        => String,
+  :length       => Integer,
+  :urls         => Hash # will be removed in 1.0. Use :relations => { :url => {...} } instead,
+  :relations    => Hash,
+  :tags         => Array
+}
+```
+
+MusicBrainz::Track (DEPRECATED: use MusicBrainz::Recording instead)
+
 ```ruby
 # Class Methods
 MusicBrainz::Track.find(id)
-MusicBrainz::ReleaseGroup.search(artist_name, track_name)
 
 # Fields
 {
   :position     => Integer,
   :recording_id => String,
+  :recording    => MusicBrainz::Recording
+  :artists      => Array
   :title        => String,
-  :length       => Integer
+  :length       => Integer,
+  :urls         => Hash # will be removed in 1.0. Use :relations => { :url => {...} } instead,
+  :relations    => Hash
 }
 ```
+
+### MusicBrainz's XML Web Service 2.0 Reference
+
+http://musicbrainz.org/doc/Development/XML_Web_Service/Version_2
+
+http://svn.musicbrainz.org/mmd-schema/trunk/schema/musicbrainz_mmd-2.0.rng
 
 ### Testing
 ```
