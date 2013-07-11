@@ -4,8 +4,6 @@ module MusicBrainz
       def get_contents(url)
         response = http.get(url)
         { body: response.body, status: response.status }
-      rescue
-        { body: nil, status: 500 }
       end
     end
   end
