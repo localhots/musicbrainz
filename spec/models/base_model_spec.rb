@@ -11,7 +11,7 @@ describe MusicBrainz::BaseModel do
       context 'nil value' do
         let(:response) { '<release-group><first-release-date></first-release-date></release-group>' }
         
-        it 'returns 2030-12-31' do
+        it 'returns a Date object corresponding to 2030-12-31' do
           release_group.first_release_date.should == Date.new(2030, 12, 31)
         end
       end
@@ -19,7 +19,7 @@ describe MusicBrainz::BaseModel do
       context 'year only' do
         let(:response) { '<release-group><first-release-date>1995</first-release-date></release-group>' }
         
-        it 'returns 1995-12-31' do
+        it 'returns a Date object corresponding to the last day of the year' do
           release_group.first_release_date.should == Date.new(1995, 12, 31)
         end
       end
@@ -27,7 +27,7 @@ describe MusicBrainz::BaseModel do
       context 'year and month only' do
         let(:response) { '<release-group><first-release-date>1995-04</first-release-date></release-group>' }
         
-        it 'returns 1995-04-30' do
+        it 'returns a Date object corresponding to the last day of the month' do
           release_group.first_release_date.should == Date.new(1995, 4, 30)
         end
       end
@@ -35,7 +35,7 @@ describe MusicBrainz::BaseModel do
       context 'year, month and day' do
         let(:response) { '<release-group><first-release-date>1995-04-30</first-release-date></release-group>' }
         
-        it 'returns 1995-04-30' do
+        it 'returns the corresponding Date object' do
           release_group.first_release_date.should == Date.new(1995, 4, 30)
         end
       end
