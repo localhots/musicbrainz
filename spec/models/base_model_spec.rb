@@ -8,7 +8,7 @@ describe MusicBrainz::BaseModel do
       let(:xml) { Nokogiri::XML.parse(response) }
       let(:release_group) { MusicBrainz::ReleaseGroup.new MusicBrainz::Bindings::ReleaseGroup.parse(xml) }
       
-      context 'nil value' do
+      context 'when the vale is nil' do
         let(:response) { '<release-group><first-release-date></first-release-date></release-group>' }
         
         it 'returns a Date object corresponding to 2030-12-31' do
@@ -16,7 +16,7 @@ describe MusicBrainz::BaseModel do
         end
       end
       
-      context 'year only' do
+      context 'when the value contains only the year' do
         let(:response) { '<release-group><first-release-date>1995</first-release-date></release-group>' }
         
         it 'returns a Date object corresponding to the last day of the year' do
@@ -24,7 +24,7 @@ describe MusicBrainz::BaseModel do
         end
       end
       
-      context 'year and month only' do
+      context 'when the value contains only the year and the month' do
         let(:response) { '<release-group><first-release-date>1995-04</first-release-date></release-group>' }
         
         it 'returns a Date object corresponding to the last day of the month' do
@@ -32,7 +32,7 @@ describe MusicBrainz::BaseModel do
         end
       end
       
-      context 'year, month and day' do
+      context 'when the value contains the year, month and day' do
         let(:response) { '<release-group><first-release-date>1995-04-30</first-release-date></release-group>' }
         
         it 'returns the corresponding Date object' do
