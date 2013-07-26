@@ -68,31 +68,37 @@ module MusicBrainz
         MusicBrainz.client
       end
 
-    private
+      private
+      
+      def validate_type(value, type)
+        validate_method = "validate_#{type.name.downcase}".to_sym
+        self.class.private_method_defined?(validate_method) ? send(validate_method, value) : value
+      end
 
-      def validate_type(val, type)
-        if type == Integer
-          val.to_i
-        elsif type == Float
-          val.to_f
-        elsif type == String
-          val.to_s
-        elsif type == Date
-          val = if val.nil? or val == ""
-            [2030, 12, 31]
-          elsif val.split("-").length == 1
-            [val.split("-").first.to_i, 12, 31]
-          elsif val.split("-").length == 2
-            val = val.split("-").map(&:to_i)
-            [val.first, val.last, -1]
-          else
-            val.split("-").map(&:to_i)
-          end
-          
-          Date.new(*val)
+      def validate_integer(value)
+        value.to_i
+      end
+      
+      def validate_float(value)
+        value.to_f
+      end
+      
+      def validate_string(value)
+        value.to_s
+      end
+
+      def validate_date(value)
+        value = if value.nil? or value == ""
+          [2030, 12, 31]
+        elsif value.split("-").length == 1
+          [value.split("-").first.to_i, 12, 31]
+        elsif value.split("-").length == 2
+          value = value.split("-").map(&:to_i)
+          [value.first, value.last, -1]
         else
-          val
-        end
+          value.split("-").map(&:to_i)
+        end        
+        Date.new(*value)
       end
     end
   end
