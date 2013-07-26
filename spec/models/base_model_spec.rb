@@ -41,6 +41,14 @@ describe MusicBrainz::BaseModel do
       end
     end
     
+    describe '#validate_float' do
+      let(:value) { '0.1' }
+      
+      it 'returns the corresponding Float object' do
+        subject.send(:validate_float, value).should eql(0.1)
+      end
+    end
+    
     describe '#validate_date' do
       let(:validated_date) { subject.send(:validate_date, value) }
       
