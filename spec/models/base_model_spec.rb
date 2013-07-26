@@ -10,6 +10,29 @@ describe MusicBrainz::BaseModel do
     
     subject { MusicBrainz::BaseModelSubclass.new }
     
+    describe '#validate_type' do
+      context 'when there is a specific implementation for the provided type' do
+        let(:type) { [ Integer, Float, String, Date ].sample }
+        let(:value) { 'sample value' }
+        let(:validate_method) { "validate_#{type.name.downcase}".to_sym }
+        
+        it 'validates the value with the specific implementation' do
+          subject.should_receive(validate_method).with(value)
+        end
+        
+        after { subject.send(:validate_type, value, type) }
+      end
+      
+      context 'when there is not a specific implementation for the provided type' do
+        let(:type) { Hash }
+        let(:value) { type.new }
+        
+        it 'returns the provided value' do
+          subject.send(:validate_type, value, type).should eql(value)
+        end
+      end
+    end
+    
     describe '#validate_date' do
       let(:validated_date) { subject.send(:validate_date, value) }
       
