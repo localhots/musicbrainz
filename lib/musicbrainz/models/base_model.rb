@@ -82,10 +82,6 @@ module MusicBrainz
       def validate_float(value)
         value.to_f
       end
-      
-      def validate_string(value)
-        value.to_s
-      end
 
       def validate_date(value)
         value = if value.nil? or value == ""

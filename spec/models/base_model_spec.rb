@@ -12,7 +12,7 @@ describe MusicBrainz::BaseModel do
     
     describe '#validate_type' do
       context 'when there is a specific implementation for the provided type' do
-        let(:type) { [ Integer, Float, String, Date ].sample }
+        let(:type) { [ Integer, Float, Date ].sample }
         let(:value) { 'sample value' }
         let(:validate_method) { "validate_#{type.name.downcase}".to_sym }
         
@@ -24,7 +24,7 @@ describe MusicBrainz::BaseModel do
       end
       
       context 'when there is not a specific implementation for the provided type' do
-        let(:type) { Hash }
+        let(:type) { [ String, Hash ].sample }
         let(:value) { type.new }
         
         it 'returns the provided value' do
