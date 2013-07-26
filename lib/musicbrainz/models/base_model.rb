@@ -11,7 +11,7 @@ module MusicBrainz
         attr_reader name
 
         define_method("#{name}=") do |val|
-          instance_variable_set("@#{name}", validate_type(val, type))
+          instance_variable_set("@#{name}", parse_type(val, type))
         end
       end
 
@@ -70,20 +70,20 @@ module MusicBrainz
 
       private
       
-      def validate_type(value, type)
-        validate_method = "validate_#{type.name.downcase}".to_sym
-        self.class.private_method_defined?(validate_method) ? send(validate_method, value) : value
+      def parse_type(value, type)
+        parse_method = "parse_#{type.name.downcase}".to_sym
+        self.class.private_method_defined?(parse_method) ? send(parse_method, value) : value
       end
 
-      def validate_integer(value)
+      def parse_integer(value)
         value.to_i
       end
       
-      def validate_float(value)
+      def parse_float(value)
         value.to_f
       end
 
-      def validate_date(value)
+      def parse_date(value)
         value = if value.nil? or value == ""
           [2030, 12, 31]
         elsif value.split("-").length == 1

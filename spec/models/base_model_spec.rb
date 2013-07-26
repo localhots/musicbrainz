@@ -10,17 +10,17 @@ describe MusicBrainz::BaseModel do
     
     subject { MusicBrainz::BaseModelSubclass.new }
     
-    describe '#validate_type' do
+    describe '#parse_type' do
       context 'when there is a specific implementation for the provided type' do
         let(:type) { [ Integer, Float, Date ].sample }
         let(:value) { 'sample value' }
-        let(:validate_method) { "validate_#{type.name.downcase}".to_sym }
+        let(:parse_method) { "parse_#{type.name.downcase}".to_sym }
         
-        it 'validates the value with the specific implementation' do
-          subject.should_receive(validate_method).with(value)
+        it 'parses the value with the specific implementation' do
+          subject.should_receive(parse_method).with(value)
         end
         
-        after { subject.send(:validate_type, value, type) }
+        after { subject.send(:parse_type, value, type) }
       end
       
       context 'when there is not a specific implementation for the provided type' do
@@ -28,35 +28,35 @@ describe MusicBrainz::BaseModel do
         let(:value) { type.new }
         
         it 'returns the provided value' do
-          subject.send(:validate_type, value, type).should eql(value)
+          subject.send(:parse_type, value, type).should eql(value)
         end
       end
     end
     
-    describe '#validate_integer' do
+    describe '#parse_integer' do
       let(:value) { '1' }
       
       it 'returns the corresponding Integer object' do
-        subject.send(:validate_integer, value).should eql(1)
+        subject.send(:parse_integer, value).should eql(1)
       end
     end
     
-    describe '#validate_float' do
+    describe '#parse_float' do
       let(:value) { '0.1' }
       
       it 'returns the corresponding Float object' do
-        subject.send(:validate_float, value).should eql(0.1)
+        subject.send(:parse_float, value).should eql(0.1)
       end
     end
     
-    describe '#validate_date' do
-      let(:validated_date) { subject.send(:validate_date, value) }
+    describe '#parse_date' do
+      let(:parsed_date) { subject.send(:parse_date, value) }
       
       context 'when the value is nil' do
         let(:value) { nil }
       
         it 'returns a Date object corresponding to 2030-12-31' do
-          validated_date.should == Date.new(2030, 12, 31)
+          parsed_date.should == Date.new(2030, 12, 31)
         end
       end
     
@@ -64,7 +64,7 @@ describe MusicBrainz::BaseModel do
         let(:value) { '1995' }
       
         it 'returns a Date object corresponding to the last day of the year' do
-          validated_date.should == Date.new(1995, 12, 31)
+          parsed_date.should == Date.new(1995, 12, 31)
         end
       end
     
@@ -72,7 +72,7 @@ describe MusicBrainz::BaseModel do
         let(:value) { '1995-04' }
       
         it 'returns a Date object corresponding to the last day of the month' do
-          validated_date.should == Date.new(1995, 4, 30)
+          parsed_date.should == Date.new(1995, 4, 30)
         end
       end
     
@@ -80,7 +80,7 @@ describe MusicBrainz::BaseModel do
         let(:value) { '1995-04-30' }
       
         it 'returns the corresponding Date object' do
-          validated_date.should == Date.new(1995, 4, 30)
+          parsed_date.should == Date.new(1995, 4, 30)
         end
       end
     end
