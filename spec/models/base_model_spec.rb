@@ -33,6 +33,14 @@ describe MusicBrainz::BaseModel do
       end
     end
     
+    describe '#validate_integer' do
+      let(:value) { '1' }
+      
+      it 'returns the corresponding Integer object' do
+        subject.send(:validate_integer, value).should eql(1)
+      end
+    end
+    
     describe '#validate_date' do
       let(:validated_date) { subject.send(:validate_date, value) }
       
