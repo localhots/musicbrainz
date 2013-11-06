@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module MusicBrainz
   class Configuration
     attr_accessor :app_name, :app_version, :contact,

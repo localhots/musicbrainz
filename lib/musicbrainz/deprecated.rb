@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module MusicBrainz
   module Deprecated
     module ProxyConfig

@@ -1,7 +1,7 @@
-# encoding: UTF-8
+# -*- encoding : utf-8 -*-
 module MusicBrainz
   module Bindings
-    module TrackSearch
+    module RecordingSearch 
       def parse(xml)
         xml.xpath('./recording-list/recording').map do |xml|
           {
