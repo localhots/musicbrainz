@@ -59,6 +59,7 @@ module MusicBrainz
 			end
 
 			def underscore_name
+				# self.name[13..-1] => removes MusicBrainz::
 				self.name[13..-1].underscore
 			end
 
