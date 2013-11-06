@@ -22,17 +22,16 @@ describe MusicBrainz::Artist do
 
   it "should return search results in the right order and pass back the correct score" do
     matches = MusicBrainz::Artist.search('Chris Martin')
-
-    matches[0][:score].should == 100
-    matches[0][:id].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
-    matches[1][:score].should == 100
-    matches[1][:id].should == "af2ab893-3212-4226-9e73-73a1660b6952"
+    matches[2][:score].should == 100
+    matches[2][:id].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
+    matches[3][:score].should == 100
+    matches[3][:id].should == "af2ab893-3212-4226-9e73-73a1660b6952"
   end
 
   it "finds name first than alias" do
     matches = MusicBrainz::Artist.search('Chris Martin')
     matches.length.should be > 0
-    matches.first[:mbid].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
+    matches[2][:mbid].should == "98d1ec5a-dd97-4c0b-9c83-7928aac89bca"
   end
 
   it "gets correct result by name" do
