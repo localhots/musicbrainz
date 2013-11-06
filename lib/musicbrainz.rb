@@ -1,3 +1,7 @@
+# -*- encoding : utf-8 -*-
+#!/bin/env ruby
+# encoding: utf-8
+
 require "digest/sha1"
 require "fileutils"
 require "date"
@@ -20,6 +24,7 @@ require "musicbrainz/models/artist"
 require "musicbrainz/models/release_group"
 require "musicbrainz/models/release"
 require "musicbrainz/models/track"
+require "musicbrainz/models/recording"
 
 require "musicbrainz/bindings/artist"
 require "musicbrainz/bindings/artist_search"
@@ -30,7 +35,8 @@ require "musicbrainz/bindings/release_group_releases"
 require "musicbrainz/bindings/release"
 require "musicbrainz/bindings/release_tracks"
 require "musicbrainz/bindings/track"
-require "musicbrainz/bindings/track_search"
+require "musicbrainz/bindings/recording"
+require "musicbrainz/bindings/recording_search"
 
 module MusicBrainz
   GH_PAGE_URL = "http://git.io/brainz"

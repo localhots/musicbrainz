@@ -121,11 +121,10 @@ MusicBrainz::Release.find(id)
 }
 ```
 
-MusicBrainz::Track
+MusicBrainz::Track (depreciated, now called Recording)
 ```ruby
 # Class Methods
 MusicBrainz::Track.find(id)
-MusicBrainz::ReleaseGroup.search(artist_name, track_name)
 
 # Fields
 {
@@ -133,6 +132,23 @@ MusicBrainz::ReleaseGroup.search(artist_name, track_name)
   :recording_id => String,
   :title        => String,
   :length       => Integer
+}
+```
+
+MusicBrainz::Recording
+```ruby
+# Class Methods
+MusicBrainz::Recording.find(id)
+MusicBrainz::Recording.search(track_name, artist_name)
+
+# Fields
+{
+  :id     	=> Integer,
+  :mbid			=> Integer,
+  :title		=> String,
+  :artist		=> String,
+	:releases	=> String,
+	:score		=> Integer
 }
 ```
 
