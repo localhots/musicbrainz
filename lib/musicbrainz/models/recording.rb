@@ -1,7 +1,7 @@
 module MusicBrainz
   class Recording < BaseModel
-    field :id, Integer
-    field :mbid, Integer
+    field :id, String
+    field :mbid, String
     field :title, String
     field :artist, String
 		field :releases, String
