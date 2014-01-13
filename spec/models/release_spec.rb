@@ -35,4 +35,12 @@ describe MusicBrainz::Release do
     tracks.first.title.should == "Empire"
     tracks.first.length.should == 233013
   end
+
+  it "gets a list of matching releases for a discid" do
+    releases = MusicBrainz::Release.find_by_discid("pmzhT6ZlFiwSRCdVwV0eqire5_Y-")
+    releases.length.should == 2
+    releases.first.id.should == "7a31cd5f-6a57-4fca-a731-c521df1d3b78"
+    releases.first.title.should == "Kveikur"
+    releases.first.asin.should == "B00C1GBOU6"
+  end
 end
