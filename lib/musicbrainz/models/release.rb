@@ -28,8 +28,8 @@ module MusicBrainz
       end
 
       def find_by_discid(id)
-        client.load(:discid, { id: id, inc: [:media, :release_groups] }, {
-          binding: :release_group_releases,
+        client.load(:discid, { id: id }, {
+          binding: :discid_releases,
           create_models: :release
         })
       end
