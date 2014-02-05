@@ -36,7 +36,9 @@ module MusicBrainz
 
       def find_by_name(name)
         matches = search(name)
-        matches.empty? ? nil : find(matches.first[:id])
+        if matches and not matches.empty?
+          find(matches.first[:id])
+        end
       end
     end
   end
