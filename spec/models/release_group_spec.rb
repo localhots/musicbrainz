@@ -66,9 +66,15 @@ describe MusicBrainz::ReleaseGroup do
   
   describe '#releases' do
     it "gets correct release group's releases" do
+      MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/release-group/6f33e0f0-cde2-38f9-9aee-2c60af8d1a61?inc=url-rels').
+      and_return({ status: 200, body: File.open(File.join(File.dirname(__FILE__), "../fixtures/release_group/entity.xml")).read})
+      
+      MusicBrainz::Client.any_instance.stub(:get_contents).with('http://musicbrainz.org/ws/2/release?release-group=6f33e0f0-cde2-38f9-9aee-2c60af8d1a61&inc=media+release-groups&limit=100').
+      and_return({ status: 200, body: File.open(File.join(File.dirname(__FILE__), "../fixtures/release/list.xml")).read})
+      
       releases = MusicBrainz::ReleaseGroup.find("6f33e0f0-cde2-38f9-9aee-2c60af8d1a61").releases
       releases.length.should be >= 5
-      releases.first.id.should == "2225dd4c-ae9a-403b-8ea0-9e05014c778f"
+      releases.first.id.should == "30d5e730-ce0a-464d-93e1-7d76e4bb3e31"
       releases.first.status.should == "Official"
       releases.first.title.should == "Empire"
       releases.first.date.should == Date.new(2006, 8, 28)
