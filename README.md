@@ -158,4 +158,4 @@ bundle exec irb -r musicbrainz
 
 ### Copyright
 
-Copyright (c) 2011 Gregory Eremin. See [LICENSE](https://raw.github.com/magnolia-fan/musicbrainz/master/LICENSE) for further details.
+Copyright (c) 2014 Gregory Eremin. See [LICENSE](https://raw.github.com/magnolia-fan/musicbrainz/master/LICENSE) for further details.
