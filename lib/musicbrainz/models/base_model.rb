@@ -11,7 +11,7 @@ module MusicBrainz
         attr_reader name
 
         define_method("#{name}=") do |val|
-          instance_variable_set("@#{name}", validate_type(val, type))
+          instance_variable_set("@#{name}", parse_type(val, type))
         end
       end
 
@@ -68,31 +68,33 @@ module MusicBrainz
         MusicBrainz.client
       end
 
-    private
+      private
+      
+      def parse_type(value, type)
+        parse_method = "parse_#{type.name.downcase}".to_sym
+        self.class.private_method_defined?(parse_method) ? send(parse_method, value) : value
+      end
 
-      def validate_type(val, type)
-        if type == Integer
-          val.to_i
-        elsif type == Float
-          val.to_f
-        elsif type == String
-          val.to_s
-        elsif type == Date
-          val = if val.nil? or val == ""
-            [2030, 12, 31]
-          elsif val.split("-").length == 1
-            [val.split("-").first.to_i, 12, 31]
-          elsif val.split("-").length == 2
-            val = val.split("-").map(&:to_i)
-            [val.first, val.last, -1]
-          else
-            val.split("-").map(&:to_i)
-          end
-          
-          Date.new(*val)
+      def parse_integer(value)
+        value.to_i
+      end
+      
+      def parse_float(value)
+        value.to_f
+      end
+
+      def parse_date(value)
+        value = if value.nil? or value == ""
+          [2030, 12, 31]
+        elsif value.split("-").length == 1
+          [value.split("-").first.to_i, 12, 31]
+        elsif value.split("-").length == 2
+          value = value.split("-").map(&:to_i)
+          [value.first, value.last, -1]
         else
-          val
-        end
+          value.split("-").map(&:to_i)
+        end        
+        Date.new(*value)
       end
     end
   end
