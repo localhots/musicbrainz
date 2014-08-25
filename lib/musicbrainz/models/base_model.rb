@@ -44,8 +44,9 @@ module MusicBrainz
 			def build_query(hash)
 				return ["#{hash.first[0].to_s}:\"#{hash.first[1]}\""] if hash.size ==1
 				arr ||= []
+        condition = hash.delete(:condition)
 				hash.each { |k, v| arr << "#{k.to_s}:\"#{hash[k]}\"" }
-				arr.join(' AND ')
+        arr.join(" #{(condition || 'AND').to_s.upcase} ")
 			end
 
 			def escape_strings(hash)

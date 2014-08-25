@@ -25,7 +25,11 @@ module MusicBrainz
       end
 
       def search(name)
-				super({artist: name})
+        if name.is_a?(String)
+  				super({artist: name})
+        elsif name.is_a?(Hash)
+          super(name)
+        end
       end
 
       def discography(mbid)
