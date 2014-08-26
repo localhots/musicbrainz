@@ -26,7 +26,7 @@ module MusicBrainz
 
       def search(name)
         if name.is_a?(String)
-  				super({artist: name})
+          super({artist: name})
         elsif name.is_a?(Hash)
           super(name)
         end
