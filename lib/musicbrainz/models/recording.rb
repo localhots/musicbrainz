@@ -22,9 +22,9 @@ module MusicBrainz
         })
       end
 
-			def search(hash)
-				super(hash)
-			end
+      def search(hash)
+        super(hash)
+      end
     end
   end
 end
