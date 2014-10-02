@@ -4,6 +4,7 @@ module MusicBrainz
     field :recording_id, String
     field :title, String
     field :length, Integer
+    field :disc, Integer
 
     class << self
       def find(id)
