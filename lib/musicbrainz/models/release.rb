@@ -19,6 +19,13 @@ module MusicBrainz
       }) unless @id.nil?
     end
 
+    def artists
+      @artists ||= client.load(:artist, {release: id}, {
+        binding: :release_artists,
+        create_models: :artist
+      }) unless @id.nil?
+    end
+
     class << self
       def find(id)
         client.load(:release, { id: id, inc: [:media, :release_groups] }, {
