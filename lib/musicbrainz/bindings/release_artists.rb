@@ -2,7 +2,7 @@ module MusicBrainz
   module Bindings
     module ReleaseArtists
       def parse(xml)
-        xml.xpath('./artist-list').map do |xml|
+        xml.xpath('./release/artist-credit/name-credit').map do |xml|
           MusicBrainz::Bindings::Artist.parse(xml)
         end
       end

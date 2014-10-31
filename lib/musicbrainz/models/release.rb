@@ -20,7 +20,7 @@ module MusicBrainz
     end
 
     def artists
-      @artists ||= client.load(:artist, {release: id}, {
+      @artists ||= client.load(:release, {id: id, inc: [:artist_credits]}, {
         binding: :release_artists,
         create_models: :artist
       }) unless @id.nil?
