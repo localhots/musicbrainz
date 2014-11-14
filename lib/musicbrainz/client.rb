@@ -27,7 +27,10 @@ module MusicBrainz
         model_class_for(params[:create_model]).new(data)
       elsif params[:create_models]
         models = data.map{ |item| model_class_for(params[:create_models]).new(item) }
-        models.sort!{ |a, b| a.send(params[:sort]) <=> b.send(params[:sort]) } if params[:sort]
+        params[:sort] = [params[:sort]] if params[:sort].try(:is_a?, Symbol)
+        models.sort! do |a, b| 
+          params[:sort].reverse_each.inject(true) { |m, s| m && a.send(s) <=> b.send(s) }
+        end if params[:sort]
         models
       else
         data

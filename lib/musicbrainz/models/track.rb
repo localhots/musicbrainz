@@ -1,6 +1,7 @@
 module MusicBrainz
   class Track < BaseModel
     field :position, Integer
+    field :disc, Integer
     field :recording_id, String
     field :title, String
     field :length, Integer
