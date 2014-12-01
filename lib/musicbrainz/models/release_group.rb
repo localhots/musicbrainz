@@ -35,7 +35,7 @@ module MusicBrainz
       
       def find_by_artist_and_title(artist_name, title, type = nil )
         matches = search(artist_name, title, type)
-        matches.empty? ? nil : find(matches.first[:id])
+        matches.nil? || matches.empty? ? nil : find(matches.first[:id])
       end
     end
   end
