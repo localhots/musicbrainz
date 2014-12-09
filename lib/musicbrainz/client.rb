@@ -1,4 +1,7 @@
 module MusicBrainz
+
+  class RateLimit < Exception ; end
+
   class Client
     include ClientModules::TransparentProxy
     include ClientModules::FailsafeProxy
@@ -18,6 +21,7 @@ module MusicBrainz
       url = build_url(resource, query)
       response = get_contents(url)
 
+      raise RateLimit if response[:status] == 503
       return nil if response[:status] != 200
 
       xml = Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata')
