@@ -11,7 +11,7 @@ module MusicBrainz
       return @release_groups if @release_groups || @id.nil? || do_not_search
       
       @release_groups ||= client.search(
-        'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels] }, sort: :first_release_date
+        'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels], limit: 500 }, sort: :first_release_date
       )
     end
     
