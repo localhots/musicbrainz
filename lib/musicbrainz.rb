@@ -2,7 +2,7 @@ require 'digest/sha1'
 require 'fileutils'
 require 'faraday'
 require 'roxml'
-require File.expand_path('vendor_extensions/roxml')
+require File.expand_path('../vendor_extensions/roxml', File.dirname(__FILE__))
 require 'rexml/document'
 
 module MusicBrainz
