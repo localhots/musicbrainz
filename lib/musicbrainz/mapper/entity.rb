@@ -26,7 +26,7 @@ module MusicBrainz
       end
       
       def to_primitive
-        do_not_search = true
+        self.do_not_search = true
         
         hash = {}
         
