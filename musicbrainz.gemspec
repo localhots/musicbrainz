@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'faraday'
   gem.add_dependency 'roxml', '~> 3.3.1'
-  gem.add_dependency 'nokogiri', '1.5.9' # 1.6.0 from '@score' is not compatible with ext:score="100" anymore
+  gem.add_dependency 'nokogiri', '~> 1.6.5' # '1.5.9' # 1.6.0 from '@score' is not compatible with ext:score="100" anymore
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'awesome_print'
   gem.add_development_dependency 'simplecov'
