@@ -15,18 +15,30 @@ module MusicBrainz
       return @releases if @releases || do_not_search
       
       @releases ||= client.search(
-        'MusicBrainz::Release', { release_group: id, inc: [:media, :release_groups] }.merge(query), sort: :date
+        'MusicBrainz::Release', { release_group: id, inc: [:media, :release_groups, :recordings], limit: 100 }.merge(query), sort: :date
       )
     end
 
     class << self
-      def search(artist_name, title, options = {})
-        artist_name = CGI.escape(artist_name).gsub(/\!/, '\!')
-        title = CGI.escape(title).gsub(/\!/, '\!')
-        query = ["artist:\"#{artist_name}\"", "releasegroup:\"#{title}\""]
-        query << "type: #{options[:type]}" if options[:type]
+      def search(artist, title, options = {})
+        if artist.split('-').length != 5
+          artist = CGI.escape(artist).gsub(/\!/, '\!')  
+        end
         
-        client.search('MusicBrainz::ReleaseGroup', query.join(' AND '), create_models: false)
+        title = CGI.escape(title).gsub(/\!/, '\!')
+        extra_query = options[:extra_query] ? options[:extra_query] : ''
+        extra_query += " AND type:#{options[:type]}" if options[:type]
+        
+        params = {}
+        params[:offset] = options[:offset] if options.has_key? :offset
+        
+        if artist.split('-').length == 5
+          params[:query] = "arid:#{artist} AND releasegroup:\"#{title}\" #{extra_query}"
+          client.search('MusicBrainz::ReleaseGroup', params, create_models: false)
+        else
+          params[:query] = "artistname:\"#{artist}\" AND releasegroup:\"#{title}*\" #{extra_query}"
+          client.search('MusicBrainz::ReleaseGroup', params, create_models: false)
+        end
       end
       
       def find_by_artist_and_title(artist_name, title, options = {})
