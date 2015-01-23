@@ -11,8 +11,8 @@ module MusicBrainz
       end
       
       def self.to_date(val)
-        val = if val.nil? or val == ""
-          [2030, 12, 31]
+        val = if val.nil? || val == ""
+          nil
         elsif val.split("-").length == 1
           [val.split("-").first.to_i, 12, 31]
         elsif val.split("-").length == 2
@@ -22,7 +22,7 @@ module MusicBrainz
           val.split("-").map(&:to_i)
         end
         
-        Date.new(*val)
+        val == nil ? val : Date.new(*val)
       end
       
       def to_primitive
