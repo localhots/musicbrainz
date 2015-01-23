@@ -34,7 +34,6 @@ module MusicBrainz
       
       params = { query: params } if params.is_a?(String)
       params = { limit: 10 }.merge(params)
-      
       response = get_contents(build_url(resource, params))
 
       return nil unless response[:status] == 200
@@ -46,7 +45,7 @@ module MusicBrainz
       options = { create_models: true }.merge(options) 
       
       if options[:create_models]
-        models.sort!{ |a, b| a.send(options[:sort]) <=> b.send(options[:sort]) } if options[:sort]
+        models.sort!{ |a, b| a.send(options[:sort]) && b.send(options[:sort]) ? a.send(options[:sort]) <=> b.send(options[:sort]) : a.send(options[:sort]) ? 1 : - 1} if options[:sort]
         models
       else
         models.to_primitive
