@@ -31,12 +31,6 @@ module MusicBrainz
         matches = search(artist_name, title, options)
         matches.empty? ? nil : find(matches.first[:id])
       end
-      
-      def by_release_id(release_id)
-        client.search(
-          'MusicBrainz::Recording', { query: "reid:#{release_id}", limit: 100 }
-        )
-      end
     end
   end
 end
