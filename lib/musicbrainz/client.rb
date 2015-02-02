@@ -39,7 +39,7 @@ module MusicBrainz
       return nil unless response[:status] == 200
 
       models = MusicBrainz::Mapper::List.from_xml(
-        Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata/*').to_xml
+        Nokogiri::XML.parse(response[:body]).remove_namespaces!.xpath('/metadata/*').to_xml.gsub('ext:score', 'score')
       )
       
       options = { create_models: true }.merge(options) 

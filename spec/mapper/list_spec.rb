@@ -16,7 +16,7 @@ describe MusicBrainz::Mapper::List do
         <track-count>#{attributes[:track_count]}</track-count>
         <artist ext:score="#{artists.first.first}"><name>#{artists.first.last}</name></artist>
         <artist id="d7102b7e-5a12-41b0-9050-d5762d22e2cb" type="Person" ext:score="#{artists.last.first}"><name>#{artists.last.last}</name></artist>
-      </artist-list>})
+      </artist-list>}.gsub('ext:score', 'score'))
      
       artists_list.count.should == 2
       artists_list.total_count.should == attributes[:total_count]

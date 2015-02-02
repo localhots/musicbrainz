@@ -7,7 +7,7 @@ describe MusicBrainz::Artist do
     it 'delegates to client properly' do
       artist_name = 'Kasabian'
       
-      MusicBrainz::Client.any_instance.should_receive(:search).with(described_class.to_s, "artist:#{artist_name}", create_models: false)
+      MusicBrainz::Client.any_instance.should_receive(:search).with(described_class.to_s, "artist:\"#{artist_name}\"", create_models: false)
       
       described_class.search(artist_name)
     end
@@ -42,10 +42,10 @@ describe MusicBrainz::Artist do
         id = '2225dd4c-ae9a-403b-8ea0-9e05014c778f'
         
         MusicBrainz::Client.any_instance.should_receive(:search).with(
-          'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels] }, sort: :first_release_date
+          'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels, :artist_credits], limit: 100, offset: 100 }, sort: :first_release_date
         )
         
-        described_class.new(id: id).release_groups
+        described_class.new(id: id).release_groups(offset: 100)
       end
     end
   end

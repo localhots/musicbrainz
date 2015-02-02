@@ -5,14 +5,28 @@ require "spec_helper"
 describe MusicBrainz::ReleaseGroup do
   describe '.search' do
     context 'without type filter' do
-      it "searches release group by artist name and title" do
-        expected = { artist_name: 'Kasabian', title: 'Empire' }
-        
-        MusicBrainz::Client.any_instance.should_receive(:search).with(
-          described_class.to_s, %Q{artist:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}"}, create_models: false
-        )
-        
-        described_class.search(expected[:artist_name], expected[:title])
+      context 'search by artist name and title' do
+        it 'delegates to client properly' do
+          expected = { artist_name: 'Kasabian', title: 'Empire' }
+          
+          MusicBrainz::Client.any_instance.should_receive(:search).with(
+            described_class.to_s, { query: %Q{artistname:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}*" } }, create_models: false
+          )
+          
+          described_class.search(expected[:artist_name], expected[:title])
+        end
+      end
+      
+      context 'search by MusicBrainz ID of artist and title' do
+        it 'delegates to client properly' do
+          expected = { mbid: '69b39eab-6577-46a4-a9f5-817839092033', title: 'Empire' }
+          
+          MusicBrainz::Client.any_instance.should_receive(:search).with(
+            described_class.to_s, { query: %Q{arid:#{expected[:mbid]} AND releasegroup:"#{expected[:title]}*" } }, create_models: false
+          )
+          
+          described_class.search(expected[:mbid], expected[:title])
+        end
       end
     end
     
@@ -21,7 +35,7 @@ describe MusicBrainz::ReleaseGroup do
         expected = { artist_name: 'Kasabian', title: 'Empire', type: 'Album' }
         
         MusicBrainz::Client.any_instance.should_receive(:search).with(
-          described_class.to_s, %Q{artist:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}" AND type: #{expected[:type]}}, 
+          described_class.to_s, { query: %Q{artistname:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}*"  AND type:#{expected[:type]}} }, 
           create_models: false
         )
         
@@ -65,7 +79,7 @@ describe MusicBrainz::ReleaseGroup do
         id = '2225dd4c-ae9a-403b-8ea0-9e05014c778f'
         
         MusicBrainz::Client.any_instance.should_receive(:search).with(
-          'MusicBrainz::Release', { release_group: id, inc: [:media, :release_groups] }, sort: :date
+          'MusicBrainz::Release', { release_group: id, inc: [:media, :release_groups, :recordings], limit: 100 }, sort: :date
         )
         
         described_class.new(id: id).releases

@@ -33,7 +33,7 @@ module MusicBrainz
         params[:offset] = options[:offset] if options.has_key? :offset
         
         if artist.split('-').length == 5
-          params[:query] = "arid:#{artist} AND releasegroup:\"#{title}\" #{extra_query}"
+          params[:query] = "arid:#{artist} AND releasegroup:\"#{title}*\" #{extra_query}"
           client.search('MusicBrainz::ReleaseGroup', params, create_models: false)
         else
           params[:query] = "artistname:\"#{artist}\" AND releasegroup:\"#{title}*\" #{extra_query}"

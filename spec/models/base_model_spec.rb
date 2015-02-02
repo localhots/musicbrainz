@@ -34,7 +34,7 @@ describe MusicBrainz::BaseModel do
       expected = { artist_name: 'Kasabian', title: 'Empire' }
       
       MusicBrainz::Client.any_instance.should_receive(:search).with(
-        'MusicBrainz::Recording', %Q{artist:"#{expected[:artist_name]}" AND recording:"#{expected[:title]}"}, create_models: false
+        'MusicBrainz::Recording', { query: %Q{artist:"#{expected[:artist_name]}" AND recording:"#{expected[:title]}"} }, create_models: false
       )
       
       MusicBrainz::Recording.search(expected[:artist_name], expected[:title])

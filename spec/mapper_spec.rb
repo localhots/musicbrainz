@@ -41,10 +41,10 @@ describe MusicBrainz::Mapper do
 
         context 'IncompleteDate' do
           context 'nil value' do
-            it 'returns 2030-12-31' do
+            it 'returns nil' do
               xml = '<release-group><first-release-date></first-release-date></release-group>'
               release_group = MusicBrainz::ReleaseGroup.from_xml(xml)
-              release_group.first_release_date.should == Date.new(2030, 12, 31)
+              release_group.first_release_date.should == nil
             end
           end
 
