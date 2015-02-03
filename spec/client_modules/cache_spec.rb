@@ -4,8 +4,8 @@ require "ostruct"
 require "spec_helper"
 
 describe MusicBrainz::ClientModules::CachingProxy do
-  let(:old_cache_path){ File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'spec_cache') }
-  let(:tmp_cache_path){ File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'cache_module_spec_cache') }
+  def old_cache_path; File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'spec_cache'); end
+  def tmp_cache_path; File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'cache_module_spec_cache'); end
   let(:test_mbid){ "69b39eab-6577-46a4-a9f5-817839092033" }
   let(:test_cache_file){ "#{tmp_cache_path}/03/48/ec/6c2bee685d9a96f95ed46378f624714e7a4650b0d44c1a8eee5bac2480.xml" }
   let(:test_cache_file_without_hexdigest_url){"#{tmp_cache_path}/artist/69b39eab-6577-46a4-a9f5-817839092033/inc=url-rels.xml"}
@@ -33,16 +33,16 @@ describe MusicBrainz::ClientModules::CachingProxy do
       }.each do |cache_file,hexdigest_url|
         MusicBrainz.config.hexdigest_url = hexdigest_url
         
-        File.exist?(cache_file).should be_false
+        expect(File.exist?(cache_file)).to be_falsey
   
         # Stubbing
-        MusicBrainz.client.http.stub(:get).and_return(OpenStruct.new(status: 200, body: test_response))
-        MusicBrainz.client.http.should_receive(:get).once
+        allow(MusicBrainz.client.http).to receive(:get).and_return(OpenStruct.new(status: 200, body: test_response))
+        expect(MusicBrainz.client.http).to receive(:get).once
   
         2.times do
           artist = MusicBrainz::Artist.find(test_mbid)
-          artist.should be_a_kind_of(MusicBrainz::Artist)
-          File.exist?(cache_file).should be_true
+          expect(artist.is_a?(MusicBrainz::Artist)).to be_truthy
+          expect(File.exist?(cache_file)).to be_truthy
         end
   
         MusicBrainz.client.clear_cache
@@ -53,19 +53,19 @@ describe MusicBrainz::ClientModules::CachingProxy do
   context "with cache disabled" do
     it "calls http twice when requesting the resource twice" do
       MusicBrainz.config.perform_caching = false
-      File.exist?(test_cache_file).should be_false
+      expect(File.exist?(test_cache_file)).to be_falsey
 
       # Hacking for test performance purposes
       MusicBrainz.config.query_interval = 0.0
 
       # Stubbing
-      MusicBrainz.client.http.stub(:get).and_return(OpenStruct.new(status: 200, body: test_response))
-      MusicBrainz.client.http.should_receive(:get).twice
+      allow(MusicBrainz.client.http).to receive(:get).and_return(OpenStruct.new(status: 200, body: test_response))
+      expect(MusicBrainz.client.http).to receive(:get).twice
 
       2.times do
         artist = MusicBrainz::Artist.find(test_mbid)
-        artist.should be_a_kind_of(MusicBrainz::Artist)
-        File.exist?(test_cache_file).should be_false
+        expect(artist.is_a?(MusicBrainz::Artist)).to be_truthy
+        expect(File.exist?(test_cache_file)).to be_falsey
       end
     end
   end

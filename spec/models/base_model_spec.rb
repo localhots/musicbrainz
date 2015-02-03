@@ -8,7 +8,7 @@ describe MusicBrainz::BaseModel do
       it 'delegates it to the client properly with standard includes' do
         mbid = 'bcf7c1d6-8cb5-41ca-a798-cb6e994f1bda'
         
-        MusicBrainz::Client.any_instance.should_receive(:find).with(subject_type, mbid, [:url_rels])
+        expect_any_instance_of(MusicBrainz::Client).to receive(:find).with(subject_type, mbid, [:url_rels])
         
         MusicBrainz.const_get(subject_type.split('::').pop.to_sym).find(mbid)
       end 
@@ -22,7 +22,7 @@ describe MusicBrainz::BaseModel do
       it 'delegates it to the client properly with standard includes plus manual includes' do
         mbid = 'bcf7c1d6-8cb5-41ca-a798-cb6e994f1bda'
         
-        MusicBrainz::Client.any_instance.should_receive(:find).with('MusicBrainz::Artist', mbid, [:url_rels, :tags])
+        expect_any_instance_of(MusicBrainz::Client).to receive(:find).with('MusicBrainz::Artist', mbid, [:url_rels, :tags])
         
         MusicBrainz::Artist.with(:tags).find(mbid)
       end 
@@ -33,7 +33,7 @@ describe MusicBrainz::BaseModel do
     it 'delegates it to the client properly' do
       expected = { artist_name: 'Kasabian', title: 'Empire' }
       
-      MusicBrainz::Client.any_instance.should_receive(:search).with(
+      expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
         'MusicBrainz::Recording', { query: %Q{artist:"#{expected[:artist_name]}" AND recording:"#{expected[:title]}"} }, create_models: false
       )
       
@@ -46,7 +46,7 @@ describe MusicBrainz::BaseModel do
       it 'determines all includes through the INCLUDE constant of the model' do
         MusicBrainz::Artist.with(:all)
         
-        MusicBrainz::Artist.includes.should == MusicBrainz::Artist::INCLUDES.map(&:to_sym)
+        expect(MusicBrainz::Artist.includes).to be == MusicBrainz::Artist::INCLUDES.map(&:to_sym)
         
         MusicBrainz::Artist.includes = []
       end
@@ -83,14 +83,14 @@ describe MusicBrainz::BaseModel do
     it 'returns a sorted list' do
       expected = [{ position: 2 }, { position: 1 }].map{|attributes| MusicBrainz::Track.new(attributes)}
       
-      MusicBrainz::Release.should_receive(:find).with('2225dd4c-ae9a-403b-8ea0-9e05014c778f', [:recordings, :media]).and_return(
+      allow(MusicBrainz::Release).to receive(:find).with('2225dd4c-ae9a-403b-8ea0-9e05014c778f', [:recordings, :media]).and_return(
         MusicBrainz::Release.new(tracks: expected)
       )
       
       got = MusicBrainz::Release.new(id: '2225dd4c-ae9a-403b-8ea0-9e05014c778f').tracks
        
-      got.first.position.should == 1
-      got.last.position.should == 2
+      expect(got.first.position).to be == 1
+      expect(got.last.position).to be == 2
     end
   end
 end

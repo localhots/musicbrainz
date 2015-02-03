@@ -11,7 +11,7 @@ describe MusicBrainz::Concerns::ArtistName do
       '</artist-credit></recording>'
     )
 
-    recording.artist_name.should == 'Artist 1 & Artist 2'
+    expect(recording.artist_name).to be == 'Artist 1 & Artist 2'
   end
   
   it 'principally works' do
@@ -25,6 +25,6 @@ describe MusicBrainz::Concerns::ArtistName do
       </recording> 
     })
 
-    recording.artist_name.should == 'Artist 1 feat. Artist 2 and Artist 3'
+    expect(recording.artist_name).to be == 'Artist 1 feat. Artist 2 and Artist 3'
   end
 end

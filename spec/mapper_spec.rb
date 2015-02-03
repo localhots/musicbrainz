@@ -15,8 +15,8 @@ describe MusicBrainz::Mapper do
           }
         )
         
-        artist.id.should == value
-        artist.annotation.name.should == annotation_name
+        expect(artist.id).to be == value
+        expect(artist.annotation.name).to be == annotation_name
       end
     end
   end
@@ -34,7 +34,7 @@ describe MusicBrainz::Mapper do
             
             entity = Entity.from_xml('<entity><field>1</field></entity>')
             
-            entity.field.should == 1
+            expect(entity.field).to be == 1
             Object.send(:remove_const, :Entity)
           end
         end
@@ -44,7 +44,7 @@ describe MusicBrainz::Mapper do
             it 'returns nil' do
               xml = '<release-group><first-release-date></first-release-date></release-group>'
               release_group = MusicBrainz::ReleaseGroup.from_xml(xml)
-              release_group.first_release_date.should == nil
+              expect(release_group.first_release_date).to be == nil
             end
           end
 
@@ -52,7 +52,7 @@ describe MusicBrainz::Mapper do
             it 'returns 1995-12-31' do
               xml = '<release-group><first-release-date>1995</first-release-date></release-group>'
               release_group = MusicBrainz::ReleaseGroup.from_xml(xml)
-              release_group.first_release_date.should == Date.new(1995, 12, 31)
+              expect(release_group.first_release_date).to be == Date.new(1995, 12, 31)
             end
           end
   
@@ -60,7 +60,7 @@ describe MusicBrainz::Mapper do
             it 'returns 1995-04-30' do
               xml = '<release-group><first-release-date>1995-04</first-release-date></release-group>'
               release_group = MusicBrainz::ReleaseGroup.from_xml(xml)
-              release_group.first_release_date.should == Date.new(1995, 4, 30)
+              expect(release_group.first_release_date).to be == Date.new(1995, 4, 30)
             end
           end
           
@@ -68,7 +68,7 @@ describe MusicBrainz::Mapper do
             it 'returns 1995-04-30' do
               xml = '<release-group><first-release-date>1995-04-30</first-release-date></release-group>'
               release_group = MusicBrainz::ReleaseGroup.from_xml(xml)
-              release_group.first_release_date.should == Date.new(1995, 4, 30)
+              expect(release_group.first_release_date).to be == Date.new(1995, 4, 30)
             end
           end
         end
@@ -84,7 +84,7 @@ describe MusicBrainz::Mapper do
               
               entity = Entity.from_xml("<entity><field>#{value}</field></entity>")
               
-              entity.field.should == eval(value)
+              expect(entity.field).to be == eval(value)
               Object.send(:remove_const, :Entity)
             end
           end
@@ -97,14 +97,14 @@ describe MusicBrainz::Mapper do
         it 'returns name through parent' do
           types = ['Type 1', 'Type 2']
           
-          MusicBrainz::ReleaseGroup.from_xml(
+          expect(MusicBrainz::ReleaseGroup.from_xml(
             %Q{<release-group>
               <secondary-type-list>
                 <secondary-type>#{types.first}</secondary-type>
                 <secondary-type>#{types.last}</secondary-type>
               </secondary-type-list>
             </artist>}
-          ).secondary_types.should == types
+          ).secondary_types).to be == types
         end
       end
     end
@@ -116,14 +116,14 @@ describe MusicBrainz::Mapper do
         it 'makes an exception' do
           expected = [['Eminem', ' feat. '], ['Rihanna', nil]]
           
-          MusicBrainz::Recording.from_xml(
+          expect(MusicBrainz::Recording.from_xml(
             %Q{<recording>
               <artist-credit>
                 <name-credit joinphrase="#{expected[0][1]}"><artist><name>#{expected[0][0]}</name></artist></name-credit>
                 <name-credit><artist><name>#{expected[1][0]}</name></artist></name-credit>
               </artist-credit>
             </recording>}
-          ).artists.map{|artist| [artist.name, artist.joinphrase]}.should == expected
+          ).artists.map{|artist| [artist.name, artist.joinphrase]}).to be == expected
         end  
       end
       
@@ -131,11 +131,11 @@ describe MusicBrainz::Mapper do
         it 'returns [ComplexType]' do
           collection = ['1', '2']
           
-          MusicBrainz::Artist.from_xml(
+          expect(MusicBrainz::Artist.from_xml(
             %Q{<artist>
               <recording-list><recording id="#{collection[0]}"/><recording id="#{collection[1]}"/></recording-list>
             </artist>}
-          ).recordings.map(&:id).should == collection
+          ).recordings.map(&:id)).to be == collection
         end
       end
       
@@ -143,11 +143,11 @@ describe MusicBrainz::Mapper do
         it 'returns []' do
           collection = ['1', '2']
           
-          MusicBrainz::Artist.from_xml(
+          expect(MusicBrainz::Artist.from_xml(
             %Q{<artist>
               <ipi-list><ipi>#{collection[0]}</ipi><ipi>#{collection[1]}</ipi></ipi-list>
             </artist>}
-          ).ipis.should == collection
+          ).ipis).to be == collection
         end
       end
     end

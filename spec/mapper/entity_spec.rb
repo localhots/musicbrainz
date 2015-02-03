@@ -34,8 +34,8 @@ describe MusicBrainz::Mapper::Entity do
           }
         ).to_primitive
   
-        my_entity[:sub_elements].first[:name].should == 'Dummy'
-        my_entity[:sub_elements_count].should == 1
+        expect(my_entity[:sub_elements].first[:name]).to be == 'Dummy'
+        expect(my_entity[:sub_elements_count]).to be == 1
       end
     end
     
@@ -47,7 +47,7 @@ describe MusicBrainz::Mapper::Entity do
           }
         ).to_primitive
   
-        my_entity[:array_elements].first.should == 'Dummy'
+        expect(my_entity[:array_elements].first).to be == 'Dummy'
       end
     end
   end

@@ -9,7 +9,7 @@ describe MusicBrainz::Recording do
         it 'delegates to client properly' do
           expected = { artist_name: 'Kasabian', title: 'Empire' }
         
-          MusicBrainz::Client.any_instance.should_receive(:search).with(
+          expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
             described_class.to_s, { query: %Q{artist:"#{expected[:artist_name]}" AND recording:"#{expected[:title]}"}, limit: 100, offset: 100 }, create_models: false
           )
           
@@ -21,7 +21,7 @@ describe MusicBrainz::Recording do
         it 'delegates to client properly' do
           expected = { artist_mbid: '69b39eab-6577-46a4-a9f5-817839092033', title: 'Empire' }
         
-          MusicBrainz::Client.any_instance.should_receive(:search).with(
+          expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
             described_class.to_s, { query: %Q{arid:"#{expected[:artist_mbid]}" AND recording:"#{expected[:title]}"}, limit: 100, offset: 100 }, create_models: false
           )
           
@@ -34,7 +34,7 @@ describe MusicBrainz::Recording do
       it 'searches track by artist name and title' do
         expected = { artist_name: 'Kasabian', title: 'Empire', type: 'Album' }
       
-        MusicBrainz::Client.any_instance.should_receive(:search).with(
+        expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
           described_class.to_s, { query: %Q{artist:"#{expected[:artist_name]}" AND recording:"#{expected[:title]}" AND type: #{expected[:type]}} }, create_models: false
         )
         
@@ -47,8 +47,8 @@ describe MusicBrainz::Recording do
     it 'gets first release group by artist name and title' do
       expected = { artist_name: 'Kasabian', title: 'Empire', id: 'xyz' }
       
-      MusicBrainz::Recording.should_receive(:search).with(expected[:artist_name], expected[:title], {}).and_return([{ id: expected[:id] }])
-      MusicBrainz::Recording.should_receive(:find).with(expected[:id])
+      allow(MusicBrainz::Recording).to receive(:search).with(expected[:artist_name], expected[:title], {}).and_return([{ id: expected[:id] }])
+      expect(MusicBrainz::Recording).to receive(:find).with(expected[:id])
       
       described_class.find_by_artist_and_title(expected[:artist_name], expected[:title])
     end

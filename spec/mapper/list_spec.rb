@@ -18,10 +18,10 @@ describe MusicBrainz::Mapper::List do
         <artist id="d7102b7e-5a12-41b0-9050-d5762d22e2cb" type="Person" ext:score="#{artists.last.first}"><name>#{artists.last.last}</name></artist>
       </artist-list>}.gsub('ext:score', 'score'))
      
-      artists_list.count.should == 2
-      artists_list.total_count.should == attributes[:total_count]
-      artists_list.offset.should == attributes[:offset]
-      artists_list.map{|artist| [artist.score, artist.name]}.should == artists
+      expect(artists_list.count).to be == 2
+      expect(artists_list.total_count).to be == attributes[:total_count]
+      expect(artists_list.offset).to be == attributes[:offset]
+      expect(artists_list.map{|artist| [artist.score, artist.name]}).to be == artists
     end
   end
   
@@ -37,11 +37,11 @@ describe MusicBrainz::Mapper::List do
         </relation-list>}
       </work>})
       
-      work.relations.count.should == 3
-      work.relations.keys.should == ['artist', 'recording']
-      work.relations['artist'].count.should == 2
-      work.relations['recording'].count.should == 1
-      work.relations['xyz'].count.should == 0
+      expect(work.relations.count).to be == 3
+      expect(work.relations.keys).to be == ['artist', 'recording']
+      expect(work.relations['artist'].count).to be == 2
+      expect(work.relations['recording'].count).to be == 1
+      expect(work.relations['xyz'].count).to be == 0
       
       relations_list = described_class.from_xml(%Q{<relation-list target-type="artist">
         <relation type="composer"><artist id="e4d54dd5-9eae-49d8-9a53-b5cbff13a9e5"/></relation>
@@ -51,11 +51,11 @@ describe MusicBrainz::Mapper::List do
         <relation type="performance"><recording id="20a908d5-0708-4a2b-991e-3f8644b747c5"/></relation>
       </relation-list>})
       
-      relations_list.count.should == 3
-      relations_list.keys.should == ['artist', 'recording']
-      relations_list['artist'].count.should == 2
-      relations_list['recording'].count.should == 1
-      relations_list['xyz'].count.should == 0
+      expect(relations_list.count).to be == 3
+      expect(relations_list.keys).to be == ['artist', 'recording']
+      expect(relations_list['artist'].count).to be == 2
+      expect(relations_list['recording'].count).to be == 1
+      expect(relations_list['xyz'].count).to be == 0
     end
   end
 end

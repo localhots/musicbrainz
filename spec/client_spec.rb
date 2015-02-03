@@ -7,14 +7,14 @@ describe MusicBrainz::Client do
     it 'instantiates the resource properly' do
       mbid = 'bcf7c1d6-8cb5-41ca-a798-cb6e994f1bda'
           
-      MusicBrainz::Client.any_instance.should_receive(:get_contents).with(
+      allow_any_instance_of(MusicBrainz::Client).to receive(:get_contents).with(
         "http://musicbrainz.org/ws/2/recording/#{mbid}?inc=url-rels"
       ).and_return(status: 200, body: "<metadata><recording id='#{mbid}'/></metadata>")
       
       recording = MusicBrainz::Client.new.find('MusicBrainz::Recording', mbid, [:url_rels])
       
-      recording.is_a?(MusicBrainz::Recording).should be_true
-      recording.id.should == mbid
+      expect(recording.is_a?(MusicBrainz::Recording)).to be_truthy
+      expect(recording.id).to be == mbid
     end  
   end
   
@@ -22,7 +22,7 @@ describe MusicBrainz::Client do
     before :each do
       @expected = { id: 'bcf7c1d6-8cb5-41ca-a798-cb6e994f1bda', artist_name: 'Kasabian', title: 'Empire' }
       
-      MusicBrainz::Client.any_instance.should_receive(:get_contents).with(
+      allow_any_instance_of(MusicBrainz::Client).to receive(:get_contents).with(
         %Q{http://musicbrainz.org/ws/2/recording?limit=10&query=artist:"#{@expected[:artist_name]}" AND recording:"#{@expected[:title]}"}
       ).and_return(
         status: 200, body: %Q{
@@ -34,9 +34,9 @@ describe MusicBrainz::Client do
     it 'delegates it to the client properly' do
       recordings = MusicBrainz::Client.new.search('MusicBrainz::Recording', %Q{artist:"#{@expected[:artist_name]}" AND recording:"#{@expected[:title]}"})
       
-      recordings.length.should == 1
-      recordings.first.id.should == @expected[:id]
-      recordings.first.score.should == 100
+      expect(recordings.length).to be == 1
+      expect(recordings.first.id).to be == @expected[:id]
+      expect(recordings.first.score).to be == 100
     end
     
     describe 'options' do
@@ -45,9 +45,9 @@ describe MusicBrainz::Client do
           it 'instantiates models' do
             recordings = MusicBrainz::Client.new.search('MusicBrainz::Recording', %Q{artist:"#{@expected[:artist_name]}" AND recording:"#{@expected[:title]}"})
       
-            recordings.length.should == 1
-            recordings.first.id.should == @expected[:id]
-            recordings.first.score.should == 100
+            expect(recordings.length).to be == 1
+            expect(recordings.first.id).to be == @expected[:id]
+            expect(recordings.first.score).to be == 100
           end
         end
         
@@ -57,7 +57,7 @@ describe MusicBrainz::Client do
               'MusicBrainz::Recording', %Q{artist:"#{@expected[:artist_name]}" AND recording:"#{@expected[:title]}"}, create_models: false
             )
       
-            recordings.should == [{score: 100, id: @expected[:id]}]
+            expect(recordings).to be == [{score: 100, id: @expected[:id]}]
           end
         end
       end
