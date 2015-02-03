@@ -1,8 +1,30 @@
+class FileMock
+  attr_accessor :closed, :string
+
+  def initialize
+    self.closed = false
+    self.string = ''
+  end
+  
+  def puts(value)
+    if closed
+      self.string = ''
+      self.closed = false  
+    end
+    
+    self.string += value + "\n"
+  end
+  
+  def close
+    self.closed = true
+  end
+end
+
 def stub_run(body)
-  MusicBrainz::Mapper::Generator::Base.stub(:schema).and_return(
+  allow(MusicBrainz::Mapper::Generator::Base).to receive(:schema).and_return(
     Nokogiri.parse(resource_input(body))
   )
-  File.stub(:open).and_return{ @my_file = StringIO.new }
+  allow(File).to receive(:open).and_return(@my_file = FileMock.new)
   MusicBrainz::Mapper::Generator::Base.run
 end
 
