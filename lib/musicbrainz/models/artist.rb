@@ -21,7 +21,7 @@ module MusicBrainz
     class << self
       def search(name)
         name = CGI.escape(name).gsub(/\!/, '\!')
-        client.search(to_s, "artist:\"#{name}\"", create_models: false)
+        client.search(to_s, "\"#{name}\"", create_models: false)
       end
 
       def discography(mbid)
