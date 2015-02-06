@@ -7,7 +7,7 @@ describe MusicBrainz::Artist do
     it 'delegates to client properly' do
       artist_name = 'Kasabian'
       
-      expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(described_class.to_s, "artist:\"#{artist_name}\"", create_models: false)
+      expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(described_class.to_s, "\"#{artist_name}\"", create_models: false)
       
       described_class.search(artist_name)
     end
