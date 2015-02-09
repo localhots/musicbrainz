@@ -11,7 +11,7 @@ module MusicBrainz
       end
       
       def self.to_date(val)
-        val = if val.nil? || val == ""
+        val = if val.nil? || val == '' || val == '0000-00-00'
           nil
         elsif val.split("-").length == 1
           [val.split("-").first.to_i, 12, 31]
