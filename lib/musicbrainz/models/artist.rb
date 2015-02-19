@@ -10,7 +10,8 @@ module MusicBrainz
     def release_groups(options = {})
       return @release_groups if @release_groups || @id.nil? || do_not_search
       
-      params = { artist: id, inc: [:url_rels, :artist_credits], limit: 100 }
+      extra_query = options[:extra_query] ? options[:extra_query] : ''
+      params = { query: "arid:#{id} #{extra_query}", inc: [:url_rels, :artist_credits], limit: 100 }
       params[:offset] = options[:offset] if options.has_key? :offset
       
       client.search(
