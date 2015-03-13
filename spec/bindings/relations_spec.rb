@@ -15,11 +15,11 @@ describe MusicBrainz::Bindings::Relations do
                 </relation>
               </relation-list></artist>}
             )
-            
-            described_class.parse(xml.xpath('./artist'))[:urls][:social_network].should == 'https://plus.google.com/+Madonna'
+
+            expect(described_class.parse(xml.xpath('./artist'))[:urls][:social_network]).to eq 'https://plus.google.com/+Madonna'
           end
         end
-        
+
         context 'multiple urls for relation types' do
           it 'returns an array' do
             xml = Nokogiri::XML.parse(
@@ -33,7 +33,7 @@ describe MusicBrainz::Bindings::Relations do
               </relation-list></artist>}
             )
 
-            described_class.parse(xml.xpath('./artist'))[:urls][:social_network].should == [
+            expect(described_class.parse(xml.xpath('./artist'))[:urls][:social_network]).to eq [
               'https://plus.google.com/+Madonna', 'https://www.facebook.com/madonna'
             ]
           end

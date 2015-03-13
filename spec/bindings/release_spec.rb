@@ -10,31 +10,31 @@ describe MusicBrainz::Bindings::Release do
           it 'returns CD' do
             response = '<release><medium-list count="1"><medium><format>CD</format></medium></medium-list></release>'
             xml = Nokogiri::XML.parse(response)
-            described_class.parse(xml)[:format].should == 'CD'
+            expect(described_class.parse(xml)[:format]).to eq 'CD'
           end
         end
-        
+
         context 'multiple cds' do
           it 'returns 2xCD' do
             response = '<release><medium-list count="2"><medium><format>CD</format><track-list count="11" /></medium><medium><title>bonus disc</title><format>CD</format></medium></medium-list></release>'
             xml = Nokogiri::XML.parse(response)
-            described_class.parse(xml)[:format].should == '2xCD'
+            expect(described_class.parse(xml)[:format]).to eq '2xCD'
           end
         end
-        
+
         context 'different formats' do
           it 'returns DVD + CD' do
             response = '<release><medium-list count="2"><medium><format>DVD</format></medium><medium><format>CD</format></medium></medium-list></release>'
             xml = Nokogiri::XML.parse(response)
-            described_class.parse(xml)[:format].should == 'DVD + CD'
+            expect(described_class.parse(xml)[:format]).to eq 'DVD + CD'
           end
         end
-        
+
         context 'different formats plus multiple mediums with same format' do
           it 'returns 2xCD + DVD' do
             response = '<release><medium-list count="2"><medium><format>CD</format></medium><medium><format>CD</format></medium><medium><format>DVD</format></medium></medium-list></release>'
             xml = Nokogiri::XML.parse(response)
-            described_class.parse(xml)[:format].should == '2xCD + DVD'
+            expect(described_class.parse(xml)[:format]).to eq '2xCD + DVD'
           end
         end
       end

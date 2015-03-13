@@ -1,6 +1,7 @@
 require "rubygems"
 require "bundler/setup"
 require "musicbrainz"
+require "pry"
 
 RSpec.configure do |c|
   c.order = 'random'
