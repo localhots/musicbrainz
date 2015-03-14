@@ -35,4 +35,12 @@ describe MusicBrainz::Release do
     expect(tracks.first.title).to eq "Empire"
     expect(tracks.first.length).to eq 233013
   end
+
+  it "gets a list of matching releases for a discid" do
+    releases = MusicBrainz::Release.find_by_discid("pmzhT6ZlFiwSRCdVwV0eqire5_Y-")
+    expect(releases.length).to eq 2
+    expect(releases.first.id).to eq "7a31cd5f-6a57-4fca-a731-c521df1d3b78"
+    expect(releases.first.title).to eq "Kveikur"
+    expect(releases.first.asin).to eq "B00C1GBOU6"
+  end
 end
