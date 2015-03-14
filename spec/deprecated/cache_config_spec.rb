@@ -18,15 +18,15 @@ describe MusicBrainz::Deprecated::CacheConfig do
   it "allows deprecated use of cache_path" do
     MusicBrainz.config.cache_path = "test1"
 
-    MusicBrainz::Tools::Cache.cache_path.should == "test1"
-    MusicBrainz.cache_path.should == "test1"
+    expect(MusicBrainz::Tools::Cache.cache_path).to eq "test1"
+    expect(MusicBrainz.cache_path).to eq "test1"
   end
 
   it "allows deprecated use of cache_path=" do
     MusicBrainz::Tools::Cache.cache_path = "test2"
-    MusicBrainz.config.cache_path.should == "test2"
+    expect(MusicBrainz.config.cache_path).to eq "test2"
 
     MusicBrainz.cache_path = "test3"
-    MusicBrainz.config.cache_path.should == "test3"
+    expect(MusicBrainz.config.cache_path).to eq "test3"
   end
 end
