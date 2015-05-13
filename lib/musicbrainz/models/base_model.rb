@@ -24,11 +24,16 @@ module MusicBrainz
         MusicBrainz.client
       end
 
+			def find(hash)
+				underscored_name = underscore_name.to_sym
+				client.load(underscored_name, hash, { binding: underscored_name, create_model: underscored_name })
+			end
+
 			def search(hash)
 				hash = escape_strings(hash)
 				query_val = build_query(hash)
-				underscore_name = self.name[13..-1].underscore
-				client.load(underscore_name.to_sym, { query: query_val, limit: 10 }, { binding: underscore_name.insert(-1,"_search").to_sym })
+				underscored_name = underscore_name
+				client.load(underscored_name.to_sym, { query: query_val, limit: 10 }, { binding: underscored_name.insert(-1,"_search").to_sym })
 			end
 
 			class ::String
@@ -51,6 +56,11 @@ module MusicBrainz
 			def escape_strings(hash)
 				hash.each { |k, v| hash[k] = CGI.escape(v).gsub(/\!/, '\!') }
 				hash
+			end
+
+			def underscore_name
+				# self.name[13..-1] => removes MusicBrainz::
+				self.name[13..-1].underscore
 			end
 
 			# these probably should be private... but I'm not sure how to get it to work in a module...
