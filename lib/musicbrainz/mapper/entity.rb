@@ -11,6 +11,18 @@ module MusicBrainz
       end
       
       def self.to_date(val)
+        if val.to_s.match(/\?\?/)
+          new_val = []
+          
+          val.split('-').each do |item|
+            break if item == '??'
+            
+            new_val << item
+          end
+          
+          val = new_val.join('-')
+        end
+        
         val = if val.nil? || val == '' || val == '0000-00-00'
           nil
         elsif val.split("-").length == 1
