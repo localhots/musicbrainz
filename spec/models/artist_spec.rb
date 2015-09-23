@@ -42,7 +42,7 @@ describe MusicBrainz::Artist do
         id = '2225dd4c-ae9a-403b-8ea0-9e05014c778f'
         
         expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
-          'MusicBrainz::ReleaseGroup', { artist: id, inc: [:url_rels, :artist_credits], limit: 100, offset: 100 }, sort: :first_release_date
+          'MusicBrainz::ReleaseGroup', { query: "arid:#{id} ", inc: [:url_rels, :artist_credits], limit: 100, offset: 100 }, sort: :first_release_date
         )
         
         described_class.new(id: id).release_groups(offset: 100)
