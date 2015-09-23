@@ -10,7 +10,7 @@ describe MusicBrainz::ReleaseGroup do
           expected = { artist_name: 'Kasabian', title: 'Empire' }
           
           expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
-            described_class.to_s, { query: %Q{artistname:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}*" } }, create_models: false
+            described_class.to_s, { query: %Q{artistname:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}" } }, create_models: false
           )
           
           described_class.search(expected[:artist_name], expected[:title])
@@ -22,7 +22,7 @@ describe MusicBrainz::ReleaseGroup do
           expected = { mbid: '69b39eab-6577-46a4-a9f5-817839092033', title: 'Empire' }
           
           expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
-            described_class.to_s, { query: %Q{arid:#{expected[:mbid]} AND releasegroup:"#{expected[:title]}*" } }, create_models: false
+            described_class.to_s, { query: %Q{arid:#{expected[:mbid]} AND releasegroup:"#{expected[:title]}" } }, create_models: false
           )
           
           described_class.search(expected[:mbid], expected[:title])
@@ -35,7 +35,7 @@ describe MusicBrainz::ReleaseGroup do
         expected = { artist_name: 'Kasabian', title: 'Empire', type: 'Album' }
         
         expect_any_instance_of(MusicBrainz::Client).to receive(:search).with(
-          described_class.to_s, { query: %Q{artistname:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}*"  AND type:#{expected[:type]}} }, 
+          described_class.to_s, { query: %Q{artistname:"#{expected[:artist_name]}" AND releasegroup:"#{expected[:title]}"  AND type:#{expected[:type]}} }, 
           create_models: false
         )
         
