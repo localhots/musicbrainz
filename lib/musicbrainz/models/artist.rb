@@ -10,7 +10,7 @@ module MusicBrainz
     field :urls, Hash
 
     def release_groups
-      @release_groups ||= client.load(:release_group, { artist: id, inc: [:url_rels] }, {
+      @release_groups ||= client.load(:release_group, { artist: id, inc: [:url_rels], limit: 100 }, {
         binding: :artist_release_groups,
         create_models: :release_group,
         sort: :first_release_date
