@@ -7,7 +7,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'rake', '~> 10.4.0'
+  gem 'rake', '~> 13.1.0'
   gem 'pry'
   gem 'awesome_print'
 end
