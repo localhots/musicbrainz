@@ -1,4 +1,4 @@
-## MusicBrainz Web Service wrapper [![Travis CI](https://secure.travis-ci.org/magnolia-fan/musicbrainz.png)](http://travis-ci.org/magnolia-fan/musicbrainz)
+## MusicBrainz Web Service wrapper
 
 ### Ruby Version
 **IMPORTANT!**
