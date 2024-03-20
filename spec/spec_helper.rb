@@ -3,6 +3,7 @@ require "rubygems"
 require "bundler/setup"
 require "musicbrainz"
 require "pry"
+require "awesome_print"
 
 RSpec.configure do |c|
   c.order = 'random'

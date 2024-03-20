@@ -14,10 +14,6 @@ Gem::Specification.new do |gem|
   gem.version       = MusicBrainz::VERSION
   gem.license       = "MIT"
 
-  gem.add_dependency('faraday')
-  gem.add_dependency('nokogiri')
-  gem.add_development_dependency('rspec')
-  gem.add_development_dependency('awesome_print')
-  gem.add_development_dependency('rake', '~> 10.4.0')
-  gem.add_development_dependency('pry')
+  gem.add_runtime_dependency('faraday')
+  gem.add_runtime_dependency('nokogiri')
 end

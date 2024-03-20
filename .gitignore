@@ -2,7 +2,6 @@
 coverage
 .bundle
 tmp
-Gemfile.lock
 .gem
-*.swp
 pkg/*
+/vendor
