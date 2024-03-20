@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <release-list count="8">
+    <release id="123eff45-b875-4aab-b659-fb6996691db6">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <packaging>Jewel Case</packaging>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006</date>
+      <country>XE</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006</date>
+          <area id="89a675c2-3e37-3518-b83c-418bad59a85a">
+            <name>Europe</name>
+            <sort-name>Europe</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>XE</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <barcode>828768934227</barcode>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>CD</format>
+          <track-list count="11" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="2225dd4c-ae9a-403b-8ea0-9e05014c778f">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006-08-28</date>
+      <country>GB</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006-08-28</date>
+          <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+            <name>United Kingdom</name>
+            <sort-name>United Kingdom</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>GB</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <asin>B000H49P28</asin>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <track-list count="11" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="2bc94ddc-b872-3b7f-b0a7-98a4fffbe5ba">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006-09-19</date>
+      <country>US</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006-09-19</date>
+          <area id="489ce91b-6658-3307-9877-795b68554c98">
+            <name>United States</name>
+            <sort-name>United States</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>US</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <barcode>828768832325</barcode>
+      <asin>B000HEVYQS</asin>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>CD</format>
+          <track-list count="11" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="2c8dcfc6-4afe-4b33-abc7-dff1bb4c5386">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006-09-22</date>
+      <country>XW</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006-09-22</date>
+          <area id="525d4e18-3d00-31b9-a58b-a146a916de8f">
+            <name>[Worldwide]</name>
+            <sort-name>[Worldwide]</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>XW</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>Digital Media</format>
+          <track-list count="12" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="30d5e730-ce0a-464d-93e1-7d76e4bb3e31">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006-08-28</date>
+      <country>GB</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006-08-28</date>
+          <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+            <name>United Kingdom</name>
+            <sort-name>United Kingdom</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>GB</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <barcode>828768849927</barcode>
+      <asin>B000H49P28</asin>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>CD</format>
+          <track-list count="11" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="36ee86ab-0450-4d8f-a970-183c11f210c1">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <packaging>Jewel Case</packaging>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006</date>
+      <country>GB</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006</date>
+          <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+            <name>United Kingdom</name>
+            <sort-name>United Kingdom</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>GB</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <barcode>828768934227</barcode>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>CD</format>
+          <track-list count="11" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="9f068ed6-9f69-4a60-bf5a-0931176a9aba">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006-12-20</date>
+      <country>JP</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006-12-20</date>
+          <area id="2db42837-c832-3c27-b4a3-08198f75693c">
+            <name>Japan</name>
+            <sort-name>Japan</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>JP</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <barcode>4988017645901</barcode>
+      <asin>B000K2QL9W</asin>
+      <cover-art-archive>
+        <artwork>false</artwork>
+        <count>0</count>
+        <front>false</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>CD</format>
+          <track-list count="16" />
+        </medium>
+      </medium-list>
+    </release>
+    <release id="dd34af03-37ab-460a-b20a-54629336d81a">
+      <title>Empire</title>
+      <status>Official</status>
+      <quality>normal</quality>
+      <packaging>Jewel Case</packaging>
+      <text-representation>
+        <language>eng</language>
+        <script>Latn</script>
+      </text-representation>
+      <release-group type="Album" id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61">
+        <title>Empire</title>
+        <first-release-date>2006-08-28</first-release-date>
+        <primary-type>Album</primary-type>
+      </release-group>
+      <date>2006-12-18</date>
+      <country>GB</country>
+      <release-event-list count="1">
+        <release-event>
+          <date>2006-12-18</date>
+          <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+            <name>United Kingdom</name>
+            <sort-name>United Kingdom</sort-name>
+            <iso-3166-1-code-list>
+              <iso-3166-1-code>GB</iso-3166-1-code>
+            </iso-3166-1-code-list>
+          </area>
+        </release-event>
+      </release-event-list>
+      <cover-art-archive>
+        <artwork>true</artwork>
+        <count>1</count>
+        <front>true</front>
+        <back>false</back>
+      </cover-art-archive>
+      <medium-list count="1">
+        <medium>
+          <position>1</position>
+          <format>Digital Media</format>
+          <track-list count="16" />
+        </medium>
+      </medium-list>
+    </release>
+  </release-list>
+</metadata>
