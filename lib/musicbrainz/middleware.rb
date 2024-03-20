@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module MusicBrainz
   class Middleware < Faraday::Middleware
     def call(env)

@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module MusicBrainz
   class ReleaseGroup < BaseModel
     field :id, String

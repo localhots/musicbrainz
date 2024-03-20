@@ -1,7 +1,3 @@
-# -*- encoding : utf-8 -*-
-#!/bin/env ruby
-# encoding: utf-8
-
 require "digest/sha1"
 require "fileutils"
 require "date"
