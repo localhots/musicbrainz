@@ -167,6 +167,6 @@ bundle exec irb -r musicbrainz
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-### Copyright
+### License
 
-Copyright (c) 2014 Gregory Eremin. See [LICENSE](https://raw.github.com/magnolia-fan/musicbrainz/master/LICENSE) for further details.
+[MIT](https://raw.github.com/localhots/musicbrainz/master/LICENSE)

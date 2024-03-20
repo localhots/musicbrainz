@@ -10,7 +10,7 @@ end
 
 MusicBrainz.configure do |c|
   test_email = `git config user.email`.chomp
-  test_email = "magnolia_fan@me.com" if test_email.empty?
+  raise 'Configure user.email in Git before running tests' if test_email.empty?
 
   c.app_name = "MusicBrainzGemTestSuite"
   c.app_version = MusicBrainz::VERSION

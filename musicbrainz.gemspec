@@ -4,7 +4,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Gregory Eremin"]
   gem.email         = ["magnolia_fan@me.com"]
   gem.summary       = %q{ MusicBrainz Web Service wrapper with ActiveRecord-style models }
-  gem.homepage      = "http://github.com/magnolia-fan/musicbrainz"
+  gem.homepage      = "http://github.com/localhots/musicbrainz"
 
   gem.files         = %x{ git ls-files }.split($\)
   gem.executables   = []
