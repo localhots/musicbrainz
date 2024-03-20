@@ -3,8 +3,10 @@ require "bundler/setup"
 require "musicbrainz"
 require "pry"
 require "awesome_print"
+require_relative 'support/mock_helpers'
 
 RSpec.configure do |c|
+  include MockHelpers
   c.order = 'random'
 end
 

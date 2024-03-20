@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <release-group-list count="49">
+    <release-group id="6a5a0cc6-245e-3e29-a143-c1bab026def6" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>Kasabian</title>
+      <first-release-date>2004-07-23</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="allmusic" type-id="a50a1d20-2b20-4d2c-9a29-eb771dd78386">
+          <target id="4a9964c1-131f-46fd-9796-0e6f31c25af1">https://www.allmusic.com/album/mw0000261419</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="e2947c75-4b83-485c-9b23-05f41880cf1d">https://www.discogs.com/master/89974</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="lyrics" type-id="156344d3-da8b-40c6-8b10-7b1c22727124">
+          <target id="ea2c0878-c2e8-44fe-ab82-10731f8294e3">https://genius.com/albums/Kasabian/Kasabian</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="other databases" type-id="38320e40-9f4a-3ae7-8cb2-3f3c9c5d856d">
+          <target id="f108eac8-ab07-4bd9-87ea-0d6296a25ec8">https://rateyourmusic.com/release/album/kasabian/kasabian_f2/</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="review" type-id="c3ac9c3b-f546-4d15-873f-b294d2c1b708">
+          <target id="1096ac9c-1d1c-45ac-8d3a-d7a55d3983b8">https://www.bbc.co.uk/music/reviews/64w6</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="ea336283-3cb4-4cc6-9acf-f6d91f718f87">https://www.wikidata.org/wiki/Q1535408</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>Empire</title>
+      <first-release-date>2006-08-25</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="allmusic" type-id="a50a1d20-2b20-4d2c-9a29-eb771dd78386">
+          <target id="2f2654f2-d4aa-4e88-ade3-210a0a5a3364">https://www.allmusic.com/album/mw0000445384</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="1afddd13-53dd-4d0c-87e2-faf016725e95">https://www.discogs.com/master/89980</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="review" type-id="c3ac9c3b-f546-4d15-873f-b294d2c1b708">
+          <target id="732310f9-ac35-468f-b293-891c6f7d0812">https://www.bbc.co.uk/music/reviews/389x</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="86c2338e-4922-4064-a829-f11d46b27e64">https://www.wikidata.org/wiki/Q748870</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="4a8b40bb-6af1-4284-b0b6-ac5c06f6442a" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>West Ryder Pauper Lunatic Asylum</title>
+      <first-release-date>2009-04-06</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="allmusic" type-id="a50a1d20-2b20-4d2c-9a29-eb771dd78386">
+          <target id="cf3db23b-355a-4b60-8697-f6f1fb3bc551">https://www.allmusic.com/album/mw0000818188</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="2b7252ee-83bf-4776-babe-646929e32aaa">https://www.discogs.com/master/125155</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="other databases" type-id="38320e40-9f4a-3ae7-8cb2-3f3c9c5d856d">
+          <target id="2fb5b9fa-ef2d-46fa-8803-3ec6e7eb31fd">https://rateyourmusic.com/release/album/kasabian/west_ryder_pauper_lunatic_asylum/</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="review" type-id="c3ac9c3b-f546-4d15-873f-b294d2c1b708">
+          <target id="19e1478d-e7ca-4d9f-afa8-66e00eddb225">https://www.bbc.co.uk/music/reviews/bn3n</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="f14b96f1-2246-4eec-923d-8fcd2d77ddae">https://www.wikidata.org/wiki/Q1932087</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="b4fe76e4-1fe5-497f-b1ec-f28c6c7d20bf" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>Velociraptor!</title>
+      <first-release-date>2011-09-16</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="allmusic" type-id="a50a1d20-2b20-4d2c-9a29-eb771dd78386">
+          <target id="690fc31f-ea19-4274-937a-cda76e5b28ef">https://www.allmusic.com/album/mw0002169520</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="bc5b66be-3b69-45e5-9684-4b8055ff355c">https://www.discogs.com/master/368845</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="review" type-id="c3ac9c3b-f546-4d15-873f-b294d2c1b708">
+          <target id="74b17bcd-9265-4556-985e-536ca8730a4d">https://www.bbc.co.uk/music/reviews/vcm5</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="f1fc1973-d743-40bf-b8b4-89f71a25a4e4">https://www.wikidata.org/wiki/Q1951148</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="c714fb23-514a-4395-a396-8c77926c4209" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>48:13</title>
+      <first-release-date>2014-06-09</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="allmusic" type-id="a50a1d20-2b20-4d2c-9a29-eb771dd78386">
+          <target id="d4e54644-407e-46f6-b86d-b0479836b795">https://www.allmusic.com/album/mw0002668450</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="5d5ec84e-ecc3-415b-aae5-3f76a38da06a">https://www.discogs.com/master/696552</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="1e39c231-c9d0-4abd-99ce-6af5535134c3">https://www.wikidata.org/wiki/Q16735842</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="4650cf9a-73c9-41ee-824c-26d1f217337c" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>For Crying Out Loud</title>
+      <first-release-date>2017-05-05</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="ec5645eb-0c27-4d40-8743-86c3011a7301">https://www.discogs.com/master/1174013</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="8b40acbb-8a65-4dbc-8e35-8ec2543e4bc4">https://www.wikidata.org/wiki/Q28951744</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="84caf02e-adcb-422a-ba28-7b0ab2e20755" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>The Alchemist’s Euphoria</title>
+      <first-release-date>2022-08-02</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="93020044-462e-47ed-bac3-d7a3dc143b3c">https://www.discogs.com/master/2743487</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="other databases" type-id="38320e40-9f4a-3ae7-8cb2-3f3c9c5d856d">
+          <target id="1d487df2-8ab3-4de4-9b98-fd29abb6d781">https://www.offiziellecharts.de/album-details-497860</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="review" type-id="c3ac9c3b-f546-4d15-873f-b294d2c1b708">
+          <target id="43b23613-5fb2-48a3-9aec-23ecb85cf14c">https://www.plattentests.de/rezi.php?show=18727</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="f8b1907c-2e7f-4e8e-afaa-10dfa1914957">https://www.wikidata.org/wiki/Q113456602</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="1ec6775b-4aa2-407d-9899-0a79e8b360fa" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>Happenings</title>
+      <first-release-date>2024-07-05</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+    </release-group>
+    <release-group id="6a21325a-8401-459d-891d-9d21aad2754c" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+      <title>Empire / West Ryder Pauper Lunatic Asylum</title>
+      <first-release-date>2011</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <secondary-type-list>
+        <secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+      </secondary-type-list>
+    </release-group>
+    <release-group id="4754518a-4ec2-3fe8-a8d9-211b9834d5be" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+      <title>Live at Brixton Academy</title>
+      <first-release-date>2005-07-04</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <secondary-type-list>
+        <secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+      </secondary-type-list>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="2d287071-5f94-4a15-8a5e-350958cd6c74">https://www.wikidata.org/wiki/Q1949413</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="487b1f90-fdf6-4040-b498-c2432acf1ab3">https://en.wikipedia.org/wiki/Live_from_Brixton_Academy</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="041780bf-f292-4c74-a661-ae7330ab806c" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+      <title>iTunes Festival: London 2007</title>
+      <first-release-date>2007-08-03</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <secondary-type-list>
+        <secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+      </secondary-type-list>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="6b1f173a-ba42-4f15-b5d5-34ce422e336c">https://www.wikidata.org/wiki/Q3789916</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="6455818a-5200-44f9-aa7e-5e119c47d39e" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+      <title>Live in London</title>
+      <first-release-date>2011</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <secondary-type-list>
+        <secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+      </secondary-type-list>
+    </release-group>
+    <release-group id="5547285f-578f-3236-85aa-b65cc0923b58" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Reason Is Treason</title>
+      <first-release-date>2004-02-23</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="7124c42e-2477-4b03-a2e0-c79a29918639">https://www.discogs.com/master/125172</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="533cbc5f-ec7e-32ab-95f3-8d1f804a5176" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Club Foot</title>
+      <first-release-date>2004-05-10</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="3828e7c4-cfd8-4242-97f4-e10d9931bf4f">https://www.discogs.com/master/125150</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="a82d7272-c5b6-453c-a878-77dd6742da42">https://www.wikidata.org/wiki/Q2327037</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="dfb6c4d7-5343-4374-9ced-b8baa8a1085b">https://en.wikipedia.org/wiki/Club_Foot_(song)</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="a3e970ee-40ff-3edf-ac99-c67477fca27e" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>L.S.F.</title>
+      <first-release-date>2004-08-17</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="d0f7219b-bb96-4da3-b432-1b253f6821f9">https://www.discogs.com/master/125163</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="4607f9e8-f58a-43ec-9bce-3ebd12835b21">https://www.wikidata.org/wiki/Q607352</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="f781ea27-6495-4fc5-ba91-a9d36438bd72">https://en.wikipedia.org/wiki/L.S.F._(song)</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="2f62a465-46b7-4313-88cb-1b8b216869ad" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Processed Beats</title>
+      <first-release-date>2004-10-13</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="395f8eac-9b6d-477c-80b7-8bedd086c916">https://www.wikidata.org/wiki/Q1463837</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="99d3532b-9181-34a6-b54c-b71a7078fd9a" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Cutt Off</title>
+      <first-release-date>2005-01-03</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="f4b3cf78-8f71-4597-8cd0-eae4d8e4640b">https://www.wikidata.org/wiki/Q3699798</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="32eabd9b-0167-4518-9be7-160c0c284138">https://en.wikipedia.org/wiki/Cutt_Off</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="246bc928-2dc8-35ba-80ee-7a0079de1632" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Empire</title>
+      <first-release-date>2006-07-24</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="7dc0dcb3-925c-46c6-a981-be49d7f2e199">https://www.discogs.com/master/125174</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="c2f55a1f-5b77-4599-8d02-be49d0da5b1c">https://www.wikidata.org/wiki/Q1463830</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="0db3b7d1-0db6-4f49-92d8-316b3f701fde">https://en.wikipedia.org/wiki/Empire_(Kasabian_song)</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="0244b82e-0796-36fc-a629-2507d5441124" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Shoot the Runner</title>
+      <first-release-date>2006-11-06</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="7fbbe0ef-4236-4c8a-8311-d2324bb62a59">https://www.discogs.com/master/125179</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="4316f9d0-1167-4d94-860b-675cb6019a61">https://www.wikidata.org/wiki/Q1463795</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="c346f015-113f-4d19-96f0-a0b03b5049d2" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Me Plus One</title>
+      <first-release-date>2007-01-29</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="6a6f7954-7dbd-446d-aa22-1a1fa8a4e204">https://www.discogs.com/master/125175</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="5e02dc49-6d56-4821-9053-60837f587548">https://www.wikidata.org/wiki/Q1120372</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="3e860ba5-650c-4013-8cf0-418adc09210d">https://en.wikipedia.org/wiki/Me_Plus_One</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="cf1373cb-8153-4628-bd27-3bafea1a3b94" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Fire</title>
+      <first-release-date>2009-05-28</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="3985831f-2610-4c5a-845f-33f8ee9355e2">https://www.wikidata.org/wiki/Q783320</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="edf67992-7fde-4450-a6fa-95d6fd3c8f32">https://en.wikipedia.org/wiki/Fire_(Kasabian_song)</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="f28b3072-c7ea-4410-91c4-2c643c83f069" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Where Did All the Love Go?</title>
+      <first-release-date>2009-08-10</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="9910c7e0-5bf2-486a-9397-9d181d794db2">https://www.wikidata.org/wiki/Q4019433</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="3aebbe82-8775-44b9-b351-b156aecc66df">https://en.wikipedia.org/wiki/Where_Did_All_the_Love_Go%3F</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="d4ac1def-d643-4d56-88e5-ed1bdb0736c5" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Underdog</title>
+      <first-release-date>2009-10-22</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="1869345c-5b5c-4f47-87fd-67f1c9d45167">https://www.wikidata.org/wiki/Q4004596</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="cd1ed30b-9c61-4210-8205-071e434154f4" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Days Are Forgotten</title>
+      <first-release-date>2011-08</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+      <relation-list target-type="url">
+        <relation type="discogs" type-id="99e550f3-5ab4-3110-b5b9-fe01d970b126">
+          <target id="cfe9c86e-c081-4519-ad70-eb2fb8eec470">https://www.discogs.com/master/381246</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikidata" type-id="b988d08c-5d86-4a57-9557-c83b399e3580">
+          <target id="cb55e0b9-5333-47ac-9134-afe569af6999">https://www.wikidata.org/wiki/Q3703828</target>
+          <direction>forward</direction>
+        </relation>
+        <relation type="wikipedia" type-id="6578f0e9-1ace-4095-9de8-6e517ddb1ceb">
+          <target id="42f899ae-864b-4a1c-9e7e-b823e5a3497a">https://en.wikipedia.org/wiki/Days_Are_Forgotten</target>
+          <direction>forward</direction>
+        </relation>
+      </relation-list>
+    </release-group>
+    <release-group id="72101928-c3b8-45b3-8735-48b1bdce1e84" type="Single" type-id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">
+      <title>Re‐Wired</title>
+      <first-release-date>2011-11-21</first-release-date>
+      <primary-type id="d6038452-8ee0-3f68-affc-2de9a1ede0b9">Single</primary-type>
+    </release-group>
+  </release-group-list>
+</metadata>
