@@ -7,7 +7,9 @@ require_relative 'support/mock_helpers'
 
 RSpec.configure do |c|
   include MockHelpers
+
   c.order = 'random'
+  c.color = true
 end
 
 MusicBrainz.configure do |c|
@@ -17,7 +19,4 @@ MusicBrainz.configure do |c|
   c.app_name = "MusicBrainzGemTestSuite"
   c.app_version = MusicBrainz::VERSION
   c.contact = test_email
-
-  c.cache_path = File.join(File.dirname(__FILE__), '..', 'tmp', 'spec_cache')
-  c.perform_caching = true
 end
