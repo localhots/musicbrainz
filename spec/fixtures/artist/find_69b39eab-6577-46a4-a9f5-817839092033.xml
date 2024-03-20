@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <artist id="69b39eab-6577-46a4-a9f5-817839092033" type="Group" type-id="e431f5f6-b5d2-343d-8b36-72607fffb74b">
+    <name>Kasabian</name>
+    <sort-name>Kasabian</sort-name>
+    <isni-list>
+      <isni>0000000106652390</isni>
+    </isni-list>
+    <country>GB</country>
+    <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+      <name>United Kingdom</name>
+      <sort-name>United Kingdom</sort-name>
+      <iso-3166-1-code-list>
+        <iso-3166-1-code>GB</iso-3166-1-code>
+      </iso-3166-1-code-list>
+    </area>
+    <begin-area id="806b9b3b-5daf-4eaa-807d-7a2a29cde0da">
+      <name>Leicester</name>
+      <sort-name>Leicester</sort-name>
+      <iso-3166-2-code-list>
+        <iso-3166-2-code>GB-LCE</iso-3166-2-code>
+      </iso-3166-2-code-list>
+    </begin-area>
+    <life-span>
+      <begin>1997</begin>
+    </life-span>
+    <relation-list target-type="url">
+      <relation type="allmusic" type-id="6b3e3c85-0002-4f34-aca6-80ace0d7e846">
+        <target id="79e99f63-f76d-4859-b10f-88ee7737f3c5">https://www.allmusic.com/artist/mn0000361541</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="BBC Music page" type-id="d028a975-000c-4525-9333-d3c8425e4b54">
+        <target id="e2110cb1-46db-42e3-abda-313e76f1237d">https://www.bbc.co.uk/music/artists/69b39eab-6577-46a4-a9f5-817839092033</target>
+        <direction>forward</direction>
+        <end>2020-11-19</end>
+        <ended>true</ended>
+      </relation>
+      <relation type="discogs" type-id="04a5b104-a4c2-4bac-99a1-7b837c37d9e4">
+        <target id="d1676007-8b11-431a-b96c-8f56d696485b">https://www.discogs.com/artist/235133</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="free streaming" type-id="769085a1-c2f7-4c24-a532-2375a77693bd">
+        <target id="0c5836a7-6747-46e7-917b-b181ee4b2468">https://open.spotify.com/artist/11wRdbnoYqRddKBrpHt4Ue</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="free streaming" type-id="769085a1-c2f7-4c24-a532-2375a77693bd">
+        <target id="dec26047-a327-4359-8db2-b2350175d100">https://www.deezer.com/artist/1247</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="image" type-id="221132e9-e30e-43f2-a741-15afc4c5fa7c">
+        <target id="4090fabc-d9b2-419b-b9be-db9601035359">https://commons.wikimedia.org/wiki/File:Kasabian_at_Brixton_Academy_2009.jpg</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="IMDb" type-id="94c8b0cc-4477-4106-932c-da60e63de61c">
+        <target id="7e8236d6-4a80-423d-8caf-5b012542befd">https://www.imdb.com/name/nm1868442/</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="last.fm" type-id="08db8098-c0df-4b78-82c3-c8697b4bba7f">
+        <target id="6733880a-f246-4ead-a7ac-23785b80e136">https://www.last.fm/music/Kasabian</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="lyrics" type-id="e4d73442-3762-45a8-905c-401da65544ed">
+        <target id="a716a264-b67a-4ad9-9e29-64a5c589e595">https://genius.com/artists/Kasabian</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="lyrics" type-id="e4d73442-3762-45a8-905c-401da65544ed">
+        <target id="6859ebf7-cfe7-4543-b576-788d0149c773">https://muzikum.eu/en/kasabian/lyrics</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="myspace" type-id="bac47923-ecde-4b59-822e-d08f0cd10156">
+        <target id="2a671cb7-482b-48e3-9fb9-5aa448968e14">https://myspace.com/kasabian</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="official homepage" type-id="fe33d22f-c3b0-4d68-bd53-a856badf2b15">
+        <target id="f489988f-f6ca-49ed-9931-f21712d00f6d">https://www.kasabian.co.uk/</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="other databases" type-id="d94fb61c-fa20-4e3c-a19a-71a949fb2c55">
+        <target id="49a2e69a-a3ef-4096-aefd-15ba6b3e32a4">http://id.loc.gov/authorities/names/n2005068609</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="other databases" type-id="d94fb61c-fa20-4e3c-a19a-71a949fb2c55">
+        <target id="1fdfb0d4-fcdd-4f44-b9e2-f4c9e76b7d94">https://catalogue.bnf.fr/ark:/12148/cb145796883</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="other databases" type-id="d94fb61c-fa20-4e3c-a19a-71a949fb2c55">
+        <target id="be5626f4-70f3-4ee9-9c04-4b41dc9a27b3">https://d-nb.info/gnd/10336310-5</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="other databases" type-id="d94fb61c-fa20-4e3c-a19a-71a949fb2c55">
+        <target id="0ad65037-83d2-46ca-8bf6-9327fe0063bb">https://rateyourmusic.com/artist/kasabian</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="other databases" type-id="d94fb61c-fa20-4e3c-a19a-71a949fb2c55">
+        <target id="6636ae93-6f8a-4d98-9013-609259712cdf">http://www.worldcat.org/identities/lccn-n2005068609/</target>
+        <direction>forward</direction>
+        <ended>true</ended>
+      </relation>
+      <relation type="purchase for download" type-id="f8319a2f-f824-4617-81c8-be6560b3b203">
+        <target id="04c0e7b7-2b69-4708-8de4-7f37cee8a9eb">https://play.google.com/store/music/artist?id=A2chuocuj6o6rswcqvmb6h2fzn4</target>
+        <direction>forward</direction>
+        <end>2020-10-12</end>
+        <ended>true</ended>
+      </relation>
+      <relation type="purchase for download" type-id="f8319a2f-f824-4617-81c8-be6560b3b203">
+        <target id="b8ac6f68-70bb-41b8-9632-4fa002003949">https://itunes.apple.com/us/artist/id20478838</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="secondhandsongs" type-id="79c5b84d-a206-4f4c-9832-78c028c312c3">
+        <target id="68cf3241-04bc-488c-976d-af33680a51d4">https://secondhandsongs.com/artist/25440</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="social network" type-id="99429741-f3f6-484b-84f8-23af51991770">
+        <target id="b32de4e6-f645-45e8-b2e4-787f4e49aa84">https://twitter.com/kasabianhq</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="social network" type-id="99429741-f3f6-484b-84f8-23af51991770">
+        <target id="74206326-e179-4908-8be8-79db9cef17fa">https://www.facebook.com/kasabian</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="social network" type-id="99429741-f3f6-484b-84f8-23af51991770">
+        <target id="ba78e7e1-27e6-407e-b9de-3f9415b7e7e7">https://www.instagram.com/kasabianofficial/</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="songkick" type-id="aac9c4bc-a5b9-30b8-9839-e3ac314c6e58">
+        <target id="187bd965-fef2-4674-98b9-1b256a1ae96d">https://www.songkick.com/artists/175029</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="soundcloud" type-id="89e4a949-0976-440d-bda1-5f772c1e5710">
+        <target id="8ef55e5b-ef5a-433f-bbea-cf08b920d7a0">https://soundcloud.com/kasabian</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="streaming" type-id="63cc5d1f-f096-4c94-a43f-ecb32ea94161">
+        <target id="6533f0f7-20c1-4834-ba14-c0776d80152b">https://music.apple.com/gb/artist/20478838</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="streaming" type-id="63cc5d1f-f096-4c94-a43f-ecb32ea94161">
+        <target id="1dd6ae94-e90f-4e17-9ad3-4adcce78cfaa">https://music.youtube.com/channel/UCmJDzMXYTdyjtp5VNONQRKg</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="streaming" type-id="63cc5d1f-f096-4c94-a43f-ecb32ea94161">
+        <target id="550130fd-4182-4284-b526-fdf20f2a6709">https://tidal.com/artist/1556</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="VIAF" type-id="e8571dcc-35d4-4e91-a577-a3382fd84460">
+        <target id="02fb245f-87f3-4363-9a81-dc0c0ec4f874">http://viaf.org/viaf/138707200</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="wikidata" type-id="689870a4-a1e4-4912-b17f-7b2664215698">
+        <target id="82e48da2-9fc5-402a-b7c1-d1eb0bb6e123">https://www.wikidata.org/wiki/Q272517</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="youtube" type-id="6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0">
+        <target id="cca53eab-ab96-4d2d-9403-4c5278164812">https://www.youtube.com/channel/UC_niYTRmUdRvVNdGYIA1vcg</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="youtube" type-id="6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0">
+        <target id="b52fa30f-3705-40d9-b3c5-d164be76b360">https://www.youtube.com/user/KasabianVEVO</target>
+        <direction>forward</direction>
+      </relation>
+      <relation type="youtube" type-id="6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0">
+        <target id="a013b397-c09b-4308-b14b-8168265b6776">https://www.youtube.com/user/KasabianTour</target>
+        <direction>forward</direction>
+        <ended>true</ended>
+      </relation>
+    </relation-list>
+  </artist>
+</metadata>

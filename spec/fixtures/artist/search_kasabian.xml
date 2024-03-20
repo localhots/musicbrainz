@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata created="2024-03-20T20:21:55.556Z" xmlns="http://musicbrainz.org/ns/mmd-2.0#" xmlns:ns2="http://musicbrainz.org/ns/ext#-2.0">
+  <artist-list count="2" offset="0">
+    <artist id="69b39eab-6577-46a4-a9f5-817839092033" ns2:score="100" type="Group" type-id="e431f5f6-b5d2-343d-8b36-72607fffb74b">
+      <name>Kasabian</name>
+      <sort-name>Kasabian</sort-name>
+      <country>GB</country>
+      <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed" type="Country" type-id="06dd0ae4-8c74-30bb-b43d-95dcedf961de">
+        <name>United Kingdom</name>
+        <sort-name>United Kingdom</sort-name>
+        <life-span>
+          <ended>false</ended>
+        </life-span>
+      </area>
+      <begin-area id="806b9b3b-5daf-4eaa-807d-7a2a29cde0da" type="City" type-id="6fd8f29a-3d0a-32fc-980d-ea697b69da78">
+        <name>Leicester</name>
+        <sort-name>Leicester</sort-name>
+        <life-span>
+          <ended>false</ended>
+        </life-span>
+      </begin-area>
+      <isni-list>
+        <isni>0000000106652390</isni>
+      </isni-list>
+      <life-span>
+        <begin>1997</begin>
+        <ended>false</ended>
+      </life-span>
+      <tag-list>
+        <tag count="1">
+          <name>rock</name>
+        </tag>
+        <tag count="8">
+          <name>alternative rock</name>
+        </tag>
+        <tag count="0">
+          <name>british</name>
+        </tag>
+        <tag count="5">
+          <name>indie rock</name>
+        </tag>
+        <tag count="1">
+          <name>indie</name>
+        </tag>
+        <tag count="0">
+          <name>alternative</name>
+        </tag>
+        <tag count="2">
+          <name>neo-psychedelia</name>
+        </tag>
+        <tag count="3">
+          <name>alternative dance</name>
+        </tag>
+        <tag count="1">
+          <name>dance-punk</name>
+        </tag>
+        <tag count="1">
+          <name>indietronica</name>
+        </tag>
+        <tag count="0">
+          <name>rock and indie</name>
+        </tag>
+        <tag count="1">
+          <name>post-baggy</name>
+        </tag>
+      </tag-list>
+    </artist>
+    <artist id="d76aed40-1332-44db-9b19-aee7ec17464b" ns2:score="73" type="Group" type-id="e431f5f6-b5d2-343d-8b36-72607fffb74b">
+      <name>Mother Kasabian</name>
+      <sort-name>Mother Kasabian</sort-name>
+      <area id="1127ddc2-eab3-4662-8718-6adbdeea3b10" type="City" type-id="6fd8f29a-3d0a-32fc-980d-ea697b69da78">
+        <name>Stockholm</name>
+        <sort-name>Stockholm</sort-name>
+        <life-span>
+          <ended>false</ended>
+        </life-span>
+      </area>
+      <life-span>
+        <begin>2011</begin>
+        <ended>false</ended>
+      </life-span>
+      <tag-list>
+        <tag count="1">
+          <name>psychedelic</name>
+        </tag>
+        <tag count="1">
+          <name>experimental</name>
+        </tag>
+        <tag count="1">
+          <name>metal</name>
+        </tag>
+        <tag count="1">
+          <name>doom</name>
+        </tag>
+        <tag count="1">
+          <name>stoner</name>
+        </tag>
+        <tag count="1">
+          <name>sludge</name>
+        </tag>
+      </tag-list>
+    </artist>
+  </artist-list>
+</metadata>

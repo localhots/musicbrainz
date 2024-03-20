@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <release id="2225dd4c-ae9a-403b-8ea0-9e05014c778f">
+    <title>Empire</title>
+    <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+    <quality>normal</quality>
+    <text-representation>
+      <language>eng</language>
+      <script>Latn</script>
+    </text-representation>
+    <date>2006-08-28</date>
+    <country>GB</country>
+    <release-event-list count="1">
+      <release-event>
+        <date>2006-08-28</date>
+        <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+          <name>United Kingdom</name>
+          <sort-name>United Kingdom</sort-name>
+          <iso-3166-1-code-list>
+            <iso-3166-1-code>GB</iso-3166-1-code>
+          </iso-3166-1-code-list>
+        </area>
+      </release-event>
+    </release-event-list>
+    <asin>B000H49P28</asin>
+    <cover-art-archive>
+      <artwork>true</artwork>
+      <count>1</count>
+      <front>true</front>
+      <back>false</back>
+    </cover-art-archive>
+    <medium-list count="1">
+      <medium>
+        <position>1</position>
+        <track-list count="11" offset="0">
+          <track id="0501cf38-48b7-3026-80d2-717d574b3d6a">
+            <position>1</position>
+            <number>1</number>
+            <length>233013</length>
+            <recording id="b3015bab-1540-4d4e-9f30-14872a1525f7">
+              <title>Empire</title>
+              <length>233013</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="0f01dd2f-81c9-3c27-8e1d-c8adf2f518ac">
+            <position>2</position>
+            <number>2</number>
+            <length>207373</length>
+            <recording id="43b2f487-0d08-4acc-a090-35ad408986a7">
+              <title>Shoot the Runner</title>
+              <length>207373</length>
+              <disambiguation>album version</disambiguation>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="13d5eec9-efc5-3a16-9876-7afb1778e47d">
+            <position>3</position>
+            <number>3</number>
+            <length>173160</length>
+            <recording id="bec0618e-aa89-4a34-b944-f3f2baea4345">
+              <title>Last Trip (In Flight)</title>
+              <length>173160</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="da159049-7459-3215-9b13-3742a8db94b7">
+            <position>4</position>
+            <number>4</number>
+            <length>148733</length>
+            <recording id="e20d8620-b241-40c4-8e31-b26715261f1b">
+              <title>Me Plus One</title>
+              <length>148733</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="1218042d-2ab4-3c84-b0d2-0f9c9b1f929c">
+            <position>5</position>
+            <number>5</number>
+            <length>248653</length>
+            <recording id="dac22e23-8452-4040-9977-ec1648fa799f">
+              <title>Sun Rise Light Flies</title>
+              <length>248653</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="52b20e8f-1c38-3225-aeef-f293336534bf">
+            <position>6</position>
+            <number>6</number>
+            <length>107973</length>
+            <recording id="36ee03dc-43c1-4ef1-a18e-ebd30ff95d17">
+              <title>Apnoea</title>
+              <length>107973</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="6bf92b79-6449-3b55-bd64-c5683727493e">
+            <position>7</position>
+            <number>7</number>
+            <length>254373</length>
+            <recording id="47ec6792-3c84-48fc-b3a4-f047de6c6405">
+              <title>By My Side</title>
+              <length>254373</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="862ad1e2-3f35-32e8-a953-484c610b183e">
+            <position>8</position>
+            <number>8</number>
+            <length>319626</length>
+            <recording id="66cc6ebf-850d-4ec1-a10e-7ab9db9dae03">
+              <title>Stuntman</title>
+              <length>319626</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="25bbba97-383c-30ca-9935-69997a90e48e">
+            <position>9</position>
+            <number>9</number>
+            <length>135053</length>
+            <recording id="92f5aa84-7752-4c2a-ba79-06d91a8a390d">
+              <title>Seek &amp; Destroy</title>
+              <length>135053</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="c749962a-53b1-3546-95ec-609c8926e39d">
+            <position>10</position>
+            <number>10</number>
+            <length>199866</length>
+            <recording id="7865a614-14ac-478f-8c5d-4991af86c7a7">
+              <title>British Legion</title>
+              <length>199866</length>
+              <first-release-date>2006-08-25</first-release-date>
+            </recording>
+          </track>
+          <track id="044d688d-8b3e-362c-ad6f-6e7c3b239303">
+            <position>11</position>
+            <number>11</number>
+            <length>1156293</length>
+            <recording id="04003da8-ba59-48a2-acfc-ef7d5e634bc0">
+              <title>The Doberman / [untitled]</title>
+              <length>333973</length>
+              <first-release-date>2006-08-28</first-release-date>
+            </recording>
+          </track>
+        </track-list>
+      </medium>
+    </medium-list>
+  </release>
+</metadata>

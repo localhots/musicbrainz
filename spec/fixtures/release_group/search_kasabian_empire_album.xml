@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata created="2024-03-20T21:10:40.204Z" xmlns="http://musicbrainz.org/ns/mmd-2.0#" xmlns:ns2="http://musicbrainz.org/ns/ext#-2.0">
+  <release-group-list count="2" offset="0">
+    <release-group id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61" ns2:score="100" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>Empire</title>
+      <first-release-date>2006-08-25</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <artist-credit>
+        <name-credit>
+          <name>Kasabian</name>
+          <artist id="69b39eab-6577-46a4-a9f5-817839092033">
+            <name>Kasabian</name>
+            <sort-name>Kasabian</sort-name>
+          </artist>
+        </name-credit>
+      </artist-credit>
+      <release-list count="14">
+        <release id="1f5bb929-fd6a-43a2-b4ab-90a9344d528a">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="2daac42a-ed43-49cd-aa92-1c42206d3258">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="2bc94ddc-b872-3b7f-b0a7-98a4fffbe5ba">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="bc5979d9-6f3a-4fdd-9cb2-07e883baa140">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="097ac0ff-6d56-4e66-932f-99f3b4c390d0">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="36ee86ab-0450-4d8f-a970-183c11f210c1">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="2225dd4c-ae9a-403b-8ea0-9e05014c778f">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="30d5e730-ce0a-464d-93e1-7d76e4bb3e31">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="2c8dcfc6-4afe-4b33-abc7-dff1bb4c5386">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="9f068ed6-9f69-4a60-bf5a-0931176a9aba">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="dd34af03-37ab-460a-b20a-54629336d81a">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="123eff45-b875-4aab-b659-fb6996691db6">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="c90a61c7-b25b-4aa9-bd8e-d036283fd1c0">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+        <release id="0efa3c56-8836-49a5-8aa2-ba00d26dbb68">
+          <title>Empire</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+      </release-list>
+      <tag-list>
+        <tag count="5">
+          <name>rock</name>
+        </tag>
+        <tag count="7">
+          <name>alternative rock</name>
+        </tag>
+        <tag count="2">
+          <name>indie rock</name>
+        </tag>
+        <tag count="1">
+          <name>indie</name>
+        </tag>
+        <tag count="1">
+          <name>rock and indie</name>
+        </tag>
+      </tag-list>
+    </release-group>
+    <release-group id="6a21325a-8401-459d-891d-9d21aad2754c" ns2:score="79" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+      <title>Empire / West Ryder Pauper Lunatic Asylum</title>
+      <first-release-date>2011</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+      <secondary-type-list>
+        <secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+      </secondary-type-list>
+      <artist-credit>
+        <name-credit>
+          <name>Kasabian</name>
+          <artist id="69b39eab-6577-46a4-a9f5-817839092033">
+            <name>Kasabian</name>
+            <sort-name>Kasabian</sort-name>
+          </artist>
+        </name-credit>
+      </artist-credit>
+      <release-list count="1">
+        <release id="d28ae1f2-cbbc-454c-a0d5-e08576c2567c">
+          <title>Empire / West Ryder Pauper Lunatic Asylum</title>
+          <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        </release>
+      </release-list>
+    </release-group>
+  </release-group-list>
+</metadata>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <disc id="pmzhT6ZlFiwSRCdVwV0eqire5_Y-">
+    <sectors>217171</sectors>
+    <offset-list count="9">
+      <offset position="1">150</offset>
+      <offset position="2">35000</offset>
+      <offset position="3">63711</offset>
+      <offset position="4">86440</offset>
+      <offset position="5">105891</offset>
+      <offset position="6">128017</offset>
+      <offset position="7">154668</offset>
+      <offset position="8">177007</offset>
+      <offset position="9">200379</offset>
+    </offset-list>
+    <release-list count="2">
+      <release id="7a31cd5f-6a57-4fca-a731-c521df1d3b78">
+        <title>Kveikur</title>
+        <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        <quality>normal</quality>
+        <packaging id="f7101ce3-0384-39ce-9fde-fbbd0044d35f">Cardboard/Paper Sleeve</packaging>
+        <text-representation>
+          <language>isl</language>
+          <script>Latn</script>
+        </text-representation>
+        <date>2013-06-17</date>
+        <country>XE</country>
+        <release-event-list count="2">
+          <release-event>
+            <date>2013-06-17</date>
+            <area id="89a675c2-3e37-3518-b83c-418bad59a85a">
+              <name>Europe</name>
+              <sort-name>Europe</sort-name>
+              <iso-3166-1-code-list>
+                <iso-3166-1-code>XE</iso-3166-1-code>
+              </iso-3166-1-code-list>
+            </area>
+          </release-event>
+          <release-event>
+            <date>2013-06-18</date>
+            <area id="489ce91b-6658-3307-9877-795b68554c98">
+              <name>United States</name>
+              <sort-name>United States</sort-name>
+              <iso-3166-1-code-list>
+                <iso-3166-1-code>US</iso-3166-1-code>
+              </iso-3166-1-code-list>
+            </area>
+          </release-event>
+        </release-event-list>
+        <barcode>634904060626</barcode>
+        <asin>B00C1GBOU6</asin>
+        <cover-art-archive>
+          <artwork>true</artwork>
+          <count>14</count>
+          <front>true</front>
+          <back>true</back>
+        </cover-art-archive>
+        <medium-list count="1">
+          <medium>
+            <position>1</position>
+            <format id="9712d52a-4509-3d4b-a1a2-67c88c643e31">CD</format>
+            <disc-list count="1">
+              <disc id="pmzhT6ZlFiwSRCdVwV0eqire5_Y-">
+                <sectors>217171</sectors>
+                <offset-list count="9">
+                  <offset position="1">150</offset>
+                  <offset position="2">35000</offset>
+                  <offset position="3">63711</offset>
+                  <offset position="4">86440</offset>
+                  <offset position="5">105891</offset>
+                  <offset position="6">128017</offset>
+                  <offset position="7">154668</offset>
+                  <offset position="8">177007</offset>
+                  <offset position="9">200379</offset>
+                </offset-list>
+              </disc>
+            </disc-list>
+            <track-list count="9"/>
+          </medium>
+        </medium-list>
+      </release>
+      <release id="932e9a53-af28-43be-8e6f-446da5d0a94d">
+        <title>Kveikur</title>
+        <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+        <quality>normal</quality>
+        <packaging id="f7101ce3-0384-39ce-9fde-fbbd0044d35f">Cardboard/Paper Sleeve</packaging>
+        <text-representation>
+          <language>eng</language>
+          <script>Latn</script>
+        </text-representation>
+        <date>2013-06-14</date>
+        <country>TW</country>
+        <release-event-list count="1">
+          <release-event>
+            <date>2013-06-14</date>
+            <area id="41637cec-9a4f-389c-86d2-fc6abf3357b5">
+              <name>Taiwan</name>
+              <sort-name>Taiwan</sort-name>
+              <iso-3166-1-code-list>
+                <iso-3166-1-code>TW</iso-3166-1-code>
+              </iso-3166-1-code-list>
+              <iso-3166-2-code-list>
+                <iso-3166-2-code>CN-71</iso-3166-2-code>
+              </iso-3166-2-code-list>
+            </area>
+          </release-event>
+        </release-event-list>
+        <barcode>4712765169088</barcode>
+        <cover-art-archive>
+          <artwork>true</artwork>
+          <count>1</count>
+          <front>true</front>
+          <back>false</back>
+        </cover-art-archive>
+        <medium-list count="1">
+          <medium>
+            <position>1</position>
+            <format id="9712d52a-4509-3d4b-a1a2-67c88c643e31">CD</format>
+            <disc-list count="1">
+              <disc id="pmzhT6ZlFiwSRCdVwV0eqire5_Y-">
+                <sectors>217171</sectors>
+                <offset-list count="9">
+                  <offset position="1">150</offset>
+                  <offset position="2">35000</offset>
+                  <offset position="3">63711</offset>
+                  <offset position="4">86440</offset>
+                  <offset position="5">105891</offset>
+                  <offset position="6">128017</offset>
+                  <offset position="7">154668</offset>
+                  <offset position="8">177007</offset>
+                  <offset position="9">200379</offset>
+                </offset-list>
+              </disc>
+            </disc-list>
+            <track-list count="9"/>
+          </medium>
+        </medium-list>
+      </release>
+    </release-list>
+  </disc>
+</metadata>

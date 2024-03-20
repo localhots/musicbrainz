@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<metadata created="2024-03-20T20:52:49.094Z" xmlns="http://musicbrainz.org/ns/mmd-2.0#" xmlns:ns2="http://musicbrainz.org/ns/ext#-2.0">
+	<recording-list count="22" offset="0">
+		<recording id="bb940e26-4265-4909-b128-4906d8b1079e" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>1997-04-28</first-release-date>
+			<release-list>
+				<release id="8693242a-74a7-442b-be53-eaf1a0414313">
+					<title>Blackrock</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="84660be8-d077-335b-96b0-0fec2eba540d" type="Soundtrack" type-id="22a628ad-c082-3c4f-b1b6-d41665107b88">
+						<title>Blackrock</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="22a628ad-c082-3c4f-b1b6-d41665107b88">Soundtrack</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>1997-04-28</date>
+					<country>AU</country>
+					<release-event-list>
+						<release-event>
+							<date>1997-04-28</date>
+							<area id="106e0bec-b638-3b37-b731-f53d507dc00e">
+								<name>Australia</name>
+								<sort-name>Australia</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>AU</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="1">
+						<track-count>15</track-count>
+						<medium>
+							<position>1</position>
+							<track-list count="15" offset="7">
+								<track id="d0f4de52-f9f2-31e6-b429-37a0c2b33ee7">
+									<number>8</number>
+									<title>Bound for the Floor</title>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="6b70baf5-38af-4905-8129-4bc19764280f" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<length>224000</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>2001</first-release-date>
+			<release-list>
+				<release id="729ec39e-95ef-4639-b405-ce0ce41862ff">
+					<title>Killer Buzz</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="029557f3-7dd2-392e-95a2-880b921d7e00" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+						<title>Killer Buzz</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>2001</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>2001</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="2">
+						<track-count>32</track-count>
+						<medium>
+							<position>1</position>
+							<format>CD</format>
+							<track-list count="16" offset="10">
+								<track id="6f8299cc-eb29-3ff3-b581-b1016bf4d996">
+									<number>11</number>
+									<title>Bound for the Floor</title>
+									<length>224000</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="f619ad5b-ae70-4183-87db-21bb811102e1" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<length>230773</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<release-list>
+				<release id="badcfef2-d479-4eee-b238-ca7169551718">
+					<title>Unplugged &amp; Burnt Out</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="20f0474e-0ac5-3d22-960c-2327c27b4bb7" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+						<title>Unplugged &amp; Burnt Out</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<medium-list count="1">
+						<track-count>12</track-count>
+						<medium>
+							<position>1</position>
+							<track-list count="12" offset="7">
+								<track id="e5f5372f-fe8a-3d4d-95c3-661787773ccc">
+									<number>8</number>
+									<title>Bound for the Floor</title>
+									<length>230773</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="9a0589c9-7dc9-4c5c-9fda-af6cd863095c" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<length>231880</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>1997-11-25</first-release-date>
+			<release-list>
+				<release id="d4fd8dd2-72bc-44e7-8e96-cb725f44e415">
+					<title>WAAF 107.3 FM: Royal Flush: Live On‐air</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="4d6cd463-ce25-3002-99c2-3db9bf6d40fc" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+						<title>WAAF 107.3 FM: Royal Flush: Live On‐air</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>1997-11-25</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>1997-11-25</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="1">
+						<track-count>26</track-count>
+						<medium>
+							<position>1</position>
+							<format>CD</format>
+							<track-list count="26" offset="24">
+								<track id="c2d30d7d-7975-324f-bc27-f45b7f92ccd5">
+									<number>25</number>
+									<title>Bound for the Floor</title>
+									<length>231880</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="0158c3e2-25d7-4660-978b-03c2a22ce444" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<length>218360</length>
+			<disambiguation>live</disambiguation>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>1998</first-release-date>
+			<release-list>
+				<release id="8bdf1bd4-e163-4e7e-a058-bb8042e886c1">
+					<title>The Point Platinum Version 1.0</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="a864e9ee-5d9f-3a94-bc3a-055e4b84c2c9" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+						<title>The Point Platinum Version 1.0</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>1998</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>1998</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="2">
+						<track-count>32</track-count>
+						<medium>
+							<position>2</position>
+							<format>CD</format>
+							<track-list count="13" offset="5">
+								<track id="ffd55adb-6dac-318f-b624-a3ae2a46110a">
+									<number>6</number>
+									<title>Bound for the Floor</title>
+									<length>218360</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="3b8e47d4-7305-4fc9-b187-48134fcc072a" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<length>223866</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<release-list>
+				<release id="1a008713-bd31-446b-be9c-e3d17fec067c">
+					<title>Radio 104 WMRQ Back to School</title>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="acc96604-e33e-3796-a711-51da5bf7f231" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+						<title>Radio 104 WMRQ Back to School</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<medium-list count="1">
+						<track-count>15</track-count>
+						<medium>
+							<position>1</position>
+							<track-list count="15" offset="1">
+								<track id="740e55bc-b0fe-31a7-b70b-dd8c590a9dfb">
+									<number>2</number>
+									<title>Bound for the Floor</title>
+									<length>223866</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="512d4444-8644-4dae-916f-77d2981c9814" ns2:score="100">
+			<title>Bound For the Floor</title>
+			<length>225000</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>2018-02-06</first-release-date>
+			<release-list>
+				<release id="1a58b013-7530-4857-8b76-841e89b5bb3c">
+					<title>Live In Europe</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Local H</name>
+							<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+								<name>Local H</name>
+								<sort-name>Local H</sort-name>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="e128a782-a9bf-40c9-8863-f3f67d520cd3" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+						<title>Live In Europe</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>2018-02-06</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>2018-02-06</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="1">
+						<track-count>18</track-count>
+						<medium>
+							<position>1</position>
+							<format>CD</format>
+							<track-list count="18" offset="8">
+								<track id="befde23f-65d3-496e-b62a-f9abe29ccf0d">
+									<number>9</number>
+									<title>Bound For the Floor</title>
+									<length>225000</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="af32a39d-27e3-4921-9632-dd86fca9c001" ns2:score="100">
+			<title>Bound for the Floor</title>
+			<length>223947</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>1996</first-release-date>
+			<release-list>
+				<release id="53975e35-c4fa-455f-a423-bd7fcdc6abe2">
+					<title>Promo Only: Modern Rock Radio, July 1996</title>
+					<status id="518ffc83-5cde-34df-8627-81bff5093d92">Promotion</status>
+					<artist-credit>
+						<name-credit>
+							<name>Various Artists</name>
+							<artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+								<name>Various Artists</name>
+								<sort-name>Various Artists</sort-name>
+								<disambiguation>add compilations to this artist</disambiguation>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="c323692d-6729-4760-bf51-17a7d44b4e1f" type="Compilation" type-id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">
+						<title>Promo Only: Modern Rock Radio, July 1996</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="dd2a21e1-0c00-3729-a7a0-de60b84eb5d1">Compilation</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>1996</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>1996</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="1">
+						<track-count>19</track-count>
+						<medium>
+							<position>1</position>
+							<format>CD</format>
+							<track-list count="19" offset="14">
+								<track id="864c95d6-760b-4e8c-8b27-4901fb4a5389">
+									<number>15</number>
+									<title>Bound for the Floor</title>
+									<length>223947</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="8afc46db-f139-452b-a600-140eaa42b0f1" ns2:score="100">
+			<title>Bound For The Floor</title>
+			<length>213000</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>1999-06-26</first-release-date>
+			<release-list>
+				<release id="affbb060-56b9-4af2-ac50-d3f6de3034cc">
+					<title>Live at The Metro / Smart Bar</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Local H</name>
+							<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+								<name>Local H</name>
+								<sort-name>Local H</sort-name>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="301ea0e2-e671-4ed7-9319-e7e8bae07025" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+						<title>Live at The Metro / Smart Bar</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>1999-06-26</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>1999-06-26</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="2">
+						<track-count>19</track-count>
+						<medium>
+							<position>1</position>
+							<format>CD</format>
+							<track-list count="14" offset="2">
+								<track id="4673e15b-890c-48ba-aa87-d49a2d0be56d">
+									<number>3</number>
+									<title>Bound For The Floor</title>
+									<length>213000</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+		<recording id="b34e0298-4a73-4a45-ac78-b11e9a2d55c8" ns2:score="100">
+			<title>Bound For The Floor</title>
+			<length>381000</length>
+			<artist-credit>
+				<name-credit>
+					<name>Local H</name>
+					<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+						<name>Local H</name>
+						<sort-name>Local H</sort-name>
+						<alias-list>
+							<alias sort-name="Local H.">Local H.</alias>
+						</alias-list>
+					</artist>
+				</name-credit>
+			</artist-credit>
+			<first-release-date>2006-02-11</first-release-date>
+			<release-list>
+				<release id="913408b2-1595-44ef-a742-679a3a9de9b0">
+					<title>Live at Durty Nellies</title>
+					<status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+					<artist-credit>
+						<name-credit>
+							<name>Local H</name>
+							<artist id="baaf92f5-f2b2-4f51-9723-abed41a257f8">
+								<name>Local H</name>
+								<sort-name>Local H</sort-name>
+							</artist>
+						</name-credit>
+					</artist-credit>
+					<release-group id="567430de-6402-4d72-a45e-ae8864f612fb" type="Live" type-id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">
+						<title>Live at Durty Nellies</title>
+						<primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+						<secondary-type-list>
+							<secondary-type id="6fd474e2-6b58-3102-9d17-d6f7eb7da0a0">Live</secondary-type>
+						</secondary-type-list>
+					</release-group>
+					<date>2006-02-11</date>
+					<country>US</country>
+					<release-event-list>
+						<release-event>
+							<date>2006-02-11</date>
+							<area id="489ce91b-6658-3307-9877-795b68554c98">
+								<name>United States</name>
+								<sort-name>United States</sort-name>
+								<iso-3166-1-code-list>
+									<iso-3166-1-code>US</iso-3166-1-code>
+								</iso-3166-1-code-list>
+							</area>
+						</release-event>
+					</release-event-list>
+					<medium-list count="2">
+						<track-count>17</track-count>
+						<medium>
+							<position>2</position>
+							<format>CD</format>
+							<track-list count="6" offset="1">
+								<track id="070dc00e-564c-4a3d-b71b-55353f121ef8">
+									<number>2</number>
+									<title>Bound For The Floor</title>
+									<length>381000</length>
+								</track>
+							</track-list>
+						</medium>
+					</medium-list>
+				</release>
+			</release-list>
+		</recording>
+	</recording-list>
+</metadata>
