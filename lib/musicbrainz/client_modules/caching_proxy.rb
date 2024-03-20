@@ -19,27 +19,41 @@ module MusicBrainz
         response = { body: nil, status: 500 }
 
         if File.exist?(file_path)
-          response = {
-            body: File.open(file_path, 'rb').gets,
-            status: 200
-          }
+          get_cached_contents(file_path)
         else
-          response = super
+          response = get_live_contents(file_path, url)
           if response[:status] == 200
-            FileUtils.mkpath(dir_path)
-            File.open(file_path, 'wb') do |f|
-              f.puts(response[:body])
-              f.chmod(0755)
-              f.close
-            end
+            cache_contents!(file_path, response[:body])
           end
+          response
         end
-
-        response
       end
 
       def caching?
         MusicBrainz.config.perform_caching
+      end
+
+    private
+
+      def get_cached_contents(file_path)
+        {
+          body: File.open(file_path, 'rb').gets,
+          status: 200
+        }
+      end
+
+      def get_live_contents(file_path, url)
+        http.get(url)
+      end
+
+      def cache_contents!(file_path, body)
+        dir_path = File.dirname(file_path)
+        FileUtils.mkpath(dir_path)
+        File.open(file_path, 'wb') do |f|
+          f.puts(body)
+          f.chmod(0755)
+          f.close
+        end
       end
     end
   end
