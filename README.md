@@ -1,10 +1,5 @@
 ## MusicBrainz Web Service wrapper
 
-### Ruby Version
-**IMPORTANT!**
-
-Ruby version 1.9+ required. No support for 1.8.7 anymore, if you still on 1.8 consider using gem [version 0.5.2](https://github.com/magnolia-fan/musicbrainz/tree/v0.5.2#musicbrainz-web-service-wrapper-) and bundle it like this:
-
 ```ruby
 gem 'musicbrainz', '0.5.2'
 ```
