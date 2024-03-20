@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+  <release id="2225dd4c-ae9a-403b-8ea0-9e05014c778f">
+    <title>Empire</title>
+    <status id="4e304316-386d-3409-af2e-78857eec5cfe">Official</status>
+    <quality>normal</quality>
+    <text-representation>
+      <language>eng</language>
+      <script>Latn</script>
+    </text-representation>
+    <release-group id="6f33e0f0-cde2-38f9-9aee-2c60af8d1a61" type="Album" type-id="f529b476-6e62-324f-b0aa-1f3e33d313fc">
+      <title>Empire</title>
+      <first-release-date>2006-08-25</first-release-date>
+      <primary-type id="f529b476-6e62-324f-b0aa-1f3e33d313fc">Album</primary-type>
+    </release-group>
+    <date>2006-08-28</date>
+    <country>GB</country>
+    <release-event-list count="1">
+      <release-event>
+        <date>2006-08-28</date>
+        <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+          <name>United Kingdom</name>
+          <sort-name>United Kingdom</sort-name>
+          <iso-3166-1-code-list>
+            <iso-3166-1-code>GB</iso-3166-1-code>
+          </iso-3166-1-code-list>
+        </area>
+      </release-event>
+    </release-event-list>
+    <asin>B000H49P28</asin>
+    <cover-art-archive>
+      <artwork>true</artwork>
+      <count>1</count>
+      <front>true</front>
+      <back>false</back>
+    </cover-art-archive>
+    <medium-list count="1">
+      <medium>
+        <position>1</position>
+        <track-list count="11"/>
+      </medium>
+    </medium-list>
+  </release>
+</metadata>
