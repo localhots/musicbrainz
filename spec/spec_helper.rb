@@ -13,10 +13,7 @@ RSpec.configure do |c|
 end
 
 MusicBrainz.configure do |c|
-  test_email = `git config user.email`.chomp
-  raise 'Configure user.email in Git before running tests' if test_email.empty?
-
   c.app_name = "MusicBrainzGemTestSuite"
   c.app_version = MusicBrainz::VERSION
-  c.contact = test_email
+  c.contact = "root@localhost"
 end
