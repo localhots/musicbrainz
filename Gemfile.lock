@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    musicbrainz (0.7.7)
+    musicbrainz (0.8.0)
       faraday
       nokogiri
 
