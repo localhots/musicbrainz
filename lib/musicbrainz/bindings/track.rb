@@ -3,6 +3,7 @@ module MusicBrainz
     module Track
       def parse(xml)
         {
+          id: (xml.attribute('id').value rescue nil),
           position: (xml.xpath('./position').text rescue nil),
           recording_id: (xml.xpath('./recording').attribute('id').value rescue nil),
           title: (xml.xpath('./recording/title').text rescue nil),
