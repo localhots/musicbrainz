@@ -5,9 +5,6 @@ describe MusicBrainz::Release do
     mock url: 'http://musicbrainz.org/ws/2/release/2225dd4c-ae9a-403b-8ea0-9e05014c778f?inc=media+release-groups',
          fixture: 'release/find_2225dd4c-ae9a-403b-8ea0-9e05014c778f.xml'
 
-    mock url: 'http://musicbrainz.org/ws/2/release/2225dd4c-ae9a-403b-8ea0-9e05014c778f?inc=media&limit=100',
-         fixture: 'release/find_2225dd4c-ae9a-403b-8ea0-9e05014c778f.xml'
-
     mock url: 'http://musicbrainz.org/ws/2/release/2225dd4c-ae9a-403b-8ea0-9e05014c778f?inc=recordings+media&limit=100',
          fixture: 'release/find_2225dd4c-ae9a-403b-8ea0-9e05014c778f_tracks.xml'
 
@@ -57,6 +54,14 @@ describe MusicBrainz::Release do
       expect(mediums.length).to eq 1
       expect(mediums.first.position).to eq 1
       expect(mediums.first.format).to eq "CD"
+    end
+
+    it "gets correct mediums tracks" do
+      expect(mediums.first.tracks.length).to eq 11
+      expect(mediums.first.tracks.first.position).to eq 1
+      expect(mediums.first.tracks.first.recording_id).to eq "b3015bab-1540-4d4e-9f30-14872a1525f7"
+      expect(mediums.first.tracks.first.title).to eq "Empire"
+      expect(mediums.first.tracks.first.length).to eq 233013
     end
   end
 

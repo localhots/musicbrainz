@@ -12,7 +12,7 @@ module MusicBrainz
     field :quality, String
 
     def mediums
-      @mediums ||= client.load(:release, { id: id, inc: [:media], limit: 100 }, {
+      @mediums ||= client.load(:release, { id: id, inc: [:recordings, :media], limit: 100 }, {
         binding: :release_mediums,
         create_models: :medium,
         sort: :position
