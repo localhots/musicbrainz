@@ -5,6 +5,9 @@ describe MusicBrainz::Release do
     mock url: 'http://musicbrainz.org/ws/2/release/2225dd4c-ae9a-403b-8ea0-9e05014c778f?inc=media+release-groups',
          fixture: 'release/find_2225dd4c-ae9a-403b-8ea0-9e05014c778f.xml'
 
+    mock url: 'http://musicbrainz.org/ws/2/release/2225dd4c-ae9a-403b-8ea0-9e05014c778f?inc=media&limit=100',
+         fixture: 'release/find_2225dd4c-ae9a-403b-8ea0-9e05014c778f.xml'
+
     mock url: 'http://musicbrainz.org/ws/2/release/2225dd4c-ae9a-403b-8ea0-9e05014c778f?inc=recordings+media&limit=100',
          fixture: 'release/find_2225dd4c-ae9a-403b-8ea0-9e05014c778f_tracks.xml'
 
@@ -38,6 +41,22 @@ describe MusicBrainz::Release do
       expect(release.barcode).to eq '602527197692'
       expect(release.quality).to eq 'normal'
       expect(release.type).to eq 'Album'
+    end
+  end
+
+  describe '#mediums' do
+    subject(:mediums) {
+      release.mediums
+    }
+
+    let(:release) {
+      MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f")
+    }
+
+    it "gets correct release mediums" do
+      expect(mediums.length).to eq 1
+      expect(mediums.first.position).to eq 1
+      expect(mediums.first.format).to eq "CD"
     end
   end
 
