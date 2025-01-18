@@ -4,5 +4,8 @@
 		<title>Empire</title>
 		<length>233013</length>
 		<first-release-date>2006-08-25</first-release-date>
+		<isrc-list count="1">
+			<isrc id="JPB600760301"/>
+		</isrc-list>
 	</recording>
 </metadata>

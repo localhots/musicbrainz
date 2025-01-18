@@ -3,7 +3,7 @@ require "spec_helper"
 describe MusicBrainz::Recording do
   describe '.find' do
     before(:each) {
-      mock url: 'http://musicbrainz.org/ws/2/recording/b3015bab-1540-4d4e-9f30-14872a1525f7?',
+      mock url: 'http://musicbrainz.org/ws/2/recording/b3015bab-1540-4d4e-9f30-14872a1525f7?inc=isrcs',
            fixture: 'recording/find_b3015bab-1540-4d4e-9f30-14872a1525f7.xml'
     }
     let(:recording) {
@@ -20,6 +20,7 @@ describe MusicBrainz::Recording do
 
     it "gets correct track data" do
       expect(recording.title).to eq "Empire"
+      expect(recording.isrcs).to eq ["JPB600760301"]
     end
   end
 
