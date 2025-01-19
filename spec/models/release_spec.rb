@@ -41,6 +41,30 @@ describe MusicBrainz::Release do
     end
   end
 
+  describe '#mediums' do
+    subject(:mediums) {
+      release.mediums
+    }
+
+    let(:release) {
+      MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f")
+    }
+
+    it "gets correct release mediums" do
+      expect(mediums.length).to eq 1
+      expect(mediums.first.position).to eq 1
+      expect(mediums.first.format).to eq "CD"
+    end
+
+    it "gets correct mediums tracks" do
+      expect(mediums.first.tracks.length).to eq 11
+      expect(mediums.first.tracks.first.position).to eq 1
+      expect(mediums.first.tracks.first.recording_id).to eq "b3015bab-1540-4d4e-9f30-14872a1525f7"
+      expect(mediums.first.tracks.first.title).to eq "Empire"
+      expect(mediums.first.tracks.first.length).to eq 233013
+    end
+  end
+
   describe '#tracks' do
     let(:release) {
       MusicBrainz::Release.find("2225dd4c-ae9a-403b-8ea0-9e05014c778f")

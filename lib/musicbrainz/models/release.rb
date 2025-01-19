@@ -11,6 +11,14 @@ module MusicBrainz
     field :barcode, String
     field :quality, String
 
+    def mediums
+      @mediums ||= client.load(:release, { id: id, inc: [:recordings, :media], limit: 100 }, {
+        binding: :release_mediums,
+        create_models: :medium,
+        sort: :position
+      }) unless @id.nil?
+    end
+
     def tracks
       @tracks ||= client.load(:release, { id: id, inc: [:recordings, :media], limit: 100 }, {
         binding: :release_tracks,
