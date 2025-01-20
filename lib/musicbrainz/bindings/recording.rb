@@ -9,7 +9,8 @@ module MusicBrainz
           title: (xml.xpath('./title').text.gsub(/[`’]/, "'") rescue nil),
           artist: (xml.xpath('./artist-credit/name-credit/artist/name').text rescue nil),
           releases: (xml.xpath('./release-list/release/title').map{ |xml| xml.text } rescue []),
-          score: (xml.attribute('score').value.to_i rescue nil)
+          score: (xml.attribute('score').value.to_i rescue nil),
+          isrcs: (xml.xpath('./isrc-list/isrc/@id').map(&:text) rescue [])
         }
       end
 
