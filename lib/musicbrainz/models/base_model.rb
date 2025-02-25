@@ -98,8 +98,10 @@ module MusicBrainz
           else
             val.split("-").map(&:to_i)
           end
-          
+
           Date.new(*val)
+        elsif type == Array
+          Array(val)
         else
           val
         end

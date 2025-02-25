@@ -6,10 +6,11 @@ module MusicBrainz
     field :artist, String
 		field :releases, String
 		field :score, Integer
+    field :isrcs, Array
 
     class << self
       def find(id)
-				super({ id: id })
+				super({ id: id, inc: [:isrcs] })
       end
 
 			def search(track_name, artist_name)
